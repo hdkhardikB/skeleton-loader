@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
-import { createPortal } from 'react-dom'
-import PropTypes from 'prop-types'
 import { EvlContextProvider } from './ComponentContext'
-
 import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import { MuiThemeProvider } from '@material-ui/core'
+import { ThemeProvider } from '@material-ui/styles'
+import { theme } from './jss'
 interface IEvlUIProps {
     theme?: Theme
 }
 
 class EvlUIProvider extends Component<IEvlUIProps> {
+    componentDidUpdate() {
+
+    }
     render() {
-        const { theme } = this.props
+
         return (
-            <MuiThemeProvider theme={theme}>
-                <EvlContextProvider value={{ theme: theme }}></EvlContextProvider>
-            </MuiThemeProvider>
+            <ThemeProvider theme={this.props.theme || theme}>
+                <div></div>
+            </ThemeProvider>
+
+
+            // If Theme provider works try running Context provider
+
+            // <EvlContextProvider value={{ theme: this.props.theme || theme }}>
+            //     <ThemeProvider theme={this.props.theme || theme}>
+            //         <div></div>
+            //     </ThemeProvider>
+            // </EvlContextProvider>
+
         )
     }
 }

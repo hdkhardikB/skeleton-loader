@@ -6,12 +6,21 @@
         "outDir": "./lib",
         "strict": true,
         "esModuleInterop": true,
-        "jsx": "react"
+        "jsx": "react",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "noImplicitThis": true,
+        "strictNullChecks": true
     },
     "include": [
         "./src/**/*"
     ],
-    "lib": ["es6"],
+    "lib": [
+        "es6"
+    ],
     "exclude": [
         "node_modules",
         "./src/**/*.test.*"
