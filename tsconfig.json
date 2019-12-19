@@ -1,28 +1,33 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": true,
-        "outDir": "./lib",
-        "strict": true,
-        "esModuleInterop": true,
-        "jsx": "react",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "moduleResolution": "node",
-        "noImplicitThis": true,
-        "strictNullChecks": true
-    },
-    "include": [
-        "./src/**/*"
-    ],
-    "lib": [
-        "es6"
-    ],
-    "exclude": [
-        "node_modules",
-        "./src/**/*.test.*"
-    ]
+  "compilerOptions": {
+    "outDir": "./lib",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "sourceMap": true,
+    "allowJs": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDirs": ["src"],
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@themes": ["themes"],
+      "@themes/*": ["themes/*"],
+      "@components": ["components"],
+      "@components/*": ["components/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/stories/**/*" ]
 }
