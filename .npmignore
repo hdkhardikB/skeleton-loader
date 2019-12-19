@@ -5,3 +5,4 @@ tslint.json
 .prettierrc
 *.log
 .vscode
+storybook-static
