@@ -1,0 +1,11 @@
+{
+    "name": "Evl UI Component Template",
+    "variables": [
+        {
+            "name": "component",
+            "style": {
+                "case": "auto"
+            }
+        }
+    ]
+}
