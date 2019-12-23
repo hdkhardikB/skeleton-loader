@@ -1,2 +1,4 @@
-export * from '@components';
-export * from '@themes';
+import { Button } from '@components';
+import { EvlTheme, EvlDarkTheme } from '@themes';
+
+export { Button, EvlDarkTheme, EvlTheme };

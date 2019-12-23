@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "module": "commonjs",
-    "target": "es5",
+    "module": "esnext",
+    "target": "esnext",
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
     "allowJs": false,
@@ -26,7 +26,8 @@
       "@themes/*": ["themes/*"],
       "@components": ["components"],
       "@components/*": ["components/*"]
-    }
+    },
+    "plugins": [{ "transform": "ts-transformer-imports" }],
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/stories/**/*" ]
