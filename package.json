@@ -1,6 +1,6 @@
 {
   "name": "evl-ui-components",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Everledger UI Component Library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -13,8 +13,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "repository": "https://hdkeverledger@bitbucket.org/everledger/ui-components.git",
-  "author": "<hardik@everledger.io>",
   "license": "MIT",
   "files": [
     "lib/**/*"
