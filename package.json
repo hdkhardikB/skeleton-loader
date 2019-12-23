@@ -6,9 +6,9 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "clean-lib": "rimraf lib/*",
-    "build-lib": "tsc",
+    "build-lib": "ttsc",
     "build": "npm run clean-lib && npm run build-lib",
-    "build-lib-watch": "tsc -w",
+    "build-lib-watch": "ttsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -48,9 +48,11 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "rimraf": "^3.0.0",
     "ts-loader": "^6.2.1",
+    "ts-transformer-imports": "^0.4.3",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
+    "ttypescript": "^1.5.8",
     "typescript": "^3.7.2"
   },
   "husky": {
