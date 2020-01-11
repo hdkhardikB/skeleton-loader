@@ -1,2 +1,2 @@
-import Button from './Button';
-export default Button;
+import { EvlButton } from './Button';
+export default EvlButton;
