@@ -12,7 +12,7 @@ export const EvlFormInput: React.FC<EvlFormInputProps> = ({ inlineError, name, .
         {({ field, meta }: any) => (
           <>
             <EvlTextBox {...field} error={meta.touched && meta.error && meta.error !== ''} {...props} />
-            {inlineError && <div>{meta}</div>}
+            {inlineError && <div>{meta.error}</div>}
           </>
         )}
       </Field>
