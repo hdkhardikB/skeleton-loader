@@ -27,7 +27,7 @@
       "@components": ["components"],
       "@components/*": ["components/*"]
     },
-    "plugins": [{ "transform": "ts-transformer-imports" }],
+    "plugins": [{ "transform": "ts-transformer-imports" }]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/stories/**/*" ]

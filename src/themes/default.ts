@@ -4,58 +4,81 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 const defaultTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#96122E',
+      main: '#1C415C',
+      light: '#2D6380',
     },
     secondary: {
-      main: '#941530',
+      main: '#2E4E59',
       light: '#98AFB7',
     },
     error: {
-      main: 'rgba(39, 174, 96, 0.7)',
-      light: 'rgba(235, 87, 87, 0.7)',
+      main: 'rgba(235, 87, 87, 1)',
+      light: 'rgba(235, 87, 87, 1)',
     },
     grey: {
       50: '#F2F2F2',
       A100: 'rgba(152, 175, 183, 0.3)',
-    },
-    background: {
-      default: '#F7F2F2',
+      A200: '#F5F7F8',
     },
   },
   typography: {
     fontFamily: 'Lato',
-    h1: {
-      fontWeight: 300,
-      fontSize: '2rem',
-    },
-    h2: {
-      fontWeight: 300,
-      fontSize: '1.5rem',
-    },
-    h4: {
-      fontWeight: 600,
-      fontSize: '1.7rem',
-    },
-    h5: {
-      fontFamily: 'Lato',
-      fontStyle: 'normal',
-      fontWeight: 'bold',
-      fontSize: '1.2rem',
-      lineHeight: '24px',
-      color: '#212121',
-    },
-    h6: {
-      fontSize: '1.1rem',
-      lineHeight: '1.9rem',
-    },
-    body1: {
-      color: '#5a5a5a',
-    }
   },
+  spacing: 10,
   shape: {
     borderRadius: 2,
+  },
+  overrides: {
+    MuiFormControl: {
+      root: {
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: `#2E4E59`,
+            borderRadius: 2 * 5,
+          },
+          '&:hover fieldset': {
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: `#2E4E59`,
+            borderRadius: 2 * 5,
+          },
+          '&.Mui-focused fieldset': {
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: `#2E4E59`,
+            borderRadius: 2 * 5,
+          },
+          '&.MuiOutlinedInput-notchedOutline fieldset': {
+            borderWidth: '1px !important',
+            borderColor: `#2E4E59`,
+            borderStyle: 'solid',
+            borderRadius: 2 * 5,
+          },
+          '&.Mui-error fieldset': {
+            borderWidth: '1px !important',
+            borderColor: `red`,
+            borderStyle: 'solid',
+            borderRadius: 2 * 5,
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      root: {},
+    },
+    MuiInputLabel: {
+      root: {
+        '&.Mui-focused': {
+          color: '#2E4E59',
+        },
+        '&.Mui-error': {
+          color: 'red',
+        },
+      },
+    },
   },
 });
 
 export default defaultTheme;
-
