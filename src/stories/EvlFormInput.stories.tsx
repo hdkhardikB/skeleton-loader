@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { EvlFormInput, Button } from './../components';
+import { EvlFormInput, Button } from '@components';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
