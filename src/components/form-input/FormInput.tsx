@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useField } from 'formik';
-import EvlTextBox, { EvlTextBoxProps } from './../text-field';
+import EvlTextBox, { EvlTextBoxProps } from '@components/text-field';
 
-interface EvlFormInputProps extends EvlTextBoxProps {
+export interface EvlFormInputProps extends EvlTextBoxProps {
   inlineError?: boolean;
   name: string;
 }
