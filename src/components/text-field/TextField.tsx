@@ -5,7 +5,7 @@ import useStyles from './TextFieldJSS';
 export interface EvlTextBoxProps extends Omit<OutlinedTextFieldProps, 'classes' | 'variant'> {}
 /** Customized Everledger TextBox which is based on
  * material-ui https://material-ui.com/components/text-fields/ */
-const EvlTextBox: React.FC<EvlTextBoxProps> = ({ ...props }) => {
+export const EvlTextBox: React.FC<EvlTextBoxProps> = ({ ...props }) => {
   const classes = useStyles();
   return (
     <TextField

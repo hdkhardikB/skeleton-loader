@@ -1,6 +1,6 @@
 {
   "name": "evl-ui-components",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Everledger UI Component Library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -11,12 +11,10 @@
     "build-lib-watch": "ttsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "npm run build-lib"
   },
   "license": "MIT",
-  "files": [
-    "lib/**/*"
-  ],
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
@@ -29,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
+    "@storybook/addon-a11y": "^5.3.4",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-info": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
