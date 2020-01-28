@@ -1,4 +1,14 @@
-import { Button, EvlFormInput, EvlTextBox, EvlLoader, EvlPasswordField, EvlTextFieldIcon } from '@components';
+import { Button, EvlFormInput, EvlTextBox, EvlLoader, EvlPasswordField, EvlTextFieldIcon, EvlError } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
-export { Button, EvlDarkTheme, EvlTheme, EvlFormInput, EvlPasswordField, EvlTextBox, EvlLoader, EvlTextFieldIcon };
+export {
+  Button,
+  EvlDarkTheme,
+  EvlError,
+  EvlTheme,
+  EvlFormInput,
+  EvlPasswordField,
+  EvlTextBox,
+  EvlLoader,
+  EvlTextFieldIcon,
+};
