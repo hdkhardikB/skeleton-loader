@@ -7,11 +7,11 @@ export interface EvlTextBoxProps extends Omit<OutlinedTextFieldProps, 'classes' 
  * material-ui https://material-ui.com/components/text-fields/ */
 export const EvlTextBox: React.FC<EvlTextBoxProps> = ({ ...props }) => {
   const classes = useStyles();
-  console.log(classes);
   return (
     <TextField
       fullWidth
       {...props}
+      className={classes.textField}
       variant="outlined"
       InputProps={{
         ...props.InputProps,

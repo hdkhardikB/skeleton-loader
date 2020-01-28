@@ -13,8 +13,13 @@ export const EvlFormInput: React.FC<EvlFormInputProps> = ({ inlineError, name, .
   const error: boolean = meta.touched === true && meta.error !== undefined && meta.error !== '';
   return (
     <>
-      <EvlTextBox name={name} {...field} error={error} {...props} />
-      {inlineError && <div>{meta.error}</div>}
+      <EvlTextBox
+        helperText={inlineError && error ? meta.error : undefined}
+        name={name}
+        {...field}
+        error={error}
+        {...props}
+      />
     </>
   );
 };
