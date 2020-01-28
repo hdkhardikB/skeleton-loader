@@ -20,15 +20,17 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@themes": ["themes"],
-      "@themes/*": ["themes/*"],
-      "@components": ["components"],
-      "@components/*": ["components/*"]
+      "@themes": ["src/themes"],
+      "@themes/*": ["src/themes/*"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@assets":["assets"],
+      "@assets/*":["assets/*"]
     },
     "plugins": [{ "transform": "ts-transformer-imports" }]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*","assets/**/*"],
   "exclude": ["node_modules", "src/stories/**/*" ]
 }
