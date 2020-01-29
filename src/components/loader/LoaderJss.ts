@@ -5,10 +5,15 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      textField: {
-        background: theme.palette.primary.contrastText,
-        height: theme.spacing() * 5.2,
-        fontSize: `${(theme.spacing() * 1.6) / 20}rem`,
+      formLoader: {
+        display: 'flex',
+      },
+      formLoaderContent: {
+        alignSelf: 'center',
+      },
+      figure: {
+        margin: 0,
+        alignSelf: 'center',
       },
     }),
   { name: 'evlTextBox', defaultTheme: EvlTheme },

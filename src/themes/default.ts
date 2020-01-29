@@ -35,30 +35,30 @@ const defaultTheme = createMuiTheme({
           '& fieldset': {
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderColor: `#2E4E59`,
+            borderColor: `#1C415C`,
             borderRadius: 2 * 5,
           },
           '&:hover fieldset': {
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderColor: `#2E4E59`,
+            borderColor: `#1C415C`,
             borderRadius: 2 * 5,
           },
           '&.Mui-focused fieldset': {
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderColor: `#2E4E59`,
+            borderColor: `#1C415C`,
             borderRadius: 2 * 5,
           },
           '&.MuiOutlinedInput-notchedOutline fieldset': {
             borderWidth: '1px !important',
-            borderColor: `#2E4E59`,
+            borderColor: `#1C415C`,
             borderStyle: 'solid',
             borderRadius: 2 * 5,
           },
           '&.Mui-error fieldset': {
             borderWidth: '1px !important',
-            borderColor: `red`,
+            borderColor: `rgba(235, 87, 87, 1)`,
             borderStyle: 'solid',
             borderRadius: 2 * 5,
           },
@@ -66,15 +66,20 @@ const defaultTheme = createMuiTheme({
       },
     },
     MuiTextField: {
-      root: {},
+      root: {
+        color: 'red',
+        margin: '16px 0px',
+        width: '100%',
+        border: `0px`,
+      },
     },
     MuiInputLabel: {
       root: {
         '&.Mui-focused': {
-          color: '#2E4E59',
+          color: '#1C415C',
         },
         '&.Mui-error': {
-          color: 'red',
+          color: 'rgba(235, 87, 87, 1)',
         },
       },
     },

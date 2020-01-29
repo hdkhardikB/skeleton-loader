@@ -5,3 +5,4 @@ tslint.json
 *.log
 .vscode
 storybook-static
+assets/*.*
