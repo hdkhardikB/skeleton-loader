@@ -1,4 +1,4 @@
-import { Button, EvlFormInput, EvlTextBox } from '@components';
+import { Button, EvlFormInput, EvlTextBox, EvlSearchBox } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
-export { Button, EvlDarkTheme, EvlTheme, EvlFormInput, EvlTextBox };
+export { Button, EvlDarkTheme, EvlTheme, EvlFormInput, EvlTextBox, EvlSearchBox };

@@ -1,4 +1,5 @@
 import Button from './button';
 import EvlFormInput from './form-input';
 import EvlTextBox from './text-field';
-export { Button, EvlFormInput, EvlTextBox };
+import EvlSearchBox from './searchbox';
+export { Button, EvlFormInput, EvlTextBox, EvlSearchBox };
