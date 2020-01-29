@@ -4,4 +4,4 @@ import { EvlLoader } from '@components';
 
 const stories = storiesOf('EvlLoader', module);
 
-stories.add('dummy', () => <EvlLoader />);
+stories.add('Basic Loader', () => <EvlLoader />);
