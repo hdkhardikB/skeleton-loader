@@ -5,5 +5,6 @@ import EvlLoader from './loader';
 import EvlPasswordField from './password-field';
 import EvlTextFieldIcon from './text-field-icon';
 import EvlError from './evl-error';
+import EvlSearchBox from './searchbox';
 
-export { Button, EvlError, EvlFormInput, EvlLoader, EvlPasswordField, EvlTextBox, EvlTextFieldIcon };
+export { Button, EvlError, EvlFormInput, EvlLoader, EvlPasswordField, EvlTextBox, EvlTextFieldIcon, EvlSearchBox };

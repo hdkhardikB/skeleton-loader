@@ -4,4 +4,4 @@ import { EvlError } from '@components';
 
 const stories = storiesOf('EvlError', module);
 
-stories.add('dummy', () => <EvlError message="Sample error" />);
+stories.add('Standard Error Message', () => <EvlError message="Sample error" />);
