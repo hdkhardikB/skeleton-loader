@@ -7,19 +7,12 @@ const useStyles = makeStyles(
     createStyles({
       root: {
         display: 'flex',
-        alignItems: 'center',
-        width: 400,
-        backgroundColor: theme.palette.grey.A200,
       },
-      input: {
-        marginLeft: theme.spacing(1),
-        flex: 1,
-      },
-      iconButton: {
-        padding: 10,
+      message: {
+        margin: theme.spacing(0.4),
       },
     }),
-  { name: 'evlSearchBox', defaultTheme: EvlTheme },
+  { name: 'evlError', defaultTheme: EvlTheme },
 );
 
 export default useStyles;

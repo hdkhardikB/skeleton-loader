@@ -8,12 +8,14 @@ import {
   EvlSearchBox,
   EvlSelect,
   EvlFormSelect,
+  EvlError,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
 export {
   Button,
   EvlDarkTheme,
+  EvlError,
   EvlTheme,
   EvlFormInput,
   EvlPasswordField,
