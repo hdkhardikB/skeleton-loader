@@ -6,6 +6,8 @@ import {
   EvlPasswordField,
   EvlTextFieldIcon,
   EvlSearchBox,
+  EvlSelect,
+  EvlFormSelect,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -19,4 +21,6 @@ export {
   EvlLoader,
   EvlTextFieldIcon,
   EvlSearchBox,
+  EvlSelect,
+  EvlFormSelect,
 };
