@@ -8,6 +8,7 @@ import EvlError from './evl-error';
 import EvlSearchBox from './searchbox';
 import EvlSelect from './select';
 import EvlFormSelect from './form-select';
+import EvlCheckbox from './checkbox';
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   EvlSelect,
   EvlFormSelect,
   EvlError,
+  EvlCheckbox,
 };
