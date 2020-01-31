@@ -5,8 +5,10 @@ import {
   EvlLoader,
   EvlPasswordField,
   EvlTextFieldIcon,
+  EvlSearchBox,
+  EvlSelect,
+  EvlFormSelect,
   EvlError,
-  EvlSearchBox
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -21,4 +23,6 @@ export {
   EvlLoader,
   EvlTextFieldIcon,
   EvlSearchBox,
+  EvlSelect,
+  EvlFormSelect,
 };
