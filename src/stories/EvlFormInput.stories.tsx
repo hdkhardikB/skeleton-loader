@@ -28,7 +28,7 @@ stories.add('Validation', () => (
 
 stories.add('Validation with inline error message', () => (
   <EvlFormInput
-    placeholder="enter your email address"
+    placeholder="Enter your E-mail address"
     fullWidth={false}
     inlineError={true}
     label="Email"
