@@ -2,16 +2,22 @@ import * as React from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
-interface EvlCheckboxProps extends CheckboxProps {
+export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error'> {
   label?: string;
+  error?: string;
 }
 
-export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, ...props }) => {
+export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, ...props }) => {
   return (
-    <FormGroup>
-      <FormControlLabel control={<Checkbox {...props} />} label={label} />
-    </FormGroup>
+    <FormControl error={!!error}>
+      <FormGroup>
+        <FormControlLabel control={<Checkbox {...props} />} label={label} />
+      </FormGroup>
+      <FormHelperText>{error}</FormHelperText>
+    </FormControl>
   );
 };
 

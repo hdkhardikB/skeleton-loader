@@ -9,6 +9,9 @@ import EvlSearchBox from './searchbox';
 import EvlSelect from './select';
 import EvlFormSelect from './form-select';
 import EvlCheckbox from './checkbox';
+import EvlRangeSlider from './range-slider';
+import EvlFormRangeSlider from './form-range-slider';
+import EvlFormCheckbox from './form-checkbox';
 
 export {
   Button,
@@ -22,4 +25,7 @@ export {
   EvlFormSelect,
   EvlError,
   EvlCheckbox,
+  EvlRangeSlider,
+  EvlFormRangeSlider,
+  EvlFormCheckbox,
 };
