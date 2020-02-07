@@ -8,9 +8,9 @@ const stories = storiesOf('EvlFormCheckbox', module);
 
 stories.addDecorator(storyFn => (
   <Formik
-    initialValues={{ pizza: '' }}
+    initialValues={{ pizza: false }}
     validationSchema={Yup.object().shape({
-      pizza: Yup.string().required('Required'),
+      pizza: Yup.bool().test('pizza', 'You have to agree with our Terms and Conditions!', value => value === true),
     })}
     onSubmit={values => {
       console.log(values);
