@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: everledgerio/evl-ui-components
+      tag: everledgerio/evl-ui-components:${CICD_EXECUTION_ID}
       pushRemote: true
       registry: index.docker.io
 - name: Deploy
