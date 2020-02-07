@@ -4,6 +4,7 @@ pipelines:
     master:
       - step:
           name: build and deploy
+          
           script:
             - set -eu
             - apk add --no-cache py-pip bash curl
@@ -23,3 +24,7 @@ pipelines:
             - kubectl set image deployment/evl-ui-components 	evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops
           services:
             - docker
+definitions:
+  services:
+    docker:
+      memory: 512 
