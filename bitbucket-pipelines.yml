@@ -15,13 +15,13 @@ pipelines:
             - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
             - chmod +x ./kubectl
             - mv ./kubectl /usr/local/bin/kubectl
-            - echo $KUBE_TOKEN | base64 -d > ./kube_token
-            - echo $KUBE_CA | base64 -d > ./kube_ca
+            - echo $KUBE_TOKEN | base64  > ./kube_token
+            - echo $KUBE_CA | base64  > ./kube_ca
             - kubectl config set-cluster mcq --server=https://34.68.45.155 --certificate-authority="$(pwd)/kube_ca"
             - kubectl config set-credentials default --token="$(cat ./kube_token)"
             - kubectl config set-context development --cluster=devx2 --user=default
             - kubectl config use-context development
-            - kubectl set image deployment/evl-ui-components 	evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops
+            - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops
           services:
             - docker
 definitions:
