@@ -8,7 +8,7 @@ pipelines:
             - set -eu
             - apk add --no-cache py-pip bash curl
             - pip install --no-cache-dir docker-compose~=1.23.0
-            - docker-compose build
+        #    - docker-compose build
             - chmod 755 push-docker-image-to-registry.sh
             - ./push-docker-image-to-registry.sh $BITBUCKET_BUILD_NUMBER
             - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
