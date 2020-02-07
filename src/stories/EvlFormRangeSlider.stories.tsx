@@ -25,11 +25,6 @@ stories.addDecorator(storyFn => (
   </Formik>
 ));
 
-const handleChange = (event: any, newValue: number | number[]) => {
-  console.log(event);
-  console.log(newValue);
-};
-
 stories.add('EvlFormRangeSlider', () => (
   <EvlFormRangeSlider
     max={100}
@@ -38,7 +33,6 @@ stories.add('EvlFormRangeSlider', () => (
     marks
     id="price"
     name="price"
-    onChange={handleChange}
     valueLabelDisplay="auto"
     aria-labelledby="range-slider"
     label="Price"

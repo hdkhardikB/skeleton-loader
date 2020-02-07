@@ -7,10 +7,17 @@ export interface EvlFormRangeSliderProps extends EvlRangeSliderProps {
 }
 
 export const EvlFormRangeSlider: React.FC<EvlFormRangeSliderProps> = ({ name, ...props }) => {
-  const [field] = useField(name || '');
+  const [field, meta, form] = useField(name || '');
+
   return (
     <>
-      <EvlRangeSlider name={field.name} value={field.value} {...props} />
+      <EvlRangeSlider
+        name={field.name}
+        error={meta.error}
+        value={field.value}
+        onChange={(event: any, newValue: number | number[]) => form.setValue(newValue)}
+        {...props}
+      />
     </>
   );
 };

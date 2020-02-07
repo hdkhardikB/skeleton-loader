@@ -12,6 +12,8 @@ import {
   EvlRangeSlider,
   EvlFormRangeSlider,
   EvlFormCheckbox,
+  EvlSwitch,
+  EvlFormSwitch,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -31,4 +33,6 @@ export {
   EvlRangeSlider,
   EvlFormRangeSlider,
   EvlFormCheckbox,
+  EvlSwitch,
+  EvlFormSwitch,
 };

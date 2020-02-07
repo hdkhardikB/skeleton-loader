@@ -11,6 +11,8 @@ export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error
 }
 
 export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, ...props }) => {
+  console.log(props);
+
   return (
     <FormControl error={!!error}>
       <FormGroup>
