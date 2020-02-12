@@ -14,6 +14,7 @@ import {
   EvlFormCheckbox,
   EvlSwitch,
   EvlFormSwitch,
+  EvlMultipleSelectBox,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -35,4 +36,5 @@ export {
   EvlFormCheckbox,
   EvlSwitch,
   EvlFormSwitch,
+  EvlMultipleSelectBox,
 };

@@ -14,6 +14,7 @@ import EvlFormRangeSlider from './form-range-slider';
 import EvlFormCheckbox from './form-checkbox';
 import EvlSwitch from './switch';
 import EvlFormSwitch from './form-switch';
+import EvlMultipleSelectBox from './multiple-select-box';
 
 export {
   Button,
@@ -32,4 +33,5 @@ export {
   EvlFormCheckbox,
   EvlSwitch,
   EvlFormSwitch,
+  EvlMultipleSelectBox,
 };
