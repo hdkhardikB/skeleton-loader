@@ -9,6 +9,12 @@ import {
   EvlSelect,
   EvlFormSelect,
   EvlError,
+  EvlRangeSlider,
+  EvlFormRangeSlider,
+  EvlFormCheckbox,
+  EvlSwitch,
+  EvlFormSwitch,
+  EvlMultipleSelectBox,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -25,4 +31,10 @@ export {
   EvlSearchBox,
   EvlSelect,
   EvlFormSelect,
+  EvlRangeSlider,
+  EvlFormRangeSlider,
+  EvlFormCheckbox,
+  EvlSwitch,
+  EvlFormSwitch,
+  EvlMultipleSelectBox,
 };
