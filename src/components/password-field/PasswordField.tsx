@@ -2,12 +2,13 @@ import * as React from 'react';
 import useStyles from './PasswordFieldJSS';
 import EvlFormInput, { EvlFormInputProps } from '@components/form-input';
 import { IconButton, InputAdornment } from '@material-ui/core';
-import * as Visibility from '@assets/images/ic_eye-show.svg';
-import * as VisibilityOff from '@assets/images/ic_eye-hide.svg';
 
-export interface EvlPasswordFieldProps extends Omit<EvlFormInputProps, 'type'> {}
+export interface EvlPasswordFieldProps extends Omit<EvlFormInputProps, 'type'> {
+  showIcon: React.ReactType<any>;
+  hideIcon: React.ReactType<any>;
+}
 
-export const EvlPasswordField: React.FC<EvlPasswordFieldProps> = ({ ...props }) => {
+export const EvlPasswordField: React.FC<EvlPasswordFieldProps> = ({showIcon: ShowIcon, hideIcon: HideIcon, ...props }) => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -20,7 +21,7 @@ export const EvlPasswordField: React.FC<EvlPasswordFieldProps> = ({ ...props }) 
         endAdornment: (
           <InputAdornment position="end">
             <IconButton aria-label="toggle password visibility" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? <img src={VisibilityOff} alt="" /> : <img src={Visibility} alt="" />}
+              {!!showPassword && <HideIcon /> || <ShowIcon />}
             </IconButton>
           </InputAdornment>
         ),

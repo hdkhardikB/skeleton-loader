@@ -1,19 +1,18 @@
 import * as React from 'react';
 import useStyles from './LoaderJss';
-//@ts-ignore
-import * as formLoader from '@assets/images/img_loader.svg';
 import { Typography } from '@material-ui/core';
 
 export interface EvlLoaderProps {
-  message?: string;
+  message: string;
+  image: React.ReactType<any> 
 }
 
-export const EvlLoader: React.FC<EvlLoaderProps> = ({ message, ...props }) => {
+export const EvlLoader: React.FC<EvlLoaderProps> = ({ message, image: Image, ...props }) => {
   const classes = useStyles();
   return (
     <div className={classes.formLoader}>
       <figure className={classes.figure}>
-        <img src={formLoader} alt="" />
+        <Image />
       </figure>
       <Typography className={classes.formLoaderContent} component="p">
         {message}
