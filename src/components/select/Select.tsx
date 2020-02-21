@@ -8,7 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 
 export interface EvlSelectProps extends Omit<SelectProps, 'classes' | 'error'> {
   options: Object;
-  lable: string;
+  lable?: string;
   error?: string;
 }
 
@@ -27,7 +27,7 @@ export const EvlSelect: React.FC<EvlSelectProps> = ({ options, lable, error, ...
 
   return (
     <FormControl className={classes.formControl} error={!!error}>
-      <InputLabel>{lable}</InputLabel>
+      {!!lable && <InputLabel>{lable}</InputLabel>}
       <Select {...props} className={classes.root}>
         {renderOptions()}
       </Select>

@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { EvlPasswordField } from '@components';
+import EvlPasswordField from '@components/password-field';
+import EvlTextFieldIcon from '@components/text-field-icon';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import * as Visibility from '@assets/images/ic_eye-show.svg';
+import * as VisibilityOff from '@assets/images/ic_eye-hide.svg';
 
 const stories = storiesOf('EvlPasswordField', module);
+
+const ShowIcon = () => <EvlTextFieldIcon imageSrc={Visibility} />;
+const HideIcon = () => <EvlTextFieldIcon imageSrc={VisibilityOff} />;
 
 stories.addDecorator(storyFn => (
   <Formik
@@ -21,7 +27,14 @@ stories.addDecorator(storyFn => (
 ));
 
 stories.add('Without validation message', () => (
-  <EvlPasswordField placeholder="Enter your password" fullWidth={false} label="Password" name="password" />
+  <EvlPasswordField
+    placeholder="Enter your password"
+    fullWidth={false}
+    label="Password"
+    name="password"
+    showIcon={ShowIcon}
+    hideIcon={HideIcon}
+  />
 ));
 
 stories.add('With validation message', () => (
@@ -31,5 +44,7 @@ stories.add('With validation message', () => (
     inlineError={true}
     label="Password"
     name="password"
+    showIcon={ShowIcon}
+    hideIcon={HideIcon}
   />
 ));

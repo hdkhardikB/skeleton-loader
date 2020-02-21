@@ -5,16 +5,14 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "clean-lib": "rimraf lib/* && rimraf assets/*.*",
+    "clean-lib": "rimraf lib/*",
     "build-lib": "ttsc",
-    "postbuild": "yarn run copy-files",
     "build": "npm run clean-lib && npm run build-lib",
     "build-lib-watch": "ttsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "npm run build-lib",
-    "copy-files": "cp -rv assets/**/*.* assets/"
+    "prepare": "npm run build-lib"
   },
   "license": "MIT",
   "dependencies": {
