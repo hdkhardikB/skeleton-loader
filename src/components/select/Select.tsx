@@ -6,8 +6,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select, { SelectProps } from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 
+
+type option = {
+  title: string,
+  value: string
+}
 export interface EvlSelectProps extends Omit<SelectProps, 'classes' | 'error'> {
-  options: Object;
+  options: option[];
   lable?: string;
   error?: string;
 }
@@ -16,10 +21,10 @@ export const EvlSelect: React.FC<EvlSelectProps> = ({ options, lable, error, ...
   const classes = useStyles();
 
   const renderOptions = () => {
-    return Object.keys(options).map(key => {
+    return options.map(({title, value}) => {
       return (
-        <MenuItem key={key} value={key}>
-          {options[key]}
+        <MenuItem key={title} value={value}>
+          {title}
         </MenuItem>
       );
     });
