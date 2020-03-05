@@ -8,8 +8,6 @@ export interface EvlFormSwitchProps {
 
 export const EvlFormSwitch: React.FC<EvlFormSwitchProps & EvlSwitchProps> = ({ name, ...props }) => {
   const [field, meta] = useField(name || '');
-  console.log(field);
-  console.log(props);
   return (
     <>
       <EvlSwitch name={name} error={meta.error} {...field} {...props} />

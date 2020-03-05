@@ -6,13 +6,12 @@ import * as Yup from 'yup';
 
 const stories = storiesOf('EvlFormSelect', module);
 
-const List = {
-  '': 'Plese Select',
-  1: 'Afghanistan',
-  2: 'india',
-  3: 'Pakistan',
-  4: 'Turkey',
-};
+const List = [
+  {title: 'Please select', value: ''},
+  {title: 'Afghanistan', value: 'AFG'},
+  {title: 'India', value: 'IND'},
+  {title: 'United Kingdom', value: 'AFG'}
+];
 
 stories.addDecorator(storyFn => (
   <Formik

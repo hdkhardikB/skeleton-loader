@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 export interface EvlRangeSliderProps extends SliderProps {
-  label: string;
+  label?: string;
   error?: string;
 }
 
@@ -15,9 +15,11 @@ export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ label, error, ..
 
   return (
     <FormControl className={classes.root} error={!!error}>
-      <Typography id="discrete-slider" gutterBottom>
-        {label}
-      </Typography>
+      {label && (
+        <Typography id="discrete-slider" gutterBottom>
+          {label}
+        </Typography>
+      )}
       <Slider {...props} />
       <FormHelperText>{error}</FormHelperText>
     </FormControl>

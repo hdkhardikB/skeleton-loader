@@ -6,3 +6,6 @@ tslint.json
 .vscode
 storybook-static
 assets/*.*
+*.yml
+*.sh
+Dockerfile

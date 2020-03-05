@@ -3,4 +3,6 @@ lib
 *.log
 storybook-static
 assets/*.*
+yarn.lock
+package-lock.json
 # example
