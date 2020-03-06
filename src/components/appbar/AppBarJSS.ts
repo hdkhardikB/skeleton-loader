@@ -6,15 +6,12 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {},
-      formControl: {
-        minWidth: 'inherit',
-        width: '100%',
-      },
-      selectEmpty: {
-        marginTop: theme.spacing(2),
+      appBar: {
+        boxShadow: theme.shadows[0],
+        backgroundColor: theme.palette.common.white,
       },
     }),
-  { name: 'evlSelect', defaultTheme: EvlTheme },
+  { name: 'evlAppBar', defaultTheme: EvlTheme },
 );
 
 export default useStyles;

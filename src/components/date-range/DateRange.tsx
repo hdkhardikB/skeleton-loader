@@ -33,14 +33,13 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
 
   React.useEffect(() => {
     onChange([dateRange.startDate, dateRange.endDate]);
- }, [dateRange]);
+  }, [dateRange]);
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={4}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid item xs={6}>
           <KeyboardDatePicker
-            margin="normal"
             id="startDate"
             label={startLabel}
             format={dateFormat}
@@ -48,12 +47,12 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
             maxDate={dateRange.endDate}
             value={dateRange.startDate || minDate}
             onChange={(date: Date) => onDateChange(date, 'startDate')}
+            inputVariant="outlined"
           />
         </Grid>
 
         <Grid item xs={6}>
           <KeyboardDatePicker
-            margin="normal"
             id="endDate"
             label={endLabel}
             format={dateFormat}
@@ -61,6 +60,7 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
             maxDate={maxDate}
             value={endDate || maxDate}
             onChange={(date: Date) => onDateChange(date, 'endDate')}
+            inputVariant="outlined"
           />
         </Grid>
       </MuiPickersUtilsProvider>

@@ -15,8 +15,16 @@ import EvlFormCheckbox from './form-checkbox';
 import EvlSwitch from './switch';
 import EvlFormSwitch from './form-switch';
 import EvlMultiCheckbox from './multi-checkbox';
-import EvlFilterControl from "./filter-control";
-import EvlDateRange from "./date-range";
+import EvlFilterControl from './filter-control';
+import EvlDateRange from './date-range';
+import EvlBox from './box';
+import EvlAppBar from './appbar';
+import EvlContainer from './container';
+import EvlGrid from './grid';
+import EvlToolbar from './toolbar';
+import EvlTypography from './typography';
+import EvlLink from './link';
+import EvlAlert from './alert';
 
 export {
   Button,
@@ -37,5 +45,13 @@ export {
   EvlFormSwitch,
   EvlMultiCheckbox,
   EvlFilterControl,
-  EvlDateRange
+  EvlDateRange,
+  EvlBox,
+  EvlAppBar,
+  EvlContainer,
+  EvlGrid,
+  EvlToolbar,
+  EvlTypography,
+  EvlLink,
+  EvlAlert,
 };

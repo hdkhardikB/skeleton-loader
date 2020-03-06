@@ -6,15 +6,8 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {},
-      formControl: {
-        minWidth: 'inherit',
-        width: '100%',
-      },
-      selectEmpty: {
-        marginTop: theme.spacing(2),
-      },
     }),
-  { name: 'evlSelect', defaultTheme: EvlTheme },
+  { name: 'evlToolBar', defaultTheme: EvlTheme },
 );
 
 export default useStyles;
