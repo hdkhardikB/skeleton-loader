@@ -46,7 +46,13 @@ const columns = [
 ];
 
 stories.add('Simple EvlTable', () => (
-  <EvlTable rows={rows} rowKey="assetId" columns={columns} onSelect={selectedIds => console.log(selectedIds)} />
+  <EvlTable
+    rows={rows}
+    rowKey="assetId"
+    columns={columns}
+    onSelect={selectedIds => console.log(selectedIds)}
+    noDataComponent={() => <p>No Data Available</p>}
+  />
 ));
 
 stories.add('Selectable EvlTable', () => (
@@ -56,5 +62,17 @@ stories.add('Selectable EvlTable', () => (
     columns={columns}
     selectable
     onSelect={selectedIds => console.log(selectedIds)}
+    noDataComponent={() => <p>No Data Available</p>}
+  />
+));
+
+stories.add('EvlTable with No Data', () => (
+  <EvlTable
+    rows={[]}
+    rowKey="assetId"
+    columns={columns}
+    selectable
+    onSelect={selectedIds => console.log(selectedIds)}
+    noDataComponent={() => <p>No Data Available</p>}
   />
 ));
