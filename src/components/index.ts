@@ -25,6 +25,7 @@ import EvlToolbar from './toolbar';
 import EvlTypography from './typography';
 import EvlLink from './link';
 import EvlAlert from './alert';
+import EvlTable from './table';
 
 export {
   Button,
@@ -54,4 +55,5 @@ export {
   EvlTypography,
   EvlLink,
   EvlAlert,
+  EvlTable,
 };

@@ -26,6 +26,7 @@ import {
   EvlTypography,
   EvlLink,
   EvlAlert,
+  EvlTable,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -59,4 +60,5 @@ export {
   EvlTypography,
   EvlLink,
   EvlAlert,
+  EvlTable,
 };
