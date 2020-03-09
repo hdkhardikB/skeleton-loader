@@ -6,6 +6,24 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {},
+      TableCell: {
+        padding: theme.spacing(0.5, 1.5),
+        backgroundColor: theme.palette.secondary.light,
+        borderBottom: 0,
+
+        '&:first-child': {
+          borderTopLeftRadius: theme.shape.borderRadius * 4,
+          borderBottomLeftRadius: theme.shape.borderRadius * 4,
+        },
+        '&:last-child': {
+          borderTopRighttRadius: theme.shape.borderRadius * 4,
+          borderBottomRighttRadius: theme.shape.borderRadius * 4,
+        },
+      },
+      TableSortLabel: {
+        fontWeight: 700,
+        color: theme.palette.primary.main,
+      },
     }),
   { name: 'evlTableHead', defaultTheme: EvlTheme },
 );

@@ -6,6 +6,9 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {},
+      TableCell: {
+        padding: theme.spacing(0.5, 1.5),
+      },
     }),
   { name: 'evlTable', defaultTheme: EvlTheme },
 );

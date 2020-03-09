@@ -65,7 +65,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
 
   return (
     <div className={classes.root}>
-      <Paper>
+      <Paper elevation={0}>
         <TableContainer>
           <Table aria-labelledby="tableTitle" size="medium" aria-label="table">
             <EvlTableHead
@@ -101,12 +101,12 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       selected={!!selectable && isItemSelected}
                     >
                       {!!selectable && (
-                        <TableCell padding="checkbox">
+                        <TableCell className={classes.TableCell}>
                           <EvlCheckbox checked={isItemSelected} inputProps={{ 'aria-labelledby': labelId }} />
                         </TableCell>
                       )}
                       {Object.keys(row).map((property: string) => (
-                        <TableCell>{row[property]}</TableCell>
+                        <TableCell className={classes.TableCell}>{row[property]}</TableCell>
                       ))}
                     </TableRow>
                   );

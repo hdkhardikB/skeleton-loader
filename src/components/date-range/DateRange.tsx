@@ -2,7 +2,7 @@ import * as React from 'react';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import { Grid } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
-// import useStyles from './DateRangeJSS';
+import useStyles from './DateRangeJSS';
 
 export interface EvlDateRangeProps {
   startLabel: string;
@@ -23,7 +23,7 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
   value,
   onChange,
 }) => {
-  // const classes = useStyles();
+  const classes = useStyles();
   const [startDate, endDate] = value;
   const [dateRange, setDateRange] = React.useState({ startDate, endDate });
 
@@ -48,6 +48,7 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
             value={dateRange.startDate || minDate}
             onChange={(date: Date) => onDateChange(date, 'startDate')}
             inputVariant="outlined"
+            className={classes.datePicker}
           />
         </Grid>
 
@@ -61,6 +62,7 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
             value={endDate || maxDate}
             onChange={(date: Date) => onDateChange(date, 'endDate')}
             inputVariant="outlined"
+            className={classes.datePicker}
           />
         </Grid>
       </MuiPickersUtilsProvider>

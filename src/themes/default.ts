@@ -4,12 +4,12 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 const defaultTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#1C415C',
-      light: '#2D6380',
+      main: '#1F3340',
+      light: '#6990A7',
     },
     secondary: {
       main: '#2E4E59',
-      light: '#98AFB7',
+      light: '#F3F7F9',
     },
     error: {
       main: 'rgba(235, 87, 87, 1)',

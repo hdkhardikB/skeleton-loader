@@ -4,6 +4,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import useStyles from './CheckboxJSS';
 
 export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error'> {
   label?: string;
@@ -11,10 +12,12 @@ export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error
 }
 
 export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, ...props }) => {
+  const classes = useStyles();
+
   return (
     <FormControl error={!!error}>
       <FormGroup>
-        <FormControlLabel control={<Checkbox {...props} />} label={label} />
+        <FormControlLabel className={classes.FormControlLabel} control={<Checkbox {...props} />} label={label} />
       </FormGroup>
       <FormHelperText>{error}</FormHelperText>
     </FormControl>

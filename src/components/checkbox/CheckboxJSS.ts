@@ -6,6 +6,9 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {},
+      FormControlLabel: {
+        marginLeft: 0,
+      },
     }),
   { name: 'evlCheckbox', defaultTheme: EvlTheme },
 );
