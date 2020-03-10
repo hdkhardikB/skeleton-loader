@@ -101,11 +101,10 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlAutoComplete
           options={filterOptions}
-          disableClearable
           onChange={(event: React.ChangeEvent<{}>, value: any) => {
             onChange({
               ...selectedFilters,
-              [filterProperty]: value.value,
+              [filterProperty]: (value && value.value) || '',
             });
           }}
         />

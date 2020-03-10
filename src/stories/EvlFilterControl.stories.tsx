@@ -46,14 +46,14 @@ function Filters() {
 
   return (
     <>
-      <div style={{padding: '20px'}}>
+      <div style={{ padding: '20px' }}>
         Selected Filters:
         {Object.entries(filters).map(([filterProperty, filterValue]) => (
           <div>{`${filterProperty}: ${filterValue}`}</div>
         ))}
       </div>
       {Object.entries(filtersData).map(([filterProperty, filterReferenceData]) => (
-        <div style={{padding: '20px'}}>
+        <div style={{ padding: '20px' }}>
           <EvlFilterControl
             filterProperty={filterProperty}
             filterOptions={filterReferenceData.data}
