@@ -18,7 +18,8 @@ import {
   EvlMultiCheckbox,
   EvlFilterControl,
   EvlDateRange,
-  EvlAutocomplete
+  EvlAutocomplete,
+  EvlTable,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -44,5 +45,6 @@ export {
   EvlMultiCheckbox,
   EvlFilterControl,
   EvlDateRange,
-  EvlAutocomplete
+  EvlAutocomplete,
+  EvlTable,
 };

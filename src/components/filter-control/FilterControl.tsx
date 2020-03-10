@@ -73,8 +73,8 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
             }
           }
           step={filterMeta.steps}
-          min={min}
-          max={max}
+          min={Number(min)}
+          max={Number(max)}
           aria-labelledby="range-slider"
           getAriaValueText={(value: number) => `${value} ${filterProperty}`}
         />
