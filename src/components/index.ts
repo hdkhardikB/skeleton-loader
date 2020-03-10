@@ -17,6 +17,7 @@ import EvlFormSwitch from './form-switch';
 import EvlMultiCheckbox from './multi-checkbox';
 import EvlFilterControl from "./filter-control";
 import EvlDateRange from "./date-range";
+import EvlAutocomplete from "./autocomplete";
 
 export {
   Button,
@@ -37,5 +38,6 @@ export {
   EvlFormSwitch,
   EvlMultiCheckbox,
   EvlFilterControl,
-  EvlDateRange
+  EvlDateRange,
+  EvlAutocomplete
 };
