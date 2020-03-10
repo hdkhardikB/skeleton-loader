@@ -24,6 +24,13 @@ const filtersData: FilterReferenceData = {
     ],
     control: FilterControl.select,
   },
+  movie: {
+    data: [
+      { title: 'Shole', value: '1' },
+      { title: 'Kabali', value: '2' },
+    ],
+    control: FilterControl.autocomplete,
+  },
   createdDate: {
     data: [new Date('01-11-2012'), new Date()],
     control: FilterControl.dateRange,

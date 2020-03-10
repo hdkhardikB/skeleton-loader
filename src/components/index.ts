@@ -15,8 +15,9 @@ import EvlFormCheckbox from './form-checkbox';
 import EvlSwitch from './switch';
 import EvlFormSwitch from './form-switch';
 import EvlMultiCheckbox from './multi-checkbox';
-import EvlFilterControl from './filter-control';
-import EvlDateRange from './date-range';
+import EvlFilterControl from "./filter-control";
+import EvlDateRange from "./date-range";
+import EvlAutocomplete from "./autocomplete";
 import EvlTable from './table';
 
 export {
@@ -39,5 +40,6 @@ export {
   EvlMultiCheckbox,
   EvlFilterControl,
   EvlDateRange,
+  EvlAutocomplete,
   EvlTable,
 };

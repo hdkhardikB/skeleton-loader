@@ -5,6 +5,7 @@ import EvlMultiCheckbox from '../multi-checkbox';
 import EvlRangeSlider from '../range-slider';
 import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
+import EvlAutoComplete from '../autocomplete';
 
 export interface EvlFilterControlProps {
   selectedFilters: Filter;
@@ -92,6 +93,21 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
             });
           }}
           autoWidth
+        />
+      );
+      break;
+    }
+    case FilterControlType.autocomplete: {
+      filterControl = (
+        <EvlAutoComplete
+          options={filterOptions}
+          disableClearable
+          onChange={(event: React.ChangeEvent<{}>, value: any) => {
+            onChange({
+              ...selectedFilters,
+              [filterProperty]: value.value,
+            });
+          }}
         />
       );
       break;
