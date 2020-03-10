@@ -1,8 +1,10 @@
-node_modules
-lib
+node_modules/
+.next/
+out/
+lib/
+yarn.lock
+package-lock.json
 *.log
 storybook-static
 assets/*.*
-yarn.lock
-package-lock.json
 # example
