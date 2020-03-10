@@ -2,6 +2,7 @@ node_modules/
 .next/
 out/
 lib/
+.vscode/
 yarn.lock
 package-lock.json
 *.log
