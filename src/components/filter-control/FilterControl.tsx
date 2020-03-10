@@ -96,6 +96,20 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       );
       break;
     }
+    case FilterControlType.autocomplete: {
+      filterControl = (
+        <EvlAutoComplete
+          options={filterOptions}
+          onChange={(event: React.ChangeEvent<{}>, value: any) => {
+            onChange({
+              ...selectedFilters,
+              [filterProperty]: (value && value.value) || '',
+            });
+          }}
+        />
+      );
+      break;
+    }
     case FilterControlType.dateRange: {
       const [min, max] = filterOptions;
       filterControl = (
