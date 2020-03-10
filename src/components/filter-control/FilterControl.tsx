@@ -5,6 +5,7 @@ import EvlMultiCheckbox from '../multi-checkbox';
 import EvlRangeSlider from '../range-slider';
 import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
+import EvlAutoComplete from '../autocomplete';
 
 export interface EvlFilterControlProps {
   selectedFilters: Filter;
@@ -72,8 +73,8 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
             }
           }
           step={filterMeta.steps}
-          min={min}
-          max={max}
+          min={Number(min)}
+          max={Number(max)}
           aria-labelledby="range-slider"
           getAriaValueText={(value: number) => `${value} ${filterProperty}`}
         />
