@@ -9,6 +9,7 @@ import { orderBy as _orderBy } from 'lodash';
 import EvlCheckbox from '../checkbox';
 import useStyles from './TableJSS';
 import EvlTableHead, { column } from './table-head';
+import EvlTablePagination from './table-pagination';
 
 interface EvlTableProps {
   rows: Object[];
@@ -21,6 +22,13 @@ interface EvlTableProps {
   };
   onSelect: (selectedIds: string[]) => void;
   noDataComponent: React.ReactType;
+  pagination?: {
+    showPagination?: boolean;
+    rowsPerPage?: number;
+    loadMoreLabel?: string;
+    currentlyShowingLabel?: string;
+    recordLabel?: string;
+  };
 }
 
 const EvlTable: React.FC<EvlTableProps> = ({
@@ -31,11 +39,24 @@ const EvlTable: React.FC<EvlTableProps> = ({
   onSelect,
   sort,
   noDataComponent: NoDataComponent,
+  pagination,
 }) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState<'asc' | 'desc'>((sort && sort.order) || 'asc');
   const [orderBy, setOrderBy] = React.useState<string>((sort && sort.orderBy) || rowKey);
   const [selected, setSelected] = React.useState<string[]>([]);
+  const [page, setPage] = React.useState(0);
+  const {
+    showPagination,
+    rowsPerPage = 10,
+    loadMoreLabel = 'Load More',
+    currentlyShowingLabel = 'Currently Showing',
+    recordLabel = 'Records',
+  } = pagination || {};
+
+  const handleChangePage = (newPage: number) => {
+    setPage(newPage);
+  };
 
   const handleRequestSort = (property: string) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -62,6 +83,8 @@ const EvlTable: React.FC<EvlTableProps> = ({
   };
 
   const sortedRows = (rows && rows.length && _orderBy(rows, orderBy, order)) || [];
+  const currentRowsToDisplay =
+    (showPagination && sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)) || sortedRows;
 
   return (
     <div className={classes.root}>
@@ -81,13 +104,13 @@ const EvlTable: React.FC<EvlTableProps> = ({
             <TableBody>
               {!sortedRows.length && (
                 <TableRow>
-                  <TableCell>
+                  <TableCell colSpan={6}>
                     <NoDataComponent />
                   </TableCell>
                 </TableRow>
               )}
               {!!sortedRows.length &&
-                sortedRows.map((row: any, index: number) => {
+                currentRowsToDisplay.map((row: any, index: number) => {
                   const isItemSelected = selected.includes(row[rowKey]);
                   const labelId = `enhanced-table-checkbox-${index}`;
                   return (
@@ -114,6 +137,17 @@ const EvlTable: React.FC<EvlTableProps> = ({
             </TableBody>
           </Table>
         </TableContainer>
+        {!!showPagination && !!sortedRows.length && (
+          <EvlTablePagination
+            count={rows.length}
+            page={page}
+            onChangePage={handleChangePage}
+            rowsPerPage={rowsPerPage}
+            loadMoreLabel={loadMoreLabel}
+            currentlyShowingLabel={currentlyShowingLabel}
+            recordLabel={recordLabel}
+          />
+        )}
       </Paper>
     </div>
   );
