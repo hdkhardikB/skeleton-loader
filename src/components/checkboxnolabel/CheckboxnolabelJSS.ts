@@ -19,7 +19,12 @@ const useStyles = makeStyles(
         color: theme.palette.primary.light,
         minWidth: theme.spacing(3.4),
         minHeight: theme.spacing(3.4),
-        textAlign: 'center'
+        textAlign: 'center',
+
+        '&:hover': {
+            color: theme.palette.common.white,
+            backgroundColor: theme.palette.primary.light,
+        }
       },
       Checkbox: {
           display: 'none'
