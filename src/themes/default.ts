@@ -19,6 +19,7 @@ const defaultTheme = createMuiTheme({
       50: '#F2F2F2',
       A100: 'rgba(152, 175, 183, 0.3)',
       A200: '#F5F7F8',
+      A400: 'rgba(45, 99, 128, 0.2)',
     },
   },
   typography: {
@@ -124,6 +125,7 @@ const defaultTheme = createMuiTheme({
           fontFamily: 'Lato, sans-serif',
           lineHeight: 1.5,
           letterSpacing: 0,
+          color: '#6990A7'
         },
         a: {
           textDecoration: 'none',
