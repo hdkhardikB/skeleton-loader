@@ -15,9 +15,10 @@ const useStyles = makeStyles(
           borderTopLeftRadius: theme.shape.borderRadius * 4,
           borderBottomLeftRadius: theme.shape.borderRadius * 4,
         },
+        
         '&:last-child': {
-          borderTopRighttRadius: theme.shape.borderRadius * 4,
-          borderBottomRighttRadius: theme.shape.borderRadius * 4,
+          borderTopRightRadius: theme.shape.borderRadius * 4,
+          borderBottomRightRadius: theme.shape.borderRadius * 4,
         },
       },
       TableSortLabel: {

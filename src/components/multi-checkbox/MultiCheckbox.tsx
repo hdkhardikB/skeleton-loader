@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FormControl, FormGroup } from '@material-ui/core';
-import EvlCheckbox from '../checkbox';
 import useStyles from './MultiCheckboxJSS';
+import EvlCheckboxNolabel from '@components/checkboxnolabel/Checkboxnolabel';
 
 export interface EvlMultiCheckboxProps {
   options: string[];
@@ -17,7 +17,7 @@ export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({ options, sel
         {!!options &&
           options.length > 0 &&
           options.map((attribute: string) => (
-            <EvlCheckbox
+            <EvlCheckboxNolabel
               key={attribute}
               checked={selectedOptions && selectedOptions.includes(attribute)}
               onChange={onChange}
