@@ -15,7 +15,7 @@ const useStyles = makeStyles(
           borderTopLeftRadius: theme.shape.borderRadius * 4,
           borderBottomLeftRadius: theme.shape.borderRadius * 4,
         },
-        
+
         '&:last-child': {
           borderTopRightRadius: theme.shape.borderRadius * 4,
           borderBottomRightRadius: theme.shape.borderRadius * 4,
@@ -24,6 +24,18 @@ const useStyles = makeStyles(
       TableSortLabel: {
         fontWeight: 700,
         color: theme.palette.primary.main,
+
+        '&:hover': {
+          color: theme.palette.primary.main,
+        },
+
+        '&:focus': {
+          color: theme.palette.primary.main,
+        },
+        
+        '& $active': {
+          color: theme.palette.primary.main,
+        }
       },
     }),
   { name: 'evlTableHead', defaultTheme: EvlTheme },

@@ -4,12 +4,12 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 const defaultTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#1F3340',
-      light: '#6990A7',
+      main: '#1C415C',
+      light: '#2D6380',
     },
     secondary: {
-      main: '#2E4E59',
-      light: '#F3F7F9',
+      main: '#6990A7',
+      light: '#F4F7F9',
     },
     error: {
       main: 'rgba(235, 87, 87, 1)',
@@ -27,55 +27,55 @@ const defaultTheme = createMuiTheme({
     h1: {
       fontFamily: 'Lato, sans-serif',
       fontWeight: 700,
-      fontSize: '6rem',
+      fontSize: '2.75rem',
       lineHeight: 1.167,
       letterSpacing: 0,
     },
     h2: {
       fontFamily: 'Lato, sans-serif',
       fontWeight: 700,
-      fontSize: '3.75rem',
+      fontSize: '2.5rem',
       lineHeight: 1.2,
       letterSpacing: 0,
     },
     h3: {
       fontFamily: 'Lato, sans-serif',
       fontWeight: 700,
-      fontSize: '3rem',
+      fontSize: '2.25rem',
       lineHeight: 1.235,
       letterSpacing: 0,
     },
     h4: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 500,
-      fontSize: '2.125rem',
+      fontWeight: 700,
+      fontSize: '1.75rem',
       lineHeight: 1.125,
       letterSpacing: 0,
     },
     h5: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 500,
+      fontWeight: 700,
       fontSize: '1.5rem',
       lineHeight: 1.334,
       letterSpacing: 0,
     },
     h6: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 500,
+      fontWeight: 700,
       fontSize: '1.25rem',
       lineHeight: 1.6,
       letterSpacing: 0,
     },
     subtitle1: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 500,
+      fontWeight: 700,
       fontSize: '1rem',
       lineHeight: 1.75,
       letterSpacing: 0,
     },
     subtitle2: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 500,
+      fontWeight: 700,
       fontSize: '0.875rem',
       lineHeight: 1.57,
       letterSpacing: 0,
@@ -115,6 +115,13 @@ const defaultTheme = createMuiTheme({
     borderRadius: 2,
   },
   overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          backgroundColor: '#fff',
+        },
+      },
+    },
     MuiFormControl: {
       root: {
         '& .MuiOutlinedInput-root': {
