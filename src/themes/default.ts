@@ -119,6 +119,18 @@ const defaultTheme = createMuiTheme({
       '@global': {
         body: {
           backgroundColor: '#fff',
+          fontSize: '14px',
+          margin: 0,
+          fontFamily: 'Lato, sans-serif',
+          lineHeight: 1.5,
+          letterSpacing: 0,
+        },
+        a: {
+          textDecoration: 'none',
+          cursor: 'pointer',
+        },
+        label: {
+          fontWeight: 700,
         },
       },
     },

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import useStyles from './SelectJSS';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select, { SelectProps } from '@material-ui/core/Select';
@@ -31,7 +30,7 @@ export const EvlSelect: React.FC<EvlSelectProps> = ({ options, lable, error, ...
 
   return (
     <FormControl className={classes.formControl} error={!!error}>
-      {!!lable && <InputLabel>{lable}</InputLabel>}
+      {!!lable && <label>{lable}</label>}
       <Select variant="outlined" {...props} className={classes.root}>
         {renderOptions()}
       </Select>
