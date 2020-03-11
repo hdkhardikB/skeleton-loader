@@ -6,7 +6,7 @@ export interface EvlLinkProps extends LinkProps {}
 
 export const EvlLink: React.FC<EvlLinkProps> = ({ children, ...props }) => {
   //const classes = useStyles();
-  return <MuiLink {...props}>{children}</MuiLink>;
+  return <MuiLink underline="none" {...props}>{children}</MuiLink>;
 };
 
 export default EvlLink;

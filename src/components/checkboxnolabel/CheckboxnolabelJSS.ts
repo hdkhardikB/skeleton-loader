@@ -8,6 +8,18 @@ const useStyles = makeStyles(
       root: {},
       FormControlLabel: {
         marginLeft: 0,
+        marginRight: theme.spacing(0.5),
+        padding: theme.spacing(0.4, 1),
+        borderWidth: theme.spacing(0.1),
+        borderStyle: 'solid',
+        borderColor: theme.palette.grey.A400,
+        borderRadius: theme.shape.borderRadius * 5,
+        fontSize: theme.spacing(1.4),
+        fontWeight: 700,
+        color: theme.palette.primary.light,
+        minWidth: theme.spacing(3.4),
+        minHeight: theme.spacing(3.4),
+        textAlign: 'center'
       },
       Checkbox: {
           display: 'none'
