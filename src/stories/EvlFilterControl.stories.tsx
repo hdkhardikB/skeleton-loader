@@ -24,6 +24,13 @@ const filtersData: FilterReferenceData = {
     ],
     control: FilterControl.select,
   },
+  movie: {
+    data: [
+      { title: 'Shole', value: '1' },
+      { title: 'Kabali', value: '2' },
+    ],
+    control: FilterControl.autocomplete,
+  },
   createdDate: {
     data: [new Date('01-11-2012'), new Date()],
     control: FilterControl.dateRange,
@@ -39,14 +46,14 @@ function Filters() {
 
   return (
     <>
-      <div style={{padding: '20px'}}>
+      <div style={{ padding: '20px' }}>
         Selected Filters:
         {Object.entries(filters).map(([filterProperty, filterValue]) => (
           <div>{`${filterProperty}: ${filterValue}`}</div>
         ))}
       </div>
       {Object.entries(filtersData).map(([filterProperty, filterReferenceData]) => (
-        <div style={{padding: '20px'}}>
+        <div style={{ padding: '20px' }}>
           <EvlFilterControl
             filterProperty={filterProperty}
             filterOptions={filterReferenceData.data}

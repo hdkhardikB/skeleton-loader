@@ -25,6 +25,7 @@ import EvlToolbar from './toolbar';
 import EvlTypography from './typography';
 import EvlLink from './link';
 import EvlAlert from './alert';
+import EvlAutocomplete from './autocomplete';
 import EvlTable from './table';
 
 export {
@@ -56,4 +57,5 @@ export {
   EvlLink,
   EvlAlert,
   EvlTable,
+  EvlAutocomplete,
 };

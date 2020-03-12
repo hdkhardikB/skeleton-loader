@@ -76,3 +76,18 @@ stories.add('EvlTable with No Data', () => (
     noDataComponent={() => <p>No Data Available</p>}
   />
 ));
+
+stories.add('EvlTable with Pagination', () => (
+  <EvlTable
+    rows={rows}
+    rowKey="assetId"
+    columns={columns}
+    selectable
+    onSelect={selectedIds => console.log(selectedIds)}
+    noDataComponent={() => <p>No Data Available</p>}
+    pagination={{
+      showPagination: true,
+      rowsPerPage: 2,
+    }}
+  />
+));

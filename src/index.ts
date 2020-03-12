@@ -27,6 +27,7 @@ import {
   EvlLink,
   EvlAlert,
   EvlTable,
+  EvlAutocomplete,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -61,4 +62,5 @@ export {
   EvlLink,
   EvlAlert,
   EvlTable,
+  EvlAutocomplete,
 };
