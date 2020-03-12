@@ -146,9 +146,41 @@ const defaultTheme = createMuiTheme({
         padding: `8px 25px`,
         height: `48px`,
       },
-      textPrimary: {},
-      textSecondary: {},
-      outlined: {},
+      textPrimary: {
+        backgroundColor: `#2D6380`,
+        borderColor: `#2D6380`,
+        borderWidth: `1px`,
+        borderStyle: 'solid',
+        color: `#fff`,
+
+        "&:hover": {
+          backgroundColor: 'transparent',
+          color: `#2D6380`,
+        },
+      },
+      textSecondary: {
+        borderColor: `#transparent`,
+        borderWidth: `1px`,
+        borderStyle: 'solid',
+        backgroundColor: 'transparent',
+        color: `#2D6380`,
+
+        "&:hover": {
+          backgroundColor: '#6990A7',
+          color: `#fff`,
+        },
+      },
+      outlined: {
+        borderColor: `#2D6380`,
+        borderWidth: `1px`,
+        borderStyle: 'solid',
+        backgroundColor: 'transparent',
+
+        "&:hover": {
+          backgroundColor: '#2D6380',
+          color: `#fff`,
+        },
+      },
       contained: {},
     },
     MuiFormControl: {
