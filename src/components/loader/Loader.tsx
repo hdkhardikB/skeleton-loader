@@ -1,6 +1,7 @@
 import * as React from 'react';
 import useStyles from './LoaderJss';
 import { Typography } from '@material-ui/core';
+import EvlBox from '@components/box';
 
 export interface EvlLoaderProps {
   message: string;
@@ -10,14 +11,14 @@ export interface EvlLoaderProps {
 export const EvlLoader: React.FC<EvlLoaderProps> = ({ message, image: Image, ...props }) => {
   const classes = useStyles();
   return (
-    <div className={classes.formLoader}>
+    <EvlBox className={classes.formLoader}>
       <figure className={classes.figure}>
         <Image />
       </figure>
       <Typography className={classes.formLoaderContent} component="p">
         {message}
       </Typography>
-    </div>
+    </EvlBox>
   );
 };
 
