@@ -15,7 +15,7 @@ const useStyles = makeStyles(
         color: theme.palette.common.white,
         padding: theme.spacing(0.5, 1.5),
         fontWeight: 700,
-        texttransform: 'capitalize',
+        textTransform: 'capitalize',
         minWidth: 'inherit',
         fontSize: theme.spacing(1.4),
 
