@@ -125,7 +125,7 @@ const defaultTheme = createMuiTheme({
           fontFamily: 'Lato, sans-serif',
           lineHeight: 1.5,
           letterSpacing: 0,
-          color: '#6990A7'
+          color: '#6990A7',
         },
         a: {
           textDecoration: 'none',
@@ -135,6 +135,21 @@ const defaultTheme = createMuiTheme({
           fontWeight: 700,
         },
       },
+    },
+    MuiButton: {
+      sizeSmall: {
+        padding: `2px 10px`,
+        fontSize: `12px`,
+      },
+      sizeLarge: {
+        fontSize: `16px`,
+        padding: `8px 25px`,
+        height: `48px`,
+      },
+      textPrimary: {},
+      textSecondary: {},
+      outlined: {},
+      contained: {},
     },
     MuiFormControl: {
       root: {
