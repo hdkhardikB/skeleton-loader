@@ -29,7 +29,6 @@ export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({ options, label
             <EvlTextBox
               {...params}
               label={label}
-              margin="normal"
               InputProps={{ ...params.InputProps, type: 'new-password' }}
             />
           );

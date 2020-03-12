@@ -5,22 +5,28 @@ import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import useStyles from './CheckboxnolabelJSS';
+import clsx from 'classnames';
+import { Typography } from '@material-ui/core';
 
 export interface EvlCheckboxNolabelProps extends Omit<CheckboxProps, 'classes' | 'error'> {
   label?: string;
   error?: string;
 }
 
-export const EvlCheckboxNolabel: React.FC<EvlCheckboxNolabelProps> = ({ label, error, ...props }) => {
+export const EvlCheckboxNolabel: React.FC<EvlCheckboxNolabelProps> = ({ label, error, checked, ...props }) => {
   const classes = useStyles();
 
   return (
     <FormControl error={!!error}>
       <FormGroup>
         <FormControlLabel
-          className={classes.FormControlLabel}
+          className={clsx(classes.FormControlLabel, { [classes.checked]: checked })}
           control={<Checkbox className={classes.Checkbox} {...props} />}
-          label={label}
+          label={
+            <>
+              <Typography className={classes.checkBoxLabel}>{label}</Typography>
+            </>
+          }
         />
       </FormGroup>
       <FormHelperText>{error}</FormHelperText>

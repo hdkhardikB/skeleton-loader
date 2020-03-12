@@ -133,6 +133,8 @@ const defaultTheme = createMuiTheme({
         },
         label: {
           fontWeight: 700,
+          fontSize: `16px`,
+          color: '#1C415C',
         },
       },
     },

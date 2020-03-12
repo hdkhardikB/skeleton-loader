@@ -22,13 +22,24 @@ const useStyles = makeStyles(
         textAlign: 'center',
 
         '&:hover': {
-            color: theme.palette.common.white,
-            backgroundColor: theme.palette.primary.light,
-        }
+          color: theme.palette.common.white,
+          backgroundColor: theme.palette.secondary.main,
+        },
+      },
+      checkBoxLabel: {
+        fontWeight: 700,
       },
       Checkbox: {
-          display: 'none'
-      }
+        display: 'none',
+      },
+      checked: {
+        color: theme.palette.common.white,
+        backgroundColor: theme.palette.primary.light,
+
+        '&:hover': {
+          backgroundColor: theme.palette.primary.light,
+        },
+      },
     }),
   { name: 'evlCheckboxnolabel', defaultTheme: EvlTheme },
 );
