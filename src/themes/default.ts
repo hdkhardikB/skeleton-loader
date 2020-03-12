@@ -134,54 +134,54 @@ const defaultTheme = createMuiTheme({
         label: {
           fontWeight: 700,
         },
-      },
-    },
-    MuiButton: {
-      sizeSmall: {
-        padding: `2px 10px`,
-        fontSize: `12px`,
-      },
-      sizeLarge: {
-        fontSize: `16px`,
-        padding: `8px 25px`,
-        height: `48px`,
-      },
-      textPrimary: {
-        backgroundColor: `#2D6380`,
-        borderColor: `#2D6380`,
-        borderWidth: `1px`,
-        borderStyle: 'solid',
-        color: `#fff`,
+        MuiButton: {
+          sizeSmall: {
+            padding: `2px 10px`,
+            fontSize: `12px`,
+          },
+          sizeLarge: {
+            fontSize: `16px`,
+            padding: `8px 25px`,
+            height: `48px`,
+          },
+          textPrimary: {
+            backgroundColor: `#2D6380`,
+            borderColor: `#2D6380`,
+            borderWidth: `1px`,
+            borderStyle: 'solid',
+            color: `#fff`,
 
-        "&:hover": {
-          backgroundColor: 'transparent',
-          color: `#2D6380`,
+            '&:hover': {
+              backgroundColor: 'transparent',
+              color: `#2D6380`,
+            },
+          },
+          textSecondary: {
+            borderColor: `#transparent`,
+            borderWidth: `1px`,
+            borderStyle: 'solid',
+            backgroundColor: 'transparent',
+            color: `#2D6380`,
+
+            '&:hover': {
+              backgroundColor: '#6990A7',
+              color: `#fff`,
+            },
+          },
+          outlined: {
+            borderColor: `#2D6380`,
+            borderWidth: `1px`,
+            borderStyle: 'solid',
+            backgroundColor: 'transparent',
+
+            '&:hover': {
+              backgroundColor: '#2D6380',
+              color: `#fff`,
+            },
+          },
+          contained: {},
         },
       },
-      textSecondary: {
-        borderColor: `#transparent`,
-        borderWidth: `1px`,
-        borderStyle: 'solid',
-        backgroundColor: 'transparent',
-        color: `#2D6380`,
-
-        "&:hover": {
-          backgroundColor: '#6990A7',
-          color: `#fff`,
-        },
-      },
-      outlined: {
-        borderColor: `#2D6380`,
-        borderWidth: `1px`,
-        borderStyle: 'solid',
-        backgroundColor: 'transparent',
-
-        "&:hover": {
-          backgroundColor: '#2D6380',
-          color: `#fff`,
-        },
-      },
-      contained: {},
     },
     MuiFormControl: {
       root: {
