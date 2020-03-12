@@ -136,9 +136,9 @@ const defaultTheme = createMuiTheme({
         },
       },
     },
-    MuiButton: {
+    MuiButtonBase: {
       root: {
-        '.MuiButton-textSizeSmall': {
+        '& .MuiButton-textSizeSmall': {
           padding: `2px 10px`,
           fontSize: `12px`,
         },
