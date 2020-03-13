@@ -140,16 +140,16 @@ const defaultTheme = createMuiTheme({
     },
     MuiButtonBase: {
       root: {
-        '& .MuiButton-textSizeSmall': {
+        '&.MuiButton-textSizeSmall': {
           padding: `2px 10px`,
           fontSize: `12px`,
         },
-        sizeLarge: {
+        '&.MuiButton-textSizeLarge': {
           fontSize: `16px`,
           padding: `8px 25px`,
           height: `48px`,
         },
-        textPrimary: {
+        '&.MuiButton-textPrimary': {
           backgroundColor: `#2D6380`,
           borderColor: `#2D6380`,
           borderWidth: `1px`,
@@ -161,8 +161,8 @@ const defaultTheme = createMuiTheme({
             color: `#2D6380`,
           },
         },
-        textSecondary: {
-          borderColor: `#transparent`,
+        '&.MuiButton-textSecondary': {
+          borderColor: `transparent`,
           borderWidth: `1px`,
           borderStyle: 'solid',
           backgroundColor: 'transparent',
@@ -173,18 +173,19 @@ const defaultTheme = createMuiTheme({
             color: `#fff`,
           },
         },
-        outlined: {
+        '&.MuiButton-outlined': {
           borderColor: `#2D6380`,
           borderWidth: `1px`,
           borderStyle: 'solid',
           backgroundColor: 'transparent',
+          color: `#2D6380`,
 
           '&:hover': {
             backgroundColor: '#2D6380',
             color: `#fff`,
           },
         },
-        contained: {},
+        '&.MuiButton-contained': {},
       },
     },
     MuiFormControl: {

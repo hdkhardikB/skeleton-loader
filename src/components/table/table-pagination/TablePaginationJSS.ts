@@ -17,6 +17,15 @@ const useStyles = makeStyles(
         margin: theme.spacing(1),
         width: '30%',
       },
+      paginationLabel: {
+        fontSize: theme.spacing(1.4)
+      },
+      paginationButton: {
+        borderRadius: theme.shape.borderRadius * 5,
+        fontWeight: 700,
+        textTransform: 'capitalize',
+        width: 'auto'
+      }
     }),
   { name: 'evlTablePagination', defaultTheme: EvlTheme },
 );

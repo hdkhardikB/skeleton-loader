@@ -7,7 +7,8 @@ const useStyles = makeStyles(
     createStyles({
       root: {},
       TableCell: {
-        padding: theme.spacing(0.5, 1.5),
+        padding: theme.spacing(1, 1.5),
+        color: theme.palette.secondary.main,
       },
     }),
   { name: 'evlTable', defaultTheme: EvlTheme },

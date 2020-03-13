@@ -20,6 +20,7 @@ const useStyles = makeStyles(
         minWidth: theme.spacing(3.4),
         minHeight: theme.spacing(3.4),
         textAlign: 'center',
+        backgroundColor: theme.palette.common.white,
 
         '&:hover': {
           color: theme.palette.common.white,
