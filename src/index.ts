@@ -29,6 +29,7 @@ import {
   EvlTable,
   EvlAutocomplete,
   EvlPaper,
+  EvlButtonGroup
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -65,4 +66,5 @@ export {
   EvlTable,
   EvlAutocomplete,
   EvlPaper,
+  EvlButtonGroup
 };
