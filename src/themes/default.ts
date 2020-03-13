@@ -193,13 +193,13 @@ const defaultTheme = createMuiTheme({
           '& fieldset': {
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderColor: `#1C415C`,
+            borderColor: `rgba(45, 99, 128, 0.2)`,
             borderRadius: 2 * 5,
           },
           '&:hover fieldset': {
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderColor: `#1C415C`,
+            borderColor: `rgba(45, 99, 128, 1)`,
             borderRadius: 2 * 5,
           },
           '&.Mui-focused fieldset': {
@@ -221,6 +221,9 @@ const defaultTheme = createMuiTheme({
             borderRadius: 2 * 5,
           },
         },
+        '&.MuiSelect-select:focus': {
+          backgroundColor: 'transparent'
+        }
       },
     },
     MuiTextField: {
