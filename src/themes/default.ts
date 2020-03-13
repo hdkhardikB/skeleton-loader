@@ -20,6 +20,7 @@ const defaultTheme = createMuiTheme({
       A100: 'rgba(152, 175, 183, 0.3)',
       A200: '#F5F7F8',
       A400: 'rgba(45, 99, 128, 0.2)',
+      A700: 'rgba(45, 99, 128, 0.05)',
     },
   },
   typography: {

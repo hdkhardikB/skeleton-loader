@@ -61,7 +61,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlRangeSlider
           marks
-          valueLabelDisplay="on"
+          valueLabelDisplay="auto"
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={
             //@ts-ignore

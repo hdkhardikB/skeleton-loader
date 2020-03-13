@@ -9,6 +9,7 @@ const useStyles = makeStyles(
       appBar: {
         boxShadow: theme.shadows[0],
         backgroundColor: theme.palette.common.white,
+        padding: theme.spacing(0.5, 0)
       },
     }),
   { name: 'evlAppBar', defaultTheme: EvlTheme },

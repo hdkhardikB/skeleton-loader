@@ -27,6 +27,7 @@ import EvlLink from './link';
 import EvlAlert from './alert';
 import EvlAutocomplete from './autocomplete';
 import EvlTable from './table';
+import EvlPaper from './paper';
 
 export {
   Button,
@@ -58,4 +59,5 @@ export {
   EvlAlert,
   EvlTable,
   EvlAutocomplete,
+  EvlPaper,
 };
