@@ -10,7 +10,6 @@ const useStyles = makeStyles(
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        background: theme.palette.primary.contrastText,
         width: theme.spacing() * 5.2,
         height: theme.spacing() * 5.2,
         border: `0px`,

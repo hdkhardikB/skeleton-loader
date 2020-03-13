@@ -4,6 +4,9 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select, { SelectProps } from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
+import EvlTextFieldIcon from '@components/text-field-icon';
+import * as selectIcon from '@assets/images/ic_select-arrow.svg';
+import EvlBox from '@components/box';
 
 type option = {
   title: string;
@@ -18,6 +21,12 @@ export interface EvlSelectProps extends Omit<SelectProps, 'classes' | 'error'> {
 export const EvlSelect: React.FC<EvlSelectProps> = ({ options, lable, error, ...props }) => {
   const classes = useStyles();
 
+  const SelectIcon = () => (
+    <EvlBox className={classes.selectIcon}>
+      <EvlTextFieldIcon imageSrc={selectIcon} />
+    </EvlBox>
+  );
+
   const renderOptions = () => {
     return options.map(({ title, value }) => {
       return (
@@ -31,7 +40,7 @@ export const EvlSelect: React.FC<EvlSelectProps> = ({ options, lable, error, ...
   return (
     <FormControl className={classes.formControl} error={!!error}>
       {!!lable && <label>{lable}</label>}
-      <Select variant="outlined" {...props} className={classes.root}>
+      <Select variant="outlined" IconComponent={SelectIcon} {...props} className={classes.root}>
         {renderOptions()}
       </Select>
       <FormHelperText>{error}</FormHelperText>
