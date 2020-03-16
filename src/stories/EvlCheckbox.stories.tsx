@@ -14,3 +14,5 @@ stories.add('Checkbox with label', () => <EvlCheckbox label="Pizza" onChange={ha
 stories.add('Checkbox', () => <EvlCheckbox />);
 
 stories.add('Checkbox with image', () => <EvlCheckbox image={checkboxImg} label="Tests" />);
+
+stories.add('Checkbox without check', () => <EvlCheckbox noCheckbox label="Tests" />);
