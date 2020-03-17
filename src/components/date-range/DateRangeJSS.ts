@@ -6,10 +6,10 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        margin: 0,
+        margin: theme.spacing(0),
       },
       datePicker: {
-        margin: 0,
+        margin: theme.spacing(0),
       },
     }),
   { name: 'evlDateRange', defaultTheme: EvlTheme },

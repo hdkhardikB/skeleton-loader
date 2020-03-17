@@ -3,6 +3,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import useStyles from './TablePaginationJSS';
 import EvlButton from '../../button';
 import clsx from 'classnames';
+import EvlBox from '@components/box';
 
 export interface EvlTablePaginationProps {
   count: number;
@@ -28,7 +29,7 @@ export const EvlTablePagination: React.FC<EvlTablePaginationProps> = ({
   const displayMore = noOfRecords < count && rowsPerPage < count;
   const progress = (noOfRecords / count) * 100;
   return (
-    <div className={classes.root}>
+    <EvlBox className={classes.root}>
       <label className={clsx(classes.paginationItem, classes.paginationLabel)}>
         {`${currentlyShowingLabel} ${noOfRecords}/${count} ${recordLabel}`}
       </label>
@@ -42,7 +43,7 @@ export const EvlTablePagination: React.FC<EvlTablePaginationProps> = ({
           {loadMoreLabel}
         </EvlButton>
       )}
-    </div>
+    </EvlBox>
   );
 };
 

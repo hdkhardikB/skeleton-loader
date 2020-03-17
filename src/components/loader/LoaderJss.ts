@@ -12,7 +12,7 @@ const useStyles = makeStyles(
         alignSelf: 'center',
       },
       figure: {
-        margin: 0,
+        margin: theme.spacing(0),
         alignSelf: 'center',
       },
     }),

@@ -7,10 +7,10 @@ const useStyles = makeStyles(
     createStyles({
       root: {},
       formControlLabel: {
-        marginLeft: 0,
+        marginLeft: theme.spacing(0),
       },
       formTextLabel: {
-        marginLeft: 0,
+        marginLeft: theme.spacing(0),
         marginRight: theme.spacing(0.5),
         padding: theme.spacing(0.4, 1),
         borderWidth: theme.spacing(0.1),
@@ -39,7 +39,7 @@ const useStyles = makeStyles(
       },
       blockImg: {
         display: 'inline-block',
-        marginLeft: 0,
+        marginLeft: theme.spacing(0),
         textAlign: 'center',
       },
       icon: {
@@ -50,6 +50,7 @@ const useStyles = makeStyles(
         borderWidth: theme.spacing(0.2),
         borderColor: theme.palette.secondary.main,
 
+        // TODO: Future purpose
         '$root.Mui-focusVisible &': {
           // outline: '2px auto rgba(19,124,189,.6)',
           // outlineOffset: 2,
