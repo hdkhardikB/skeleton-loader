@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { FilterControl as FilterControlType, Filter } from 'evl-types-ui';
-// import useStyles from './FilterControlJSS';
 import EvlMultiCheckbox from '../multi-checkbox';
 import EvlRangeSlider from '../range-slider';
 import EvlSelect from '../select';
