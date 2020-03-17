@@ -3,7 +3,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-// import useStyles from './TableHeadJSS';
+import useStyles from './TableHeadJSS';
 import EvlCheckbox from '../../checkbox';
 
 export type column = {
@@ -35,7 +35,7 @@ const EvlTableHead: React.FC<EvlTableHeadProps> = ({
   rowCount,
   onRequestSort,
 }: any) => {
-  // const classes = useStyles();
+  const classes = useStyles();
   const createSortHandler = (property: string) => () => {
     onRequestSort(property);
   };
@@ -43,7 +43,7 @@ const EvlTableHead: React.FC<EvlTableHeadProps> = ({
     <TableHead>
       <TableRow>
         {!!selectable && (
-          <TableCell padding="checkbox">
+          <TableCell className={classes.TableCell}>
             <EvlCheckbox
               indeterminate={numSelected > 0 && numSelected < rowCount}
               checked={rowCount > 0 && numSelected === rowCount}
@@ -52,17 +52,24 @@ const EvlTableHead: React.FC<EvlTableHeadProps> = ({
           </TableCell>
         )}
         {columns.map(({ name, title, options }: any) => (
-          <TableCell key={name} align="left" padding="default" sortDirection={orderBy === name ? order : false}>
+          <TableCell
+            className={classes.TableCell}
+            key={name}
+            align="left"
+            padding="default"
+            sortDirection={orderBy === name ? order : false}
+          >
             {(options && options.sort && (
               <TableSortLabel
                 active={options && options.sort && orderBy === name}
                 direction={(orderBy === name && order) || 'asc'}
                 onClick={createSortHandler(name)}
+                component="label"
+                className={classes.TableSortLabel}
               >
                 {title}
               </TableSortLabel>
-            )) ||
-              title}
+            )) || <label className={classes.TableSortLabel}>{title}</label>}
           </TableCell>
         ))}
       </TableRow>

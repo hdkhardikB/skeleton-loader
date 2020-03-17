@@ -7,12 +7,17 @@ const useStyles = makeStyles(
     createStyles({
       root: {},
       formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: 'inherit',
+        width: '100%',
       },
       selectEmpty: {
         marginTop: theme.spacing(2),
       },
+      selectIcon: {
+        position: 'absolute',
+        right: theme.spacing(0),
+        zIndex: -1,
+      }
     }),
   { name: 'evlSelect', defaultTheme: EvlTheme },
 );

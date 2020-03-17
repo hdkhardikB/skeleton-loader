@@ -6,9 +6,7 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       textField: {
-        background: theme.palette.primary.contrastText,
-        height: theme.spacing() * 5.2,
-        fontSize: `${(theme.spacing() * 1.6) / 20}rem`,
+        margin: theme.spacing(0),
       },
     }),
   { name: 'evlTextBox', defaultTheme: EvlTheme },

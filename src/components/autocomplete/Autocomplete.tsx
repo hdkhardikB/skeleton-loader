@@ -2,6 +2,7 @@ import * as React from 'react';
 import useStyles from './AutocompleteJSS';
 import Autocomplete, { AutocompleteProps } from '@material-ui/lab/Autocomplete';
 import EvlTextBox from './../text-field';
+import EvlBox from '@components/box';
 
 type option = {
   title: string;
@@ -17,7 +18,7 @@ export interface EvlAutocompleteProps extends Omit<AutocompleteProps<option>, 'r
 export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({ options, label, onChange, ...props }) => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <EvlBox className={classes.root}>
       <Autocomplete
         {...props}
         getOptionLabel={option => option.title}
@@ -28,13 +29,12 @@ export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({ options, label
             <EvlTextBox
               {...params}
               label={label}
-              margin="normal"
               InputProps={{ ...params.InputProps, type: 'new-password' }}
             />
           );
         }}
       />
-    </div>
+    </EvlBox>
   );
 };
 

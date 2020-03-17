@@ -10,6 +10,7 @@ import EvlCheckbox from '../checkbox';
 import useStyles from './TableJSS';
 import EvlTableHead, { column } from './table-head';
 import EvlTablePagination from './table-pagination';
+import EvlBox from '@components/box';
 
 interface EvlTableProps {
   rows: Object[];
@@ -87,8 +88,8 @@ const EvlTable: React.FC<EvlTableProps> = ({
     (showPagination && sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)) || sortedRows;
 
   return (
-    <div className={classes.root}>
-      <Paper>
+    <EvlBox className={classes.root}>
+      <Paper elevation={0}>
         <TableContainer>
           <Table aria-labelledby="tableTitle" size="medium" aria-label="table">
             <EvlTableHead
@@ -124,12 +125,12 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       selected={!!selectable && isItemSelected}
                     >
                       {!!selectable && (
-                        <TableCell padding="checkbox">
+                        <TableCell className={classes.TableCell}>
                           <EvlCheckbox checked={isItemSelected} inputProps={{ 'aria-labelledby': labelId }} />
                         </TableCell>
                       )}
                       {Object.keys(row).map((property: string) => (
-                        <TableCell>{row[property]}</TableCell>
+                        <TableCell className={classes.TableCell}>{row[property]}</TableCell>
                       ))}
                     </TableRow>
                   );
@@ -149,7 +150,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
           />
         )}
       </Paper>
-    </div>
+    </EvlBox>
   );
 };
 

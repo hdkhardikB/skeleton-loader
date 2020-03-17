@@ -16,7 +16,7 @@ const useStyles = makeStyles(
         flex: 1,
       },
       iconButton: {
-        padding: 10,
+        padding: theme.spacing(1),
       },
     }),
   { name: 'evlSearchBox', defaultTheme: EvlTheme },

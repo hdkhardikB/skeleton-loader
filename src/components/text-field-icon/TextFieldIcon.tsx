@@ -1,5 +1,6 @@
 import * as React from 'react';
 import useStyles from './TextFieldIconJSS';
+import EvlBox from '@components/box';
 
 export interface EvlTextFieldIconProps {
   imageSrc: string;
@@ -8,9 +9,9 @@ export interface EvlTextFieldIconProps {
 export const EvlTextFieldIcon: React.FC<EvlTextFieldIconProps> = ({ imageSrc }) => {
   const classes = useStyles();
   return (
-    <div className={classes.textFieldIcon}>
+    <EvlBox className={classes.textFieldIcon}>
       <img className={classes.icon} src={imageSrc} alt="" />
-    </div>
+    </EvlBox>
   );
 };
 
