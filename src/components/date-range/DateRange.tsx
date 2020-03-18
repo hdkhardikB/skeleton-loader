@@ -17,7 +17,7 @@ export interface EvlDateRangeProps {
 export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
   startLabel,
   endLabel,
-  dateFormat = 'MM/dd/yyyy',
+  dateFormat = 'dd MMM yyyy',
   minDate,
   maxDate,
   value,
@@ -36,7 +36,7 @@ export const EvlDateRange: React.FC<EvlDateRangeProps> = ({
   }, [dateRange]);
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={3}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid item xs={6}>
           <KeyboardDatePicker
