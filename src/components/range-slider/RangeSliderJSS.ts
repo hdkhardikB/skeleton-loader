@@ -12,7 +12,7 @@ const useStyles = makeStyles(
         '& .MuiSlider-root': {
           padding: theme.spacing(0),
           height: theme.spacing(2.5),
-          margin: theme.spacing(1.5, 0)
+          margin: theme.spacing(1.5, 0),
         },
         '& .MuiSlider-mark': {
           top: theme.spacing(0.9),
@@ -26,7 +26,7 @@ const useStyles = makeStyles(
         },
         '& .MuiSlider-track': {
           height: theme.spacing(0.6),
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.light,
           borderRadius: theme.shape.borderRadius * 5,
           top: theme.spacing(0.9),
         },
@@ -38,7 +38,7 @@ const useStyles = makeStyles(
           backgroundColor: theme.palette.common.white,
           borderWidth: theme.spacing(0.1),
           borderStyle: 'solid',
-          borderColor: theme.palette.grey.A400
+          borderColor: theme.palette.grey.A400,
         },
       },
       margin: {

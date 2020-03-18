@@ -1,9 +1,11 @@
 import * as React from 'react';
 import useStyles from './RangeSliderJSS';
 import Slider, { SliderProps } from '@material-ui/core/Slider';
-import Typography from '@material-ui/core/Typography';
+import EvlTypography from '@components/typography';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import EvlGrid from '@components/grid';
+import TextField from '@components/text-field';
 
 export interface EvlRangeSliderProps extends SliderProps {
   label?: string;
@@ -16,10 +18,18 @@ export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ label, error, ..
   return (
     <FormControl className={classes.root} error={!!error}>
       {label && (
-        <Typography id="discrete-slider" gutterBottom>
+        <EvlTypography id="discrete-slider" gutterBottom>
           {label}
-        </Typography>
+        </EvlTypography>
       )}
+      <EvlGrid container spacing={4}>
+        <EvlGrid item xs={6}>
+          <TextField></TextField>
+        </EvlGrid>
+        <EvlGrid item xs={6}>
+          <TextField></TextField>
+        </EvlGrid>
+      </EvlGrid>
       <Slider {...props} />
       <FormHelperText>{error}</FormHelperText>
     </FormControl>
