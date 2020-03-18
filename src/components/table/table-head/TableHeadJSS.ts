@@ -7,7 +7,7 @@ const useStyles = makeStyles(
     createStyles({
       root: {},
       TableCell: {
-        padding: theme.spacing(1, 1.5),
+        padding: theme.spacing(1.5),
         backgroundColor: theme.palette.secondary.light,
         borderBottom: 0,
 
