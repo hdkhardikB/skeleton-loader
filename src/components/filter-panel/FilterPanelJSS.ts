@@ -1,10 +1,55 @@
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import { makeStyles, createStyles} from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { EvlTheme } from '@themes';
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-    root: {},
-    filterActive: {}
-}), { name: 'evlFilterPanel', defaultTheme: EvlTheme });
+const useStyles = makeStyles(
+  (theme: Theme) =>
+    createStyles({
+      root: {
+        textAlign: 'right',
+
+        '& .MuiExpansionPanelSummary-root': {
+          padding: theme.spacing(0),
+          width: 'auto',
+          marginLeft: 'auto',
+          display: 'inline-block',
+        },
+        '& .MuiButtonBase-root': {
+          marginLeft: 'auto',
+          backgroundColor: 'transparent',
+          color: theme.palette.primary.light,
+          minWidth: theme.spacing(12.4),
+        },
+        '& .MuiExpansionPanelSummary-content': {
+          margin: theme.spacing(1.5, 0),
+        },
+        '& .MuiExpansionPanelSummary-content.Mui-expanded': {
+          margin: theme.spacing(1.5, 0),
+
+          '& .MuiButtonBase-root': {
+            backgroundColor: theme.palette.primary.light,
+            color: theme.palette.common.white,
+          },
+        },
+        '& .MuiCollapse-container': {
+          textAlign: 'left',
+        },
+        '& .MuiExpansionPanelDetails-root': {
+          padding: theme.spacing(0),
+          display: 'block',
+        },
+      },
+      figure: {
+        margin: theme.spacing(0, 1.5, 0, 0),
+      },
+      filterActive: {
+        '& .MuiButtonBase-root': {
+          backgroundColor: theme.palette.primary.light,
+          color: theme.palette.common.white,
+        },
+      },
+    }),
+  { name: 'evlFilterPanel', defaultTheme: EvlTheme },
+);
 
 export default useStyles;
