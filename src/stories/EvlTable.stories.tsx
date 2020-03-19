@@ -48,7 +48,6 @@ const columns = [
 stories.add('Simple EvlTable', () => (
   <EvlTable
     rows={rows}
-    rowKey="assetId"
     columns={columns}
     onSelect={selectedIds => console.log(selectedIds)}
     noDataComponent={() => <p>No Data Available</p>}
@@ -58,7 +57,6 @@ stories.add('Simple EvlTable', () => (
 stories.add('Selectable EvlTable', () => (
   <EvlTable
     rows={rows}
-    rowKey="assetId"
     columns={columns}
     selectable
     onSelect={selectedIds => console.log(selectedIds)}
@@ -69,7 +67,6 @@ stories.add('Selectable EvlTable', () => (
 stories.add('EvlTable with No Data', () => (
   <EvlTable
     rows={[]}
-    rowKey="assetId"
     columns={columns}
     selectable
     onSelect={selectedIds => console.log(selectedIds)}
@@ -80,7 +77,6 @@ stories.add('EvlTable with No Data', () => (
 stories.add('EvlTable with Pagination', () => (
   <EvlTable
     rows={rows}
-    rowKey="assetId"
     columns={columns}
     selectable
     onSelect={selectedIds => console.log(selectedIds)}
