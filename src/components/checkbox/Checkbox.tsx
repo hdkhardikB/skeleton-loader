@@ -17,7 +17,6 @@ export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error
 
 export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, checked, noCheckbox, ...props }) => {
   const classes = useStyles();
-
   return (
     <FormControl error={!!error}>
       <FormGroup>
@@ -25,7 +24,7 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, c
           className={clsx({
             [classes.blockImg]: !!image,
             [classes.formControlLabel]: !image && !noCheckbox,
-            [classes.checked]: checked,
+            [classes.checked]: (image || noCheckbox) && checked,
             [classes.formTextLabel]: !!noCheckbox
           })}
           control={
@@ -37,6 +36,7 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, c
                 icon={<span className={classes.icon} />}
                 inputProps={{ 'aria-label': 'decorative checkbox' }}
                 className={clsx({[classes.noCheckbox]: !!noCheckbox || !!image})}
+                checked={checked}
                 {...props}
               />
               {image && (

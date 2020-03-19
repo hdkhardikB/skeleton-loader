@@ -34,6 +34,8 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
         <EvlMultiCheckbox
           options={filterOptions as string[]}
           selectedOptions={selectedFilterValues}
+          imageSrc={filterMeta && filterMeta.imageSrc}
+          imageExt={filterMeta && filterMeta.imageExt}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             const value = event.target.value;
             let newFilters;
@@ -92,6 +94,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
             });
           }}
           autoWidth
+          icon={filterMeta && filterMeta.icon}
         />
       );
       break;
