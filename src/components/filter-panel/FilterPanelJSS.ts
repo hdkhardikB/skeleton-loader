@@ -18,7 +18,6 @@ const useStyles = makeStyles(
           marginLeft: 'auto',
           backgroundColor: 'transparent',
           color: theme.palette.primary.light,
-          minWidth: theme.spacing(12.4),
         },
         '& .MuiExpansionPanelSummary-content': {
           margin: theme.spacing(1.5, 0),
