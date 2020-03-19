@@ -124,7 +124,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       selected={!!selectable && isItemSelected}
                     >
                       {!!selectable && (
-                        <TableCell className={classes.TableCell}>
+                        <TableCell>
                           <EvlCheckbox
                             onChange={e => {
                               e.stopPropagation();
@@ -137,7 +137,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       {!!RowComponent && <RowComponent {...row} />}
                       {!RowComponent &&
                         Object.keys(row).map((property: string) => (
-                          <TableCell key={property} className={classes.TableCell}>
+                          <TableCell key={property}>
                             {row[property]}
                           </TableCell>
                         ))}

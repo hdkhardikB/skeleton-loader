@@ -5,10 +5,11 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
-      TableCell: {
-        padding: theme.spacing(1, 1.5),
-        color: theme.palette.secondary.main,
+      root: {
+        '& .MuiTableCell-body': {
+          color: theme.palette.secondary.main,
+          padding: theme.spacing(1, 1.5),
+        }
       },
     }),
   { name: 'evlTable', defaultTheme: EvlTheme },
