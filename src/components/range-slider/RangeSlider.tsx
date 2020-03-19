@@ -10,11 +10,12 @@ import TextField from '@components/text-field';
 export interface EvlRangeSliderProps extends SliderProps {
   label?: string;
   error?: string;
+  valueText?: string;
 }
 
-export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ label, error, ...props }) => {
+export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ value, label, valueText, error, ...props }) => {
   const classes = useStyles();
-
+  const [minVaule, maxValue] = value as number[];
   return (
     <FormControl className={classes.root} error={!!error}>
       {label && (
@@ -22,15 +23,15 @@ export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ label, error, ..
           {label}
         </EvlTypography>
       )}
-      <EvlGrid container spacing={4}>
-        <EvlGrid item xs={6}>
-          <TextField></TextField>
+      <EvlGrid container direction="row" justify="space-between">
+        <EvlGrid item xs={4}>
+          <TextField value={`${minVaule} ${valueText}`}></TextField>
         </EvlGrid>
-        <EvlGrid item xs={6}>
-          <TextField></TextField>
+        <EvlGrid item xs={4}>
+          <TextField value={`${maxValue} ${valueText}`}></TextField>
         </EvlGrid>
       </EvlGrid>
-      <Slider {...props} />
+      <Slider value={value} {...props} />
       <FormHelperText>{error}</FormHelperText>
     </FormControl>
   );

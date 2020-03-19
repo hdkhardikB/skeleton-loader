@@ -62,7 +62,6 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlRangeSlider
           marks
-          valueLabelDisplay="auto"
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={
             //@ts-ignore
@@ -73,11 +72,12 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
               });
             }
           }
-          step={filterMeta.steps}
+          step={filterMeta && filterMeta.steps}
           min={Number(min)}
           max={Number(max)}
+          valueText={filterMeta && filterMeta.valueText}
           aria-labelledby="range-slider"
-          getAriaValueText={(value: number) => `${value} ${filterProperty}`}
+          getAriaValueText={(value: number) => `${value} ${filterMeta && filterMeta.valueText || filterProperty}`}
         />
       );
       break;

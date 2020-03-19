@@ -29,6 +29,7 @@ import EvlAutocomplete from './autocomplete';
 import EvlTable from './table';
 import EvlPaper from './paper';
 import EvlButtonGroup from './buttongroup';
+import EvlFilterPanel from './filter-panel';
 
 export {
   Button,
@@ -61,5 +62,6 @@ export {
   EvlTable,
   EvlAutocomplete,
   EvlPaper,
-  EvlButtonGroup
+  EvlButtonGroup,
+  EvlFilterPanel
 };
