@@ -15,7 +15,7 @@ const SignupSchema = Yup.object().shape({
 
 stories.addDecorator(storyFn => (
   <Formik
-    initialValues={{ price: 10 }}
+    initialValues={{ price: [10, 20] }}
     validationSchema={SignupSchema}
     onSubmit={values => {
       console.log(values);
@@ -31,6 +31,7 @@ stories.add('EvlFormRangeSlider', () => (
     min={0}
     step={10}
     marks
+    valueText="$"
     id="price"
     name="price"
     valueLabelDisplay="auto"
