@@ -11,10 +11,11 @@ const filtersData: FilterReferenceData = {
     control: FilterControl.slider,
     meta: {
       steps: 0.1,
+      valueText: 'ct'
     },
   },
   color: {
-    data: ['red', 'blue', 'green'],
+    data: ['red', 'blue', 'green'].map(value => {return {title: value, value};}),
     control: FilterControl.multiCheckbox,
   },
   origin: {

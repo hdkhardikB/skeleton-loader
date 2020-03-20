@@ -3,8 +3,12 @@ import { FormControl, FormGroup } from '@material-ui/core';
 import useStyles from './MultiCheckboxJSS';
 import EvlCheckbox from '@components/checkbox';
 
+type option = {
+  title: string;
+  value: string;
+};
 export interface EvlMultiCheckboxProps {
-  options: string[];
+  options: option[];
   selectedOptions: string[];
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   imageSrc?: string 
@@ -18,14 +22,14 @@ export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({ options, sel
       <FormGroup row>
         {!!options &&
           options.length > 0 &&
-          options.map((attribute: string) => (
+          options.map(({title, value}) => (
             <EvlCheckbox
-              key={attribute}
-              checked={selectedOptions && selectedOptions.includes(attribute)}
+              key={value}
+              checked={selectedOptions && selectedOptions.includes(value)}
               onChange={onChange}
-              value={attribute}
-              label={attribute}
-              image={imageSrc && `${imageSrc}/${attribute}.${imageExt}`}
+              value={value}
+              label={title}
+              image={imageSrc && `${imageSrc}/${value}.${imageExt}`}
               noCheckbox
             />
           ))}

@@ -9,12 +9,12 @@ const stories = storiesOf('EvlFilterPanel', module);
 
 stories.add('Filter Panel without filter applied', () => (
   <EvlFilterPanel filterText="Filter" closeText="Close" filterIcon={filterIcon} closeIcon={closeIcon}>
-    <EvlPaper>kai bhi</EvlPaper>
+    <EvlPaper>Panel Details</EvlPaper>
   </EvlFilterPanel>
 ));
 
 stories.add('Filter Panel', () => (
   <EvlFilterPanel filterText="Filter" closeText="Close" filterIcon={filterIconLight} closeIcon={closeIcon} filterApplied>
-    <EvlPaper>kai bhi</EvlPaper>
+    <EvlPaper>Panel Details</EvlPaper>
   </EvlFilterPanel>
 ));
