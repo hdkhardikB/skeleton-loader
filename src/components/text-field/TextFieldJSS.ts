@@ -5,6 +5,7 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
+      root: {},
       textField: {
         margin: theme.spacing(0),
       },

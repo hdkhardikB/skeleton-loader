@@ -13,7 +13,7 @@ function MultiCheckbox() {
 
   return (
     <EvlMultiCheckbox
-      options={options}
+      options={options.map(value => {return {title: value, value};})}
       selectedOptions={selectedOptions}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;

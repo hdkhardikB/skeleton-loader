@@ -32,8 +32,10 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       const selectedFilterValues = selectedFilters[filterProperty] || [];
       filterControl = (
         <EvlMultiCheckbox
-          options={filterOptions as string[]}
+          options={filterOptions}
           selectedOptions={selectedFilterValues}
+          imageSrc={filterMeta && filterMeta.imageSrc}
+          imageExt={filterMeta && filterMeta.imageExt}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             const value = event.target.value;
             let newFilters;
@@ -60,7 +62,6 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlRangeSlider
           marks
-          valueLabelDisplay="auto"
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={
             //@ts-ignore
@@ -71,11 +72,12 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
               });
             }
           }
-          step={filterMeta.steps}
+          step={filterMeta && filterMeta.steps}
           min={Number(min)}
           max={Number(max)}
+          valueText={filterMeta && filterMeta.valueText}
           aria-labelledby="range-slider"
-          getAriaValueText={(value: number) => `${value} ${filterProperty}`}
+          getAriaValueText={(value: number) => `${value} ${filterMeta && filterMeta.valueText || filterProperty}`}
         />
       );
       break;
@@ -92,6 +94,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
             });
           }}
           autoWidth
+          icon={filterMeta && filterMeta.icon}
         />
       );
       break;

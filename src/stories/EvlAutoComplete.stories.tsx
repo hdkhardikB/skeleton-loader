@@ -21,7 +21,6 @@ stories.add('EvlAutoComplete', () => (
     options={top100Films}
     id="free-solo-2-demo"
     disableClearable
-    freeSolo
     label="Select Movie"
     onChange={(event: React.ChangeEvent<{}>, value: option | null) => console.log(value)}
   />

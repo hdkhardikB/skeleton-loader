@@ -5,7 +5,11 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
+      root: {
+        '& .MuiAutocomplete-popupIndicator': {
+          display: 'none',
+        },
+      },
     }),
   { name: 'evlAutocomplete', defaultTheme: EvlTheme },
 );

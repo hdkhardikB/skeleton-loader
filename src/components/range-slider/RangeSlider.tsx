@@ -1,26 +1,37 @@
 import * as React from 'react';
 import useStyles from './RangeSliderJSS';
 import Slider, { SliderProps } from '@material-ui/core/Slider';
-import Typography from '@material-ui/core/Typography';
+import EvlTypography from '@components/typography';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import EvlGrid from '@components/grid';
+import TextField from '@components/text-field';
 
 export interface EvlRangeSliderProps extends SliderProps {
   label?: string;
   error?: string;
+  valueText?: string;
 }
 
-export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ label, error, ...props }) => {
+export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ value, label, valueText, error, ...props }) => {
   const classes = useStyles();
-
+  const [minVaule, maxValue] = value as number[];
   return (
     <FormControl className={classes.root} error={!!error}>
       {label && (
-        <Typography id="discrete-slider" gutterBottom>
+        <EvlTypography id="discrete-slider" gutterBottom>
           {label}
-        </Typography>
+        </EvlTypography>
       )}
-      <Slider {...props} />
+      <EvlGrid container direction="row" justify="space-between">
+        <EvlGrid item xs={4}>
+          <TextField value={`${minVaule} ${valueText}`}></TextField>
+        </EvlGrid>
+        <EvlGrid item xs={4}>
+          <TextField value={`${maxValue} ${valueText}`}></TextField>
+        </EvlGrid>
+      </EvlGrid>
+      <Slider value={value} {...props} />
       <FormHelperText>{error}</FormHelperText>
     </FormControl>
   );

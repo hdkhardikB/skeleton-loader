@@ -5,7 +5,11 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
+      root: {
+        '& .MuiSelect-outlined.MuiSelect-outlined': {
+          paddingRight: theme.spacing(5)
+        },
+      },
       formControl: {
         minWidth: 'inherit',
         width: '100%',

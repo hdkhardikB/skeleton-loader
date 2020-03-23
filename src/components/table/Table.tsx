@@ -5,7 +5,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { orderBy as _orderBy } from 'lodash';
+import { orderBy as _orderBy, some as _some, filter as _filter, isMatch as _isMatch } from 'lodash';
 import EvlCheckbox from '../checkbox';
 import useStyles from './TableJSS';
 import EvlTableHead, { column } from './table-head';
@@ -15,14 +15,14 @@ import EvlBox from '@components/box';
 interface EvlTableProps {
   rows: Object[];
   columns: column[];
-  rowKey: string;
   selectable?: boolean;
   sort?: {
     orderBy: string;
     order: 'asc' | 'desc';
   };
-  onSelect: (selectedIds: string[]) => void;
-  noDataComponent: React.ReactType;
+  onSelect?: (selectedIds: string[]) => void;
+  noDataComponent?: React.ReactType;
+  rowComponent?: React.ReactType;
   pagination?: {
     showPagination?: boolean;
     rowsPerPage?: number;
@@ -35,17 +35,17 @@ interface EvlTableProps {
 const EvlTable: React.FC<EvlTableProps> = ({
   rows,
   columns,
-  rowKey,
   selectable,
   onSelect,
   sort,
   noDataComponent: NoDataComponent,
+  rowComponent: RowComponent,
   pagination,
 }) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState<'asc' | 'desc'>((sort && sort.order) || 'asc');
-  const [orderBy, setOrderBy] = React.useState<string>((sort && sort.orderBy) || rowKey);
-  const [selected, setSelected] = React.useState<string[]>([]);
+  const [orderBy, setOrderBy] = React.useState<string>((sort && sort.orderBy) || '');
+  const [selected, setSelected] = React.useState<any[]>([]);
   const [page, setPage] = React.useState(0);
   const {
     showPagination,
@@ -66,27 +66,30 @@ const EvlTable: React.FC<EvlTableProps> = ({
   };
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let newSelected: string[] = [];
+    let newSelected: any[] = [];
     if (event.target.checked) {
-      newSelected = rows.map(n => n[rowKey]);
+      newSelected = [...rows];
     }
     setSelected(newSelected);
-    onSelect(newSelected);
+    onSelect && onSelect(newSelected);
   };
 
-  const handleClick = (selectedKey: string) => {
-    const newSelected = (selected.includes(selectedKey) && selected.filter(key => key !== selectedKey)) || [
-      ...selected,
-      selectedKey,
-    ];
+  const handleClick = (selectedRow: any) => {
+    const newSelected = (!!_some(selected, selectedRow) &&
+      _filter(selected, o => {
+        return !_isMatch(o, selectedRow);
+      })) || [...selected, selectedRow];
     setSelected(newSelected);
-    onSelect(newSelected);
+    onSelect && onSelect(newSelected);
   };
+
+  React.useEffect(() => {
+    setSelected([]);
+  }, [rows]);
 
   const sortedRows = (rows && rows.length && _orderBy(rows, orderBy, order)) || [];
   const currentRowsToDisplay =
     (showPagination && sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)) || sortedRows;
-
   return (
     <EvlBox className={classes.root}>
       <Paper elevation={0}>
@@ -100,38 +103,44 @@ const EvlTable: React.FC<EvlTableProps> = ({
               orderBy={orderBy}
               onSelectAll={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={sortedRows.length}
             />
             <TableBody>
-              {!sortedRows.length && (
+              {!sortedRows.length && !!NoDataComponent && (
                 <TableRow>
-                  <TableCell colSpan={6}>
+                  <TableCell colSpan={columns.length}>
                     <NoDataComponent />
                   </TableCell>
                 </TableRow>
               )}
               {!!sortedRows.length &&
-                currentRowsToDisplay.map((row: any, index: number) => {
-                  const isItemSelected = selected.includes(row[rowKey]);
-                  const labelId = `enhanced-table-checkbox-${index}`;
+                currentRowsToDisplay.map((row: any) => {
+                  const isItemSelected = !!_some(selected, row);
                   return (
                     <TableRow
                       hover
-                      onClick={() => !!selectable && handleClick(row[rowKey])}
-                      role="checkbox"
-                      aria-checked={!!selectable && isItemSelected}
                       tabIndex={-1}
                       key={row.name}
                       selected={!!selectable && isItemSelected}
                     >
                       {!!selectable && (
-                        <TableCell className={classes.TableCell}>
-                          <EvlCheckbox checked={isItemSelected} inputProps={{ 'aria-labelledby': labelId }} />
+                        <TableCell>
+                          <EvlCheckbox
+                            onChange={e => {
+                              e.stopPropagation();
+                              handleClick(row);
+                            }}
+                            checked={isItemSelected}
+                          />
                         </TableCell>
                       )}
-                      {Object.keys(row).map((property: string) => (
-                        <TableCell className={classes.TableCell}>{row[property]}</TableCell>
-                      ))}
+                      {!!RowComponent && <RowComponent {...row} />}
+                      {!RowComponent &&
+                        Object.keys(row).map((property: string) => (
+                          <TableCell key={property}>
+                            {row[property]}
+                          </TableCell>
+                        ))}
                     </TableRow>
                   );
                 })}
