@@ -11,25 +11,31 @@ export interface EvlMultiCheckboxProps {
   options: option[];
   selectedOptions: string[];
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  imageSrc?: string 
-  imageExt?: string
+  imageSrc?: string;
+  imageExt?: string;
 }
 
-export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({ options, selectedOptions, onChange, imageSrc, imageExt = "svg" }) => {
+export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({
+  options,
+  selectedOptions,
+  onChange,
+  imageSrc,
+  imageExt = 'svg',
+}) => {
   const classes = useStyles();
   return (
     <FormControl className={classes.root} component="fieldset">
       <FormGroup row>
         {!!options &&
           options.length > 0 &&
-          options.map(({title, value}) => (
+          options.map(({ title, value }) => (
             <EvlCheckbox
               key={value}
               checked={selectedOptions && selectedOptions.includes(value)}
               onChange={onChange}
               value={value}
               label={title}
-              image={imageSrc && `${imageSrc}/${value}.${imageExt}`}
+              image={imageSrc && `${imageSrc}/${value.toLowerCase()}.${imageExt}`}
               noCheckbox
             />
           ))}
