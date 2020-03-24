@@ -30,7 +30,8 @@ import {
   EvlAutocomplete,
   EvlPaper,
   EvlButtonGroup,
-  EvlFilterPanel
+  EvlFilterPanel,
+  EvlImageThumbnail,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -68,5 +69,6 @@ export {
   EvlAutocomplete,
   EvlPaper,
   EvlButtonGroup,
-  EvlFilterPanel
+  EvlFilterPanel,
+  EvlImageThumbnail,
 };

@@ -88,8 +88,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
   }, [rows]);
 
   const sortedRows = (rows && rows.length && _orderBy(rows, orderBy, order)) || [];
-  const currentRowsToDisplay =
-    (showPagination && sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)) || sortedRows;
+  const currentRowsToDisplay = (showPagination && sortedRows.slice(0, page * rowsPerPage + rowsPerPage)) || sortedRows;
   return (
     <EvlBox className={classes.root}>
       <Paper elevation={0}>
@@ -117,12 +116,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
                 currentRowsToDisplay.map((row: any) => {
                   const isItemSelected = !!_some(selected, row);
                   return (
-                    <TableRow
-                      hover
-                      tabIndex={-1}
-                      key={row.name}
-                      selected={!!selectable && isItemSelected}
-                    >
+                    <TableRow hover tabIndex={-1} key={row.name} selected={!!selectable && isItemSelected}>
                       {!!selectable && (
                         <TableCell>
                           <EvlCheckbox
@@ -137,9 +131,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       {!!RowComponent && <RowComponent {...row} />}
                       {!RowComponent &&
                         Object.keys(row).map((property: string) => (
-                          <TableCell key={property}>
-                            {row[property]}
-                          </TableCell>
+                          <TableCell key={property}>{row[property]}</TableCell>
                         ))}
                     </TableRow>
                   );

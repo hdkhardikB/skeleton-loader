@@ -30,6 +30,7 @@ import EvlTable from './table';
 import EvlPaper from './paper';
 import EvlButtonGroup from './buttongroup';
 import EvlFilterPanel from './filter-panel';
+import EvlImageThumbnail from './image-thumbnail';
 
 export {
   Button,
@@ -63,5 +64,6 @@ export {
   EvlAutocomplete,
   EvlPaper,
   EvlButtonGroup,
-  EvlFilterPanel
+  EvlFilterPanel,
+  EvlImageThumbnail,
 };
