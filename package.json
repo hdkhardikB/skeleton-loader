@@ -10,7 +10,7 @@
     "build": "npm run clean-lib && npm run build-lib",
     "build-lib-watch": "ttsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s public -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "npm run build-lib"
   },
@@ -22,11 +22,13 @@
     "@material-ui/lab": "4.0.0-alpha.45",
     "@material-ui/pickers": "3.2.10",
     "@types/lodash": "4.14.149",
+    "@types/react-pdf": "4.0.3",
     "classnames": "2.2.6",
     "date-fns": "2.10.0",
     "evl-types-ui": "git+ssh://git@bitbucket.org:everledger/evl-types-ui.git#master",
     "formik": "2.1.4",
-    "lodash": "4.17.15"
+    "lodash": "4.17.15",
+    "react-pdf": "4.1.0"
   },
   "peerDependencies": {
     "react": "16.13.0",
