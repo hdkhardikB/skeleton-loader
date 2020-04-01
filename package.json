@@ -1,6 +1,6 @@
 {
   "name": "evl-ui-components",
-  "version": "1.0.6",
+  "version": "1.0.0-alpha.0",
   "description": "Everledger UI Component Library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "storybook": "start-storybook -s public -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "npm run build-lib"
+    "prepublishOnly": "npm run build-lib"
   },
   "license": "MIT",
   "dependencies": {
@@ -25,7 +25,7 @@
     "@types/react-pdf": "4.0.3",
     "classnames": "2.2.6",
     "date-fns": "2.10.0",
-    "evl-types-ui": "git+ssh://git@bitbucket.org:everledger/evl-types-ui.git#master",
+    "evl-types-ui": "~1.0.0-alpha.0",
     "formik": "2.1.4",
     "lodash": "4.17.15",
     "react-pdf": "4.1.0"
@@ -75,5 +75,6 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "publishConfig":{"registry":"http://192.168.0.2:4873"}
 }

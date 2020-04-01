@@ -9,3 +9,4 @@ assets/*.*
 *.yml
 *.sh
 Dockerfile
+src/
