@@ -32,12 +32,18 @@ definitions:
           - mv .npmrc_config .npmrc 
           - npm publish
     - step: &build-storybook
-      name: Build storybook and Deploy
+      name: Build storybook
       script:
         - set -eu
         - apk add --no-cache py-pip bash curl
+        - mv .npmrc_config .npmrc
         - chmod 755 push-docker-image-to-registry.sh
-        - ./push-docker-image-to-registry.sh $BITBUCKET_BUILD_NUMBER
+        - ./push-docker-image-to-registry.sh
+      services:
+          - docker   
+    - step: &deploy-storybook 
+      name: Deploy storybook
+      script:   
         - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
         - chmod +x ./kubectl
         - mv ./kubectl /usr/local/bin/kubectl
@@ -54,15 +60,15 @@ definitions:
 pipelines:
   default:
     - step: *build
+    - step: *build-storybook
   branches:
     develop:            
         - step: *build
         - step:     
             <<: *prerelease-publish
             deployment: test
-        - step: 
-            <<: *build-storybook
-            deployment: test    
+        - step: *build-storybook
+        - step: *deploy-storybook  
     master:               
         - step: *build
         - step:     

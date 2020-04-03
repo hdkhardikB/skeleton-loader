@@ -3,6 +3,6 @@ RUN apt-get update
 RUN mkdir /app
 COPY . /app/
 WORKDIR /app
-RUN yarn && yarn build-storybook
+RUN npm install && npm run build-storybook
 EXPOSE 6006
-CMD yarn start-storybook -p 6006
+CMD npm run start-storybook -p 6006
