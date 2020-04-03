@@ -11,7 +11,7 @@ export interface EvlRangeSliderProps extends Omit<SliderProps, 'onChange'>  {
   label?: string;
   error?: string;
   valueText?: string;
-  onChange: (event: React.ChangeEvent<{}>, newValue: number | number[]) => void;
+  onChange?: (event: React.ChangeEvent<{}>, newValue: number | number[]) => void;
 }
 
 export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ value, label, valueText, error, ...props }) => {
