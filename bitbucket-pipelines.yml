@@ -33,7 +33,6 @@ definitions:
           - npm publish
     - step: &build-storybook
       name: Build storybook and Deploy
-      image: docker:stable
       script:
         - set -eu
         - apk add --no-cache py-pip bash curl
