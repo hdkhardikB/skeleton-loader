@@ -5,7 +5,7 @@ tslint.json
 *.log
 .vscode
 storybook-static
-assets/*.*
+assets/
 *.yml
 *.sh
 Dockerfile
