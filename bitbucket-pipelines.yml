@@ -3,7 +3,7 @@ image: atlassian/default-image:2
 definitions:
   services:
     docker:
-      memory: 7128
+      memory: 3072
   steps:
     - step: &build
         name: Install & Build
@@ -35,7 +35,6 @@ definitions:
     - step: &build-storybook
         name: Build storybook
         image: docker:stable
-        size: 2x
         cache:
           - node
           - docker
@@ -49,7 +48,6 @@ definitions:
           - docker   
     - step: &deploy-storybook 
         name: Deploy storybook
-        size: 2x
         script:   
           - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
           - chmod +x ./kubectl
@@ -66,7 +64,7 @@ definitions:
          - docker      
 pipelines:
   default:
-    - step: *build-storybook
+    - step: *build
   branches:
     develop:            
         - step: *build
