@@ -74,6 +74,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "publishConfig":{"registry":"http://192.168.0.2:4873"}
+  }
 }

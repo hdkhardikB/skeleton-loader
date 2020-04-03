@@ -10,3 +10,5 @@ assets/*.*
 *.sh
 Dockerfile
 src/
+.yarnrc
+public/
