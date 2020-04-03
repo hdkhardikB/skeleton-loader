@@ -61,8 +61,7 @@ definitions:
          - docker      
 pipelines:
   default:
-    - step: *build-storybook
-    - step: *deploy-storybook
+    - step: *build
   branches:
     develop:            
         - step: *build
