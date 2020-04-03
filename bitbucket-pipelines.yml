@@ -34,6 +34,7 @@ definitions:
           - npm publish
     - step: &build-storybook
         name: Build storybook
+        image: docker:stable
         script:
           - set -eu
           - apk add --no-cache py-pip bash curl
@@ -60,8 +61,8 @@ definitions:
          - docker      
 pipelines:
   default:
-    - step: *build
     - step: *build-storybook
+    - step: *deploy-storybook
   branches:
     develop:            
         - step: *build
