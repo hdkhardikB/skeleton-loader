@@ -9,3 +9,6 @@ assets/*.*
 *.yml
 *.sh
 Dockerfile
+src/
+.yarnrc
+public/

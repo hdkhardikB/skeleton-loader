@@ -15,7 +15,7 @@ export const EvlFormRangeSlider: React.FC<EvlFormRangeSliderProps> = ({ name, ..
         name={field.name}
         error={meta.error}
         value={field.value}
-        onChange={(event: any, newValue: number | number[]) => form.setValue(newValue)}
+        onChange={(event: React.ChangeEvent<{}>, newValue: number | number[]) => form.setValue(newValue)}
         {...props}
       />
     </>
