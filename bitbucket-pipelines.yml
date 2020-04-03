@@ -3,7 +3,7 @@ image: atlassian/default-image:2
 definitions:
   services:
     docker:
-      memory: 2048
+      memory: 3072
   steps:
     - step: &build
         name: Install & Build
@@ -35,6 +35,9 @@ definitions:
     - step: &build-storybook
         name: Build storybook
         image: docker:stable
+        cache:
+          - node
+          - docker
         script:
           - set -eu
           - apk add --no-cache py-pip bash curl

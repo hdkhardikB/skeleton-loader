@@ -12,3 +12,5 @@ Dockerfile
 src/
 .yarnrc
 public/
+.storybook/
+*.yaml
