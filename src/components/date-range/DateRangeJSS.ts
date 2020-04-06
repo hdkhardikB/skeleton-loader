@@ -10,6 +10,7 @@ const useStyles = makeStyles(
       },
       datePicker: {
         margin: theme.spacing(0),
+        zIndex: 0,
       },
     }),
   { name: 'evlDateRange', defaultTheme: EvlTheme },
