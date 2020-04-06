@@ -3,11 +3,11 @@ image: atlassian/default-image:2
 definitions:
   services:
     docker:
-      memory: 3072
+      memory: 7128
   steps:
     - step: &build
         name: Install & Build
-        image: node:latest
+        image: node:10.15.3
         cache:
           - node
         script:
@@ -18,7 +18,7 @@ definitions:
           - lib/**
     - step: &prerelease-publish
         name: Increment prerelease version and create tag
-        image: node:latest
+        image: node:10.15.3
         script:
           - npm version prerelease -m "Upgrade to %s [skip ci]"
           - git push && git push --tags
@@ -26,18 +26,16 @@ definitions:
           - npm publish   
     - step: &release-publish
         name: Increment patch version and Publish
-        image: node:latest
+        image: node:10.15.3
         script:
           - npm version patch -m "Upgrade to %s [skip ci]"
           - git push && git push --tags
           - mv .npmrc_config .npmrc 
           - npm publish
     - step: &build-storybook
+        size: 2x
         name: Build storybook
         image: docker:stable
-        cache:
-          - node
-          - docker
         script:
           - set -eu
           - apk add --no-cache py-pip bash curl
@@ -48,7 +46,7 @@ definitions:
           - docker   
     - step: &deploy-storybook 
         name: Deploy storybook
-        script:   
+        script:  
           - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
           - chmod +x ./kubectl
           - mv ./kubectl /usr/local/bin/kubectl
@@ -59,9 +57,7 @@ definitions:
           - kubectl config set-context development --cluster=devx2 --user=default
           - kubectl config use-context development
           # - kubectl get nodes
-          - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops
-        services:
-         - docker      
+          - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops   
 pipelines:
   default:
     - step: *build
