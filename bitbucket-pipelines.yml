@@ -60,8 +60,7 @@ definitions:
           - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops   
 pipelines:
   default:
-    - step: *build-storybook
-    - step: *deploy-storybook
+    - step: *build
   branches:
     develop:            
         - step: *build
