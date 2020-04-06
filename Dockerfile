@@ -10,4 +10,4 @@ RUN npm install && npm run build-storybook
 ENV NPM_TOKEN=${NPM_TOKEN}
 ENV NPM_REGISTRY=${NPM_REGISTRY}
 EXPOSE 6006
-CMD npm run start-storybook -p 6006
+CMD npm run storybook
