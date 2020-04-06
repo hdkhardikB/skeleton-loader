@@ -35,7 +35,6 @@ definitions:
     - step: &build-storybook
         name: Build storybook
         image: docker:stable
-        st
         script:
           - set -eu
           - apk add --no-cache py-pip bash curl
