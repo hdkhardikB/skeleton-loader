@@ -3,7 +3,7 @@ image: atlassian/default-image:2
 definitions:
   services:
     docker:
-      memory: 4096
+      memory: 3072
   steps:
     - step: &build
         name: Install & Build
@@ -33,6 +33,7 @@ definitions:
           - mv .npmrc_config .npmrc 
           - npm publish
     - step: &build-storybook
+        size: 2x
         name: Build storybook
         image: docker:stable
         script:
