@@ -3,7 +3,7 @@ image: atlassian/default-image:2
 definitions:
   services:
     docker:
-      memory: 3072
+      memory: 7128
   steps:
     - step: &build
         name: Install & Build
@@ -33,7 +33,7 @@ definitions:
           - mv .npmrc_config .npmrc 
           - npm publish
     - step: &build-storybook
-  #      size: 2x
+        size: 2x
         name: Build storybook
         image: docker:stable
         script:
@@ -57,11 +57,7 @@ definitions:
           - kubectl config set-context development --cluster=devx2 --user=default
           - kubectl config use-context development
           # - kubectl get nodes
-          - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops
-definitions:
-  services:
-    docker:
-      memory: 3072     
+          - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops   
 pipelines:
   default:
     - step: *build-storybook
