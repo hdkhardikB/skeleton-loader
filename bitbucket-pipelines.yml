@@ -7,7 +7,7 @@ definitions:
   steps:
     - step: &build
         name: Install & Build
-        image: node:latest
+        image: node:10.15.3
         cache:
           - node
         script:
@@ -18,7 +18,7 @@ definitions:
           - lib/**
     - step: &prerelease-publish
         name: Increment prerelease version and create tag
-        image: node:latest
+        image: node:10.15.3
         script:
           - npm version prerelease -m "Upgrade to %s [skip ci]"
           - git push && git push --tags
@@ -26,7 +26,7 @@ definitions:
           - npm publish   
     - step: &release-publish
         name: Increment patch version and Publish
-        image: node:latest
+        image: node:10.15.3
         script:
           - npm version patch -m "Upgrade to %s [skip ci]"
           - git push && git push --tags
@@ -35,9 +35,6 @@ definitions:
     - step: &build-storybook
         name: Build storybook
         image: docker:stable
-        cache:
-          - node
-          - docker
         script:
           - set -eu
           - apk add --no-cache py-pip bash curl
@@ -64,7 +61,8 @@ definitions:
          - docker      
 pipelines:
   default:
-    - step: *build
+    - step: *build-storybook
+    - step: *deploy-storybook
   branches:
     develop:            
         - step: *build

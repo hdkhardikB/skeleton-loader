@@ -1,9 +1,8 @@
-FROM node:lts
+FROM mhart/alpine-node:latest
 
 ARG NPM_TOKEN
 ARG NPM_REGISTRY
 
-RUN apt-get update 
 RUN mkdir /app
 COPY . /app/
 WORKDIR /app
