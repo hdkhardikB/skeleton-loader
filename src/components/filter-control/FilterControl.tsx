@@ -65,7 +65,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={
             //@ts-ignore
-            (event: any, newValue: number | number[]) => {
+            (event: React.ChangeEvent<{}>, newValue: number | number[]) => {
               onChange({
                 ...selectedFilters,
                 [filterProperty]: newValue as number[],
