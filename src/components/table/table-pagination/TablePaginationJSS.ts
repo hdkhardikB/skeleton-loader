@@ -18,14 +18,28 @@ const useStyles = makeStyles(
         width: '30%',
       },
       paginationLabel: {
-        fontSize: theme.spacing(1.4)
+        fontSize: theme.spacing(1.4),
       },
       paginationButton: {
+        cursor: 'pointer',
+        backgroundColor: 'transparent',
+        color: theme.palette.primary.light,
+        borderColor: theme.palette.primary.light,
+        borderWidth: theme.spacing(0.1),
+        borderStyle: 'solid',
         borderRadius: theme.shape.borderRadius * 5,
+        padding: theme.spacing(0.5, 1.5),
         fontWeight: 700,
         textTransform: 'capitalize',
-        width: 'auto'
-      }
+        minWidth: 'inherit',
+        fontSize: theme.spacing(1.4),
+        width: 'auto',
+
+        '&:hover': {
+          backgroundColor: theme.palette.primary.light,
+          color: theme.palette.common.white,
+        },
+      },
     }),
   { name: 'evlTablePagination', defaultTheme: EvlTheme },
 );
