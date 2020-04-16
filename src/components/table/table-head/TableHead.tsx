@@ -51,10 +51,10 @@ const EvlTableHead: React.FC<EvlTableHeadProps> = ({
             />
           </TableCell>
         )}
-        {columns.map(({ name, title, options }: any) => (
+        {columns.map(({ name, title, options }: any, index: number) => (
           <TableCell
             className={classes.TableCell}
-            key={name}
+            key={`name_${index}`}
             align="left"
             padding="default"
             sortDirection={orderBy === name ? order : false}
