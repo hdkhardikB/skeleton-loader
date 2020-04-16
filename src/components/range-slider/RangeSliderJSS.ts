@@ -7,7 +7,6 @@ const useStyles = makeStyles(
     createStyles({
       root: {
         width: theme.spacing(30),
-        paddingTop: theme.spacing(3),
 
         '& .MuiSlider-root': {
           padding: theme.spacing(0),

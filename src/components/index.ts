@@ -31,6 +31,8 @@ import EvlPaper from './paper';
 import EvlButtonGroup from './buttongroup';
 import EvlFilterPanel from './filter-panel';
 import EvlImageThumbnail from './image-thumbnail';
+import EvlTabs from './tabs';
+import EvlTab from './tab';
 
 export {
   Button,
@@ -66,4 +68,6 @@ export {
   EvlButtonGroup,
   EvlFilterPanel,
   EvlImageThumbnail,
+  EvlTabs,
+  EvlTab
 };
