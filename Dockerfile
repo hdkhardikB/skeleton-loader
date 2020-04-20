@@ -1,8 +1,12 @@
-FROM node:lts
-RUN apt-get update 
+FROM mhart/alpine-node:latest
+
+ARG NPM_TOKEN
+ARG NPM_REGISTRY
+
 RUN mkdir /app
 COPY . /app/
 WORKDIR /app
-RUN yarn && yarn build-storybook
-EXPOSE 6006
-CMD yarn start-storybook -p 6006
+RUN npm install
+ENV NPM_TOKEN=${NPM_TOKEN}
+ENV NPM_REGISTRY=${NPM_REGISTRY}
+CMD npm run storybook

@@ -13,6 +13,7 @@ export interface EvlFilterPanelProps {
   filterIcon: string;
   closeIcon: string;
   filterApplied?: boolean;
+  filterAppliedIcon?: string;
 }
 
 export const EvlFilterPanel: React.FC<EvlFilterPanelProps> = ({
@@ -22,6 +23,7 @@ export const EvlFilterPanel: React.FC<EvlFilterPanelProps> = ({
   closeIcon,
   children,
   filterApplied,
+  filterAppliedIcon,
 }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState<boolean>(false);
@@ -39,7 +41,7 @@ export const EvlFilterPanel: React.FC<EvlFilterPanelProps> = ({
       >
         <EvlButton size="large" type="button">
           <EvlBox component="figure" className={classes.figure}>
-            <img src={(expanded && closeIcon) || filterIcon} alt="" />
+            <img src={(expanded && closeIcon) || (filterApplied && filterAppliedIcon) || filterIcon} alt="" />
           </EvlBox>
           {(expanded && closeText) || filterText}
         </EvlButton>

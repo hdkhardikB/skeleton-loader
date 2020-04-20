@@ -32,6 +32,8 @@ import {
   EvlButtonGroup,
   EvlFilterPanel,
   EvlImageThumbnail,
+  EvlTabs,
+  EvlTab
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -71,4 +73,6 @@ export {
   EvlButtonGroup,
   EvlFilterPanel,
   EvlImageThumbnail,
+  EvlTabs,
+  EvlTab
 };
