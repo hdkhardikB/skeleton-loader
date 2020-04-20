@@ -33,7 +33,8 @@ import {
   EvlFilterPanel,
   EvlImageThumbnail,
   EvlTabs,
-  EvlTab
+  EvlTab,
+  EvlPanel
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -74,5 +75,6 @@ export {
   EvlFilterPanel,
   EvlImageThumbnail,
   EvlTabs,
-  EvlTab
+  EvlTab,
+  EvlPanel
 };

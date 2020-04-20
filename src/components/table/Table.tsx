@@ -29,6 +29,8 @@ interface EvlTableProps {
     loadMoreLabel?: string;
     currentlyShowingLabel?: string;
     recordLabel?: string;
+    onLoadMore?: (skipIndex: number,rowsPerPage: number) => void
+    totalNoOfRows?: number;
   };
 }
 
@@ -53,10 +55,13 @@ const EvlTable: React.FC<EvlTableProps> = ({
     loadMoreLabel = 'Load More',
     currentlyShowingLabel = 'Currently Showing',
     recordLabel = 'Records',
+    totalNoOfRows = rows.length,
+    onLoadMore
   } = pagination || {};
 
   const handleChangePage = (newPage: number) => {
     setPage(newPage);
+    onLoadMore && onLoadMore(page * rowsPerPage + rowsPerPage, rowsPerPage); 
   };
 
   const handleRequestSort = (property: string) => {
@@ -141,7 +146,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
         </TableContainer>
         {!!showPagination && !!sortedRows.length && (
           <EvlTablePagination
-            count={rows.length}
+            count={totalNoOfRows}
             page={page}
             onChangePage={handleChangePage}
             rowsPerPage={rowsPerPage}

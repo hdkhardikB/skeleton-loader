@@ -33,6 +33,7 @@ import EvlFilterPanel from './filter-panel';
 import EvlImageThumbnail from './image-thumbnail';
 import EvlTabs from './tabs';
 import EvlTab from './tab';
+import EvlPanel from './panel';
 
 export {
   Button,
@@ -69,5 +70,6 @@ export {
   EvlFilterPanel,
   EvlImageThumbnail,
   EvlTabs,
-  EvlTab
+  EvlTab,
+  EvlPanel
 };
