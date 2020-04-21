@@ -1,6 +1,6 @@
 {
   "name": "evl-ui-components",
-  "version": "1.0.0-alpha.9",
+  "version": "1.0.0-alpha.10",
   "description": "Everledger UI Component Library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
