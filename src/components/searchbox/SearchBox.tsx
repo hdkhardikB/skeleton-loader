@@ -8,25 +8,22 @@ import ClearIcon from '@material-ui/icons/Clear';
 
 export interface EvlSearchBoxProps {
   onSearch: (text: string) => void;
-  minCharForSearch: number | 3;
   placeholder: string;
 }
 /** Customized Everledger SearchBox which is based on
  * material-ui https://material-ui.com/api/input-base/#inputbase-api */
-export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, minCharForSearch, placeholder }) => {
+export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, placeholder }) => {
   const classes = useStyles();
-  const [text, setText] = React.useState('');
+  const [text, setText] = React.useState<string>('');
   const [clear, setClear] = React.useState(false);
 
   React.useEffect(() => {
     setClear(!!text);
-    if (text && text.length > minCharForSearch) {
-      onSearch && onSearch(text);
-    }
+    onSearch && onSearch(text);
   }, [text]);
 
   const handleInput = (e: any) => {
-    setText(e.target.value);
+    setText(e.target.value as string);
   };
 
   return (
@@ -42,10 +39,6 @@ export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, minCharFor
       )}
     </Paper>
   );
-};
-
-EvlSearchBox.defaultProps = {
-  minCharForSearch: 3,
 };
 
 export default EvlSearchBox;
