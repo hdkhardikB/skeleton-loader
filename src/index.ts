@@ -34,7 +34,15 @@ import {
   EvlImageThumbnail,
   EvlTabs,
   EvlTab,
-  EvlPanel
+  EvlPanel,
+  EvlHidden,
+  EvlDrawer,
+  EvlDivider,
+  EvlList,
+  EvlListItem,
+  EvlListItemText,
+  EvlMenu,
+  EvlMenuItem,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -76,5 +84,13 @@ export {
   EvlImageThumbnail,
   EvlTabs,
   EvlTab,
-  EvlPanel
+  EvlPanel,
+  EvlHidden,
+  EvlDrawer,
+  EvlDivider,
+  EvlList,
+  EvlListItem,
+  EvlListItemText,
+  EvlMenu,
+  EvlMenuItem,
 };

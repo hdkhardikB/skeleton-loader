@@ -4,4 +4,4 @@ import { EvlAlert } from '@components';
 
 const stories = storiesOf('EvlAlert', module);
 
-stories.add('dummy', () => <EvlAlert />);
+stories.add('dummy', () => <EvlAlert message="There is some error" />);

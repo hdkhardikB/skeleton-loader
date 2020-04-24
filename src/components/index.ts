@@ -34,6 +34,14 @@ import EvlImageThumbnail from './image-thumbnail';
 import EvlTabs from './tabs';
 import EvlTab from './tab';
 import EvlPanel from './panel';
+import EvlHidden from './hidden';
+import EvlDrawer from './drawer';
+import EvlDivider from './divider';
+import EvlList from './list';
+import EvlListItem from './listitem';
+import EvlListItemText from './list-item-text';
+import EvlMenu from './menu';
+import EvlMenuItem from './menu-item';
 
 export {
   Button,
@@ -71,5 +79,13 @@ export {
   EvlImageThumbnail,
   EvlTabs,
   EvlTab,
-  EvlPanel
+  EvlPanel,
+  EvlHidden,
+  EvlDrawer,
+  EvlDivider,
+  EvlList,
+  EvlListItem,
+  EvlListItemText,
+  EvlMenu,
+  EvlMenuItem,
 };
