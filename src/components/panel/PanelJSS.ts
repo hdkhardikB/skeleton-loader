@@ -11,6 +11,14 @@ const useStyles = makeStyles(
         '& .MuiExpansionPanelSummary-root': {
           padding: theme.spacing(0),
         },
+        '& .MuiCollapse-container': {
+          borderBottomWidth: theme.spacing(0.1),
+          borderBottomStyle: 'solid',
+          borderBottomColor: theme.palette.grey.A400,
+        },
+        '&:before': {
+          backgroundColor: theme.palette.grey.A400,
+        },
       },
     }),
   { name: 'evlPanel', defaultTheme: EvlTheme },

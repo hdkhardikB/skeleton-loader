@@ -33,6 +33,15 @@ const useStyles = makeStyles(
           padding: theme.spacing(0.8, 2.5),
           height: theme.spacing(4.8),
         },
+        '&.MuiButton-outlinedSizeLarge': {
+          fontSize: theme.spacing(1.6),
+          padding: theme.spacing(0.8, 2.5),
+          height: theme.spacing(4.8),
+        },
+        '&.MuiButton-outlinedSizeSmall': {
+          padding: theme.spacing(0.2, 1),
+          fontSize: theme.spacing(1.2),
+        },
         '&.MuiButton-textPrimary': {
           backgroundColor: theme.palette.primary.light,
           borderColor: theme.palette.primary.light,
@@ -59,7 +68,7 @@ const useStyles = makeStyles(
         },
         '&.MuiButton-outlined': {
           borderColor: theme.palette.primary.light,
-          borderWidth: theme.spacing(0.15),
+          borderWidth: theme.spacing(0.1),
           borderStyle: 'solid',
           backgroundColor: 'transparent',
           color: theme.palette.primary.light,

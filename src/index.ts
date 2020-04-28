@@ -43,6 +43,8 @@ import {
   EvlListItemText,
   EvlMenu,
   EvlMenuItem,
+  EvlCard,
+  EvlCardContent,
 } from '@components';
 import { EvlTheme, EvlDarkTheme } from '@themes';
 
@@ -93,4 +95,6 @@ export {
   EvlListItemText,
   EvlMenu,
   EvlMenuItem,
+  EvlCard,
+  EvlCardContent,
 };

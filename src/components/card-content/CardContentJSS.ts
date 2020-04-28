@@ -6,10 +6,13 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        display: 'inline-block',
+        padding: theme.spacing(1.5),
+        '&:last-child': {
+          paddingBottom: theme.spacing(1.5),
+        },
       },
     }),
-  { name: 'evlButtonGroup', defaultTheme: EvlTheme },
+  { name: 'evlCardContent', defaultTheme: EvlTheme },
 );
 
 export default useStyles;

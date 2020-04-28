@@ -24,6 +24,10 @@ const useStyles = makeStyles(
         '& .PrivateSwitchBase-root': {
           padding: theme.spacing(0),
         },
+
+        '& .MuiCheckbox-root': {
+          padding: theme.spacing(0),
+        },
       },
       TableSortLabel: {
         fontWeight: 700,

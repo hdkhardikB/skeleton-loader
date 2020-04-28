@@ -120,7 +120,7 @@ const defaultTheme = createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         body: {
-          backgroundColor: '#fff',
+          backgroundColor: '#fbfbfb',
           fontSize: '14px',
           margin: 0,
           fontFamily: 'Lato, sans-serif',
@@ -143,7 +143,7 @@ const defaultTheme = createMuiTheme({
       root: {
         '& .MuiOutlinedInput-root': {
           '&.MuiOutlinedInput-adornedStart': {
-            padding: 0
+            padding: 0,
           },
           '& fieldset': {
             borderWidth: '1px',
