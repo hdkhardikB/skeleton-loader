@@ -1,11 +1,26 @@
 import * as React from 'react';
-import { FilterControl as FilterControlType, Filter } from 'evl-types-ui';
 import EvlMultiCheckbox from '../multi-checkbox';
 import EvlRangeSlider from '../range-slider';
 import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
 import EvlAutoComplete from '../autocomplete';
 
+enum FilterControlType {
+  input,
+  checkbox,
+  multiCheckbox,
+  select,
+  multiSelect,
+  slider,
+  date,
+  search,
+  dateRange,
+  autocomplete,
+}
+
+type Filter = {
+  [key: string]: any;
+};
 export interface EvlFilterControlProps {
   selectedFilters: Filter;
   filterOptions: any;
@@ -77,7 +92,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
           max={Number(max)}
           valueText={filterMeta && filterMeta.valueText}
           aria-labelledby="range-slider"
-          getAriaValueText={(value: number) => `${value} ${filterMeta && filterMeta.valueText || filterProperty}`}
+          getAriaValueText={(value: number) => `${value} ${(filterMeta && filterMeta.valueText) || filterProperty}`}
         />
       );
       break;
