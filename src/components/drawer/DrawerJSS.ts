@@ -11,7 +11,7 @@ const useStyles = makeStyles(
             width: theme.spacing(24),
           },
           borderRight: theme.spacing(0),
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.dark,
         },
       },
     }),

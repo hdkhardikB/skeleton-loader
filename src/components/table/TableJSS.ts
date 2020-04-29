@@ -17,6 +17,10 @@ const useStyles = makeStyles(
           },
         },
       },
+      tablePaper: {
+        backgroundColor: theme.palette.common.white,
+        borderRadius: theme.shape.borderRadius * 3
+      },
     }),
   { name: 'evlTable', defaultTheme: EvlTheme },
 );

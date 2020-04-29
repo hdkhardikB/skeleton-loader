@@ -6,7 +6,7 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        backgroundColor: theme.palette.grey.A400,
+        backgroundColor: theme.palette.grey.A100,
       },
     }),
   { name: 'evlDivider', defaultTheme: EvlTheme },
