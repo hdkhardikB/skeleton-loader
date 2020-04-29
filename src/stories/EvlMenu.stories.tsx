@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { EvlMenu } from '@components';
+import { EvlMenu, EvlMenuItem } from '@components';
 
 const stories = storiesOf('EvlMenu', module);
 
-stories.add('dummy', () => <EvlMenu open></EvlMenu>);
+stories.add('Menu component', () => (
+  <EvlMenu open>
+    <EvlMenuItem>{'Profile'}</EvlMenuItem>
+  </EvlMenu>
+));

@@ -4,4 +4,4 @@ import { EvlDivider } from '@components';
 
 const stories = storiesOf('EvlDivider', module);
 
-stories.add('dummy', () => <EvlDivider />);
+stories.add('Divider component', () => <EvlDivider />);
