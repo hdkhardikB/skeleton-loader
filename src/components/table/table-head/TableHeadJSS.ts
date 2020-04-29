@@ -20,6 +20,10 @@ const useStyles = makeStyles(
           borderTopRightRadius: theme.shape.borderRadius * 4,
           borderBottomRightRadius: theme.shape.borderRadius * 4,
         },
+
+        '& .PrivateSwitchBase-root': {
+          padding: theme.spacing(0),
+        },
       },
       TableSortLabel: {
         fontWeight: 700,
@@ -32,10 +36,10 @@ const useStyles = makeStyles(
         '&:focus': {
           color: theme.palette.primary.main,
         },
-        
+
         '&-active': {
           color: theme.palette.primary.main,
-        }
+        },
       },
     }),
   { name: 'evlTableHead', defaultTheme: EvlTheme },

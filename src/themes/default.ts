@@ -142,6 +142,9 @@ const defaultTheme = createMuiTheme({
     MuiFormControl: {
       root: {
         '& .MuiOutlinedInput-root': {
+          '&.MuiOutlinedInput-adornedStart': {
+            padding: 0
+          },
           '& fieldset': {
             borderWidth: '1px',
             borderStyle: 'solid',
