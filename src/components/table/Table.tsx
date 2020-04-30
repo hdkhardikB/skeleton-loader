@@ -20,7 +20,7 @@ interface EvlTableProps {
     orderBy: string;
     order: 'asc' | 'desc';
   };
-  onSelect?: (selectedIds: string[]) => void;
+  onSelect?: (selected: any[]) => void;
   noDataComponent?: React.ReactType;
   rowComponent?: React.ReactType;
   pagination?: {
@@ -76,7 +76,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
       newSelected = [...rows];
     }
     setSelected(newSelected);
-    onSelect && onSelect(newSelected);
+    !!onSelect && onSelect(newSelected);
   };
 
   const handleClick = (selectedRow: any) => {
@@ -85,12 +85,8 @@ const EvlTable: React.FC<EvlTableProps> = ({
         return !_isMatch(o, selectedRow);
       })) || [...selected, selectedRow];
     setSelected(newSelected);
-    onSelect && onSelect(newSelected);
+    !!onSelect && onSelect(newSelected);
   };
-
-  React.useEffect(() => {
-    setSelected([]);
-  }, [rows]);
 
   const sortedRows = (rows && rows.length && _orderBy(rows, orderBy, order)) || [];
   const currentRowsToDisplay = (showPagination && sortedRows.slice(0, page * rowsPerPage + rowsPerPage)) || sortedRows;

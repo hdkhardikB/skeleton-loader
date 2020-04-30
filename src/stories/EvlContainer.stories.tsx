@@ -4,4 +4,4 @@ import { EvlContainer } from '@components';
 
 const stories = storiesOf('EvlContainer', module);
 
-stories.add('dummy', () => <EvlContainer />);
+stories.add('Container component', () => <EvlContainer />);

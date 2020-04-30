@@ -4,4 +4,4 @@ import { EvlBox } from '@components';
 
 const stories = storiesOf('EvlBox', module);
 
-stories.add('dummy', () => <EvlBox />);
+stories.add('Box component', () => <EvlBox />);
