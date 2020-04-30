@@ -5,7 +5,7 @@ import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
 import EvlAutoComplete from '../autocomplete';
 
-enum FilterControlType {
+enum FilterControl {
   input,
   checkbox,
   multiCheckbox,
@@ -24,9 +24,9 @@ type Filter = {
 export interface EvlFilterControlProps {
   selectedFilters: Filter;
   filterOptions: any;
-  filterType: FilterControlType;
+  filterType: FilterControl;
   filterProperty: string;
-  filterMeta: {
+  filterMeta?: {
     [key: string]: any;
   };
   onChange: (filters: Filter) => void;
@@ -43,7 +43,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
   // const classes = useStyles();
   let filterControl = null;
   switch (filterType) {
-    case FilterControlType.multiCheckbox: {
+    case FilterControl.multiCheckbox: {
       const selectedFilterValues = selectedFilters[filterProperty] || [];
       filterControl = (
         <EvlMultiCheckbox
@@ -72,7 +72,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       );
       break;
     }
-    case FilterControlType.slider: {
+    case FilterControl.slider: {
       const [min, max] = filterOptions;
       filterControl = (
         <EvlRangeSlider
@@ -97,7 +97,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       );
       break;
     }
-    case FilterControlType.select: {
+    case FilterControl.select: {
       filterControl = (
         <EvlSelect
           value={selectedFilters[filterProperty] || ''}
@@ -114,7 +114,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       );
       break;
     }
-    case FilterControlType.autocomplete: {
+    case FilterControl.autocomplete: {
       filterControl = (
         <EvlAutoComplete
           options={filterOptions}
@@ -128,14 +128,14 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       );
       break;
     }
-    case FilterControlType.dateRange: {
+    case FilterControl.dateRange: {
       const [min, max] = filterOptions;
       filterControl = (
         <EvlDateRange
           minDate={new Date(min)}
           maxDate={new Date(max)}
-          startLabel={filterMeta.startLabel}
-          endLabel={filterMeta.endLabel}
+          startLabel={filterMeta!.startLabel}
+          endLabel={filterMeta!.endLabel}
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={dateRange => {
             onChange({
