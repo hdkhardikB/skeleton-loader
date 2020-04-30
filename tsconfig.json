@@ -29,7 +29,7 @@
       "@assets":["assets"],
       "@assets/*":["assets/*"]
     },
-    "plugins": [{ "transform": "ts-transformer-imports" }]
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
   "include": ["src/**/*","assets/**/*"],
   "exclude": ["node_modules", "src/stories/**/*" ]
