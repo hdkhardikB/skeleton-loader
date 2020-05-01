@@ -4,4 +4,4 @@ import { EvlHidden } from '@components';
 
 const stories = storiesOf('EvlHidden', module);
 
-stories.add('dummy', () => <EvlHidden />);
+stories.add('Hidden component', () => <EvlHidden />);

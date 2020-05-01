@@ -4,4 +4,4 @@ import { EvlMenuItem } from '@components';
 
 const stories = storiesOf('EvlMenuItem', module);
 
-stories.add('dummy', () => <EvlMenuItem />);
+stories.add('Menu item component', () => <EvlMenuItem>{'Profile'}</EvlMenuItem>);
