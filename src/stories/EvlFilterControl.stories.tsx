@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { EvlFilterControl } from '@components';
-import { FilterControl, FilterReferenceData } from 'evl-types-ui';
+import EvlFilterControl, {FilterControl} from '@components/filter-control';
+
 
 const stories = storiesOf('EvlFilterControl', module);
 
-const filtersData: FilterReferenceData = {
+const filtersData = {
   weight: {
     data: [0, 1],
     control: FilterControl.slider,

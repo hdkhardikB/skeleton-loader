@@ -5,7 +5,7 @@ import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
 import EvlAutoComplete from '../autocomplete';
 
-enum FilterControl {
+export enum FilterControl {
   input,
   checkbox,
   multiCheckbox,
