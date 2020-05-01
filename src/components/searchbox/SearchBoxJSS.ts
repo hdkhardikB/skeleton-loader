@@ -8,15 +8,28 @@ const useStyles = makeStyles(
       root: {
         display: 'flex',
         alignItems: 'center',
-        width: 400,
-        backgroundColor: theme.palette.grey.A200,
-      },
-      input: {
-        marginLeft: theme.spacing(1),
-        flex: 1,
+        boxShadow: 'none',
+        borderWidth: theme.spacing(0.1),
+        borderStyle: 'solid',
+        borderColor: theme.palette.grey.A400,
+        borderRadius: theme.shape.borderRadius * 5,
+        backgroundColor: theme.palette.common.white,
+
+        '& input': {
+          marginLeft: theme.spacing(1),
+          flex: 1,
+        },
+
+        '& .MuiIconButton-root.Mui-disabled': {
+          color: theme.palette.secondary.main,
+        },
       },
       iconButton: {
         padding: theme.spacing(1),
+        color: theme.palette.secondary.main,
+      },
+      iconClose: {
+        marginLeft: 'auto',
       },
     }),
   { name: 'evlSearchBox', defaultTheme: EvlTheme },

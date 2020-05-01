@@ -5,6 +5,7 @@ import useStyles from './SearchBoxJSS';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import ClearIcon from '@material-ui/icons/Clear';
+import clsx from 'classnames';
 
 export interface EvlSearchBoxProps {
   onSearch: (text: string) => void;
@@ -31,9 +32,14 @@ export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, placeholde
       <IconButton disabled className={classes.iconButton} aria-label="menu">
         <SearchIcon />
       </IconButton>
-      <InputBase onChange={handleInput} placeholder={placeholder} className={classes.input} value={text} />
+      <InputBase onChange={handleInput} placeholder={placeholder} value={text} />
       {clear && (
-        <IconButton type="button" className={classes.iconButton} aria-label="search" onClick={() => setText('')}>
+        <IconButton
+          type="button"
+          className={clsx(classes.iconButton, classes.iconClose)}
+          aria-label="search"
+          onClick={() => setText('')}
+        >
           <ClearIcon />
         </IconButton>
       )}

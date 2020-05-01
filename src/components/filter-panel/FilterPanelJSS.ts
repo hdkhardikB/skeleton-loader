@@ -7,6 +7,7 @@ const useStyles = makeStyles(
     createStyles({
       root: {
         textAlign: 'right',
+        backgroundColor: 'transparent',
 
         '& .MuiExpansionPanelSummary-root': {
           padding: theme.spacing(0),
@@ -20,10 +21,10 @@ const useStyles = makeStyles(
           color: theme.palette.primary.light,
         },
         '& .MuiExpansionPanelSummary-content': {
-          margin: theme.spacing(1.5, 0),
+          margin: theme.spacing(0),
         },
         '& .MuiExpansionPanelSummary-content.Mui-expanded': {
-          margin: theme.spacing(1.5, 0),
+          margin: theme.spacing(0),
 
           '& .MuiButtonBase-root': {
             backgroundColor: theme.palette.primary.light,

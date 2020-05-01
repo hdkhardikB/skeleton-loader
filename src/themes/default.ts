@@ -1,28 +1,41 @@
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
+const palette = {
+  primary: {
+    light: '#2D6380',
+    main: '#1C415C',
+    dark: '#101A35',
+    contrastText: '#fff',
+  },
+  secondary: {
+    light: '#FBFBFB',
+    main: '#6990A7',
+    dark: '#172446',
+    contrastText: '#fff',
+  },
+  common: {
+    black: '#000',
+    white: '#fff',
+  },
+  error: {
+    main: 'rgba(235, 87, 87, 1)',
+    light: 'rgba(235, 87, 87, 1)',
+  },
+  grey: {
+    50: '#F2F2F2',
+    A100: 'rgba(152, 175, 183, 0.3)',
+    A200: '#F5F7F8',
+    A400: '#E4E8EC',
+    A700: 'rgba(45, 99, 128, 0.05)',
+  },
+};
+
+const spacing = 10;
+
 /** Everledger Default's Theme */
 const defaultTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#1C415C',
-      light: '#2D6380',
-    },
-    secondary: {
-      main: '#6990A7',
-      light: '#F4F7F9',
-    },
-    error: {
-      main: 'rgba(235, 87, 87, 1)',
-      light: 'rgba(235, 87, 87, 1)',
-    },
-    grey: {
-      50: '#F2F2F2',
-      A100: 'rgba(152, 175, 183, 0.3)',
-      A200: '#F5F7F8',
-      A400: 'rgba(45, 99, 128, 0.2)',
-      A700: 'rgba(45, 99, 128, 0.05)',
-    },
-  },
+  palette,
+  spacing,
   typography: {
     fontFamily: 'Lato, sans-serif',
 
@@ -112,7 +125,6 @@ const defaultTheme = createMuiTheme({
       letterSpacing: 0,
     },
   },
-  spacing: 10,
   shape: {
     borderRadius: 2,
   },
@@ -120,13 +132,13 @@ const defaultTheme = createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         body: {
-          backgroundColor: '#fff',
-          fontSize: '14px',
-          margin: 0,
+          backgroundColor: palette.secondary.light,
+          fontSize: spacing * 1.4,
+          margin: spacing * 0,
           fontFamily: 'Lato, sans-serif',
           lineHeight: 1.5,
-          letterSpacing: 0,
-          color: '#6990A7',
+          letterSpacing: spacing * 0,
+          color: palette.secondary.main,
         },
         a: {
           textDecoration: 'none',
@@ -134,50 +146,53 @@ const defaultTheme = createMuiTheme({
         },
         label: {
           fontWeight: 700,
-          fontSize: `16px`,
-          color: '#1C415C',
+          fontSize: spacing * 1.6,
+          color: palette.primary.main,
         },
       },
     },
     MuiFormControl: {
       root: {
         '& .MuiOutlinedInput-root': {
+          '&.MuiOutlinedInput-adornedStart': {
+            padding: spacing * 0,
+          },
           '& fieldset': {
-            borderWidth: '1px',
+            borderWidth: spacing * 0.1,
             borderStyle: 'solid',
             borderColor: `rgba(45, 99, 128, 0.2)`,
             borderRadius: 2 * 5,
-            backgroundColor: '#fff',
+            backgroundColor: palette.common.white,
             zIndex: -2,
           },
           '&:hover fieldset': {
-            borderWidth: '1px',
+            borderWidth: spacing * 0.1,
             borderStyle: 'solid',
             borderColor: `rgba(45, 99, 128, 1)`,
             borderRadius: 2 * 5,
           },
           '&.Mui-focused fieldset': {
-            borderWidth: '1px',
+            borderWidth: spacing * 0.1,
             borderStyle: 'solid',
-            borderColor: `#1C415C`,
+            borderColor: palette.primary.main,
             borderRadius: 2 * 5,
           },
           '&.MuiOutlinedInput-notchedOutline fieldset': {
             borderWidth: '1px !important',
-            borderColor: `#1C415C`,
+            borderColor: palette.primary.main,
             borderStyle: 'solid',
             borderRadius: 2 * 5,
-            color: '#6990A7',
+            color: palette.secondary.main,
           },
           '&.Mui-error fieldset': {
             borderWidth: '1px !important',
-            borderColor: `rgba(235, 87, 87, 1)`,
+            borderColor: palette.error.main,
             borderStyle: 'solid',
             borderRadius: 2 * 5,
           },
         },
         '& .MuiOutlinedInput-adornedEnd': {
-          padding: 0,
+          padding: spacing * 0,
         },
         '&.MuiSelect-select:focus': {
           backgroundColor: 'transparent',
@@ -186,7 +201,7 @@ const defaultTheme = createMuiTheme({
     },
     MuiInputBase: {
       root: {
-        color: '#6990A7',
+        color: palette.secondary.main,
       },
     },
     MuiTextField: {
@@ -194,16 +209,16 @@ const defaultTheme = createMuiTheme({
         color: 'red',
         margin: '16px 0px',
         width: '100%',
-        border: `0px`,
+        border: spacing * 0,
       },
     },
     MuiInputLabel: {
       root: {
         '&.Mui-focused': {
-          color: '#1C415C',
+          color: palette.primary.main,
         },
         '&.Mui-error': {
-          color: 'rgba(235, 87, 87, 1)',
+          color: palette.error.main,
         },
       },
     },
