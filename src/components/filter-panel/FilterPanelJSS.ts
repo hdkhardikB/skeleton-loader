@@ -6,17 +6,14 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        textAlign: 'right',
         backgroundColor: 'transparent',
 
         '& .MuiExpansionPanelSummary-root': {
           padding: theme.spacing(0),
           width: 'auto',
-          marginLeft: 'auto',
           display: 'inline-block',
         },
         '& .MuiButtonBase-root': {
-          marginLeft: 'auto',
           backgroundColor: 'transparent',
           color: theme.palette.primary.light,
         },

@@ -5,15 +5,7 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {
-        '& .MuiDrawer-paper': {
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(24),
-          },
-          borderRight: theme.spacing(0),
-          backgroundColor: theme.palette.primary.dark,
-        },
-      },
+      root: {},
     }),
   { name: 'evlDrawer', defaultTheme: EvlTheme },
 );
