@@ -5,7 +5,9 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
+      root: {
+        display: 'inline-block',
+      },
     }),
   { name: 'evlButtonGroup', defaultTheme: EvlTheme },
 );

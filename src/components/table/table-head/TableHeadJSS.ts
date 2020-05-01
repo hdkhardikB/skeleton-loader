@@ -8,7 +8,7 @@ const useStyles = makeStyles(
       root: {},
       TableCell: {
         padding: theme.spacing(1.5),
-        backgroundColor: theme.palette.secondary.light,
+        backgroundColor: theme.palette.grey.A400,
         borderBottom: 0,
 
         '&:first-child': {
@@ -22,6 +22,10 @@ const useStyles = makeStyles(
         },
 
         '& .PrivateSwitchBase-root': {
+          padding: theme.spacing(0),
+        },
+
+        '& .MuiCheckbox-root': {
           padding: theme.spacing(0),
         },
       },

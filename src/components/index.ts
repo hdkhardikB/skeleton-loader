@@ -42,6 +42,8 @@ import EvlListItem from './listitem';
 import EvlListItemText from './list-item-text';
 import EvlMenu from './menu';
 import EvlMenuItem from './menu-item';
+import EvlCard from './card';
+import EvlCardContent from './card-content';
 
 export {
   Button,
@@ -88,4 +90,6 @@ export {
   EvlListItemText,
   EvlMenu,
   EvlMenuItem,
+  EvlCard,
+  EvlCardContent,
 };

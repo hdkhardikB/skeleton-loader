@@ -6,16 +6,13 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        '& .MuiDrawer-paper': {
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(24),
-          },
-          borderRight: theme.spacing(0),
-          backgroundColor: theme.palette.primary.dark,
+        padding: theme.spacing(1.5),
+        '&:last-child': {
+          paddingBottom: theme.spacing(1.5),
         },
       },
     }),
-  { name: 'evlDrawer', defaultTheme: EvlTheme },
+  { name: 'evlCardContent', defaultTheme: EvlTheme },
 );
 
 export default useStyles;
