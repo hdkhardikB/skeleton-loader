@@ -12,7 +12,7 @@ const useStyles = makeStyles(
         borderStyle: 'solid',
         borderColor: theme.palette.grey.A400,
         padding: theme.spacing(3),
-        backgroundColor: theme.palette.grey.A700,
+        backgroundColor: theme.palette.common.white,
       },
     }),
   { name: 'evlPaper', defaultTheme: EvlTheme },
