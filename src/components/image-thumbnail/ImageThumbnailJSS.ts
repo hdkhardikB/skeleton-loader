@@ -5,21 +5,17 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      figureImg: {
-        width: 'auto',
-        height: '100%',
-        padding: theme.spacing(0.3),
-        maxWidth: '100%',
-      }, figure: {
-        margin: theme.spacing(0),
+      root: {
+        backgroundColor: theme.palette.grey[100],
+        padding: theme.spacing(1.5),
+        borderRadius: theme.shape.borderRadius * 2,
       },
-      figureBorder: {
-        width: theme.spacing(6.2),
-        height: theme.spacing(6.2),
-        borderWidth: theme.spacing(0.1),
-        borderStyle: 'solid',
-        borderColor: theme.palette.grey.A400,
-        borderRadius: theme.shape.borderRadius * 5,
+      icDownload: {
+        padding: theme.spacing(1),
+        display: 'inline-block',
+      },
+      fileName: {
+        margin: theme.spacing(0, 1),
       },
     }),
   { name: 'evlImageThumbnail', defaultTheme: EvlTheme },
