@@ -13,6 +13,7 @@ const useStyles = makeStyles(
         borderColor: theme.palette.grey.A400,
         padding: theme.spacing(3),
         backgroundColor: theme.palette.common.white,
+        height: '100%',
       },
     }),
   { name: 'evlPaper', defaultTheme: EvlTheme },

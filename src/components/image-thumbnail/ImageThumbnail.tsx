@@ -24,20 +24,20 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
   return (
     <EvlBox className={classes.root}>
       <EvlGrid container alignItems="center">
-        <EvlGrid item xs={6}>
+        <EvlGrid item xs={8}>
           <EvlBox display="flex">
             <img src={icon} />
             {fileName && (
-              <EvlTypography variant="body2" color="primary">
+              <EvlTypography variant="subtitle2" color="primary" className={classes.fileName}>
                 {fileName}
               </EvlTypography>
             )}
           </EvlBox>
         </EvlGrid>
-        <EvlGrid item xs={6}>
+        <EvlGrid item xs={4}>
           <EvlBox textAlign="right">
             {supoportDownload && (
-              <EvlLink href={imageFile} download={imageFile} target="_blank">
+              <EvlLink href={imageFile} download={imageFile} target="_blank" className={classes.icDownload}>
                 {downloadLabel || 'Click to view'}
               </EvlLink>
             )}

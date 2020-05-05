@@ -9,7 +9,6 @@ const useStyles = makeStyles(
         borderBottomColor: theme.palette.grey.A400,
         borderBottomWidth: theme.spacing(0.1),
         borderBottomStyle: 'solid',
-        marginBottom: theme.spacing(4),
       },
     }),
   { name: 'evlTabs', defaultTheme: EvlTheme },
