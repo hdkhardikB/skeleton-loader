@@ -24,7 +24,7 @@ definitions:
           - git push && git push --tags
           - mv .npmrc_config .npmrc
           - npm publish   
-    - step: &release-publish
+    - step: &patch-publish
         name: Increment patch version and Publish
         image: node:10.15.3
         script:
@@ -32,6 +32,22 @@ definitions:
           - git push && git push --tags
           - mv .npmrc_config .npmrc 
           - npm publish
+    - step: &minor-publish
+        name: Increment patch version and Publish
+        image: node:10.15.3
+        script:
+          - npm version minor -m "Upgrade to %s [skip ci]"
+          - git push && git push --tags
+          - mv .npmrc_config .npmrc 
+          - npm publish 
+    - step: &major-publish
+        name: Increment patch version and Publish
+        image: node:10.15.3
+        script:
+          - npm version minor -m "Upgrade to %s [skip ci]"
+          - git push && git push --tags
+          - mv .npmrc_config .npmrc 
+          - npm publish                
     - step: &build-storybook
         name: Build storybook
         image: docker:stable
@@ -71,6 +87,14 @@ pipelines:
     master:               
         - step: *build
         - step:     
-            <<: *release-publish
+            <<: *minor-publish
             deployment: production
             trigger: manual
+        - step:     
+            <<: *major-publish
+            deployment: production
+            trigger: manual    
+        - step:     
+            <<: *patch-publish
+            deployment: production
+            trigger: manual      
