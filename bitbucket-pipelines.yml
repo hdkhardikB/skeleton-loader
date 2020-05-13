@@ -33,7 +33,7 @@ definitions:
           - mv .npmrc_config .npmrc 
           - npm publish
     - step: &minor-publish
-        name: Increment patch version and Publish
+        name: Increment minor version and Publish
         image: node:10.15.3
         script:
           - npm version minor -m "Upgrade to %s [skip ci]"
@@ -41,7 +41,7 @@ definitions:
           - mv .npmrc_config .npmrc 
           - npm publish 
     - step: &major-publish
-        name: Increment patch version and Publish
+        name: Increment major version and Publish
         image: node:10.15.3
         script:
           - npm version minor -m "Upgrade to %s [skip ci]"
