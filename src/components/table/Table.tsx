@@ -4,13 +4,13 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import { orderBy as _orderBy, some as _some, filter as _filter, isMatch as _isMatch } from 'lodash';
 import EvlCheckbox from '../checkbox';
 import useStyles from './TableJSS';
 import EvlTableHead, { column } from './table-head';
 import EvlTablePagination from './table-pagination';
 import EvlBox from '@components/box';
+import EvlPaper from '@components/paper';
 
 interface EvlTableProps {
   rows: Object[];
@@ -20,7 +20,7 @@ interface EvlTableProps {
     orderBy: string;
     order: 'asc' | 'desc';
   };
-  onSelect?: (selectedIds: string[]) => void;
+  onSelect?: (selected: any[]) => void;
   noDataComponent?: React.ReactType;
   rowComponent?: React.ReactType;
   pagination?: {
@@ -29,6 +29,8 @@ interface EvlTableProps {
     loadMoreLabel?: string;
     currentlyShowingLabel?: string;
     recordLabel?: string;
+    onLoadMore?: (skipIndex: number, rowsPerPage: number) => void;
+    totalNoOfRows?: number;
   };
 }
 
@@ -53,10 +55,13 @@ const EvlTable: React.FC<EvlTableProps> = ({
     loadMoreLabel = 'Load More',
     currentlyShowingLabel = 'Currently Showing',
     recordLabel = 'Records',
+    totalNoOfRows = rows.length,
+    onLoadMore,
   } = pagination || {};
 
   const handleChangePage = (newPage: number) => {
     setPage(newPage);
+    onLoadMore && onLoadMore(page * rowsPerPage + rowsPerPage, rowsPerPage);
   };
 
   const handleRequestSort = (property: string) => {
@@ -71,7 +76,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
       newSelected = [...rows];
     }
     setSelected(newSelected);
-    onSelect && onSelect(newSelected);
+    !!onSelect && onSelect(newSelected);
   };
 
   const handleClick = (selectedRow: any) => {
@@ -80,18 +85,14 @@ const EvlTable: React.FC<EvlTableProps> = ({
         return !_isMatch(o, selectedRow);
       })) || [...selected, selectedRow];
     setSelected(newSelected);
-    onSelect && onSelect(newSelected);
+    !!onSelect && onSelect(newSelected);
   };
-
-  React.useEffect(() => {
-    setSelected([]);
-  }, [rows]);
 
   const sortedRows = (rows && rows.length && _orderBy(rows, orderBy, order)) || [];
   const currentRowsToDisplay = (showPagination && sortedRows.slice(0, page * rowsPerPage + rowsPerPage)) || sortedRows;
   return (
     <EvlBox className={classes.root}>
-      <Paper elevation={0}>
+      <EvlPaper elevation={0} className={classes.tablePaper}>
         <TableContainer>
           <Table aria-labelledby="tableTitle" size="medium" aria-label="table">
             <EvlTableHead
@@ -141,7 +142,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
         </TableContainer>
         {!!showPagination && !!sortedRows.length && (
           <EvlTablePagination
-            count={rows.length}
+            count={totalNoOfRows}
             page={page}
             onChangePage={handleChangePage}
             rowsPerPage={rowsPerPage}
@@ -150,7 +151,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
             recordLabel={recordLabel}
           />
         )}
-      </Paper>
+      </EvlPaper>
     </EvlBox>
   );
 };

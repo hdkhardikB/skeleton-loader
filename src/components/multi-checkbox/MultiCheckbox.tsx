@@ -35,7 +35,7 @@ export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({
               onChange={onChange}
               value={value}
               label={title}
-              image={imageSrc && `${imageSrc}/${value.toLowerCase()}.${imageExt}`}
+              image={imageSrc && `${imageSrc}/${title.toLowerCase()}.${imageExt}`}
               noCheckbox
             />
           ))}

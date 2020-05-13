@@ -1,35 +1,49 @@
 import * as React from 'react';
-import { Document, Page } from 'react-pdf';
 import EvlBox from '@components/box';
 import EvlLink from '@components/link';
 import useStyles from './ImageThumbnailJSS';
+import { EvlGrid } from '@components';
+import EvlTypography from '@components/typography';
 
 export interface EvlImageThumbnailProps {
   imageFile: string;
-  fileType: 'pdf' | 'jpeg' | 'png'; // TODO: handle jpeg and png file in future as of now not supported
   supoportDownload?: boolean;
-  downaloadLabel?: string;
+  downloadLabel?: any;
+  icon?: string;
+  fileName?: string;
 }
 
 export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
   imageFile,
   supoportDownload,
-  downaloadLabel,
-  fileType,
+  downloadLabel,
+  icon,
+  fileName,
 }) => {
   const classes = useStyles();
   return (
     <EvlBox className={classes.root}>
-      {fileType === 'pdf' && (
-        <Document file={imageFile}>
-          <Page width={100} pageNumber={1} />
-        </Document>
-      )}
-      {supoportDownload && (
-        <EvlLink href={imageFile} download={imageFile} target="_blank">
-          {downaloadLabel || 'Click to view'}
-        </EvlLink>
-      )}
+      <EvlGrid container alignItems="center">
+        <EvlGrid item xs={8}>
+          <EvlBox display="flex">
+            <img src={icon} />
+            {fileName && (
+              <EvlTypography variant="subtitle2" color="primary" className={classes.fileName}>
+                {fileName}
+              </EvlTypography>
+            )}
+          </EvlBox>
+        </EvlGrid>
+        <EvlGrid item xs={4}>
+          <EvlBox textAlign="right">
+            {supoportDownload && (
+              <EvlLink href={imageFile} download={imageFile} target="_blank" className={classes.icDownload}>
+                {downloadLabel || 'Click to view'}
+              </EvlLink>
+            )}
+          </EvlBox>
+        </EvlGrid>
+      </EvlGrid>
     </EvlBox>
   );
 };

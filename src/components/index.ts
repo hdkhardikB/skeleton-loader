@@ -31,6 +31,19 @@ import EvlPaper from './paper';
 import EvlButtonGroup from './buttongroup';
 import EvlFilterPanel from './filter-panel';
 import EvlImageThumbnail from './image-thumbnail';
+import EvlTabs from './tabs';
+import EvlTab from './tab';
+import EvlPanel from './panel';
+import EvlHidden from './hidden';
+import EvlDrawer from './drawer';
+import EvlDivider from './divider';
+import EvlList from './list';
+import EvlListItem from './listitem';
+import EvlListItemText from './list-item-text';
+import EvlMenu from './menu';
+import EvlMenuItem from './menu-item';
+import EvlCard from './card';
+import EvlCardContent from './card-content';
 
 export {
   Button,
@@ -66,4 +79,17 @@ export {
   EvlButtonGroup,
   EvlFilterPanel,
   EvlImageThumbnail,
+  EvlTabs,
+  EvlTab,
+  EvlPanel,
+  EvlHidden,
+  EvlDrawer,
+  EvlDivider,
+  EvlList,
+  EvlListItem,
+  EvlListItemText,
+  EvlMenu,
+  EvlMenuItem,
+  EvlCard,
+  EvlCardContent,
 };

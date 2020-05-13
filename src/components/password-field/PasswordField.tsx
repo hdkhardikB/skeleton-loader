@@ -8,7 +8,7 @@ export interface EvlPasswordFieldProps extends Omit<EvlFormInputProps, 'type'> {
   hideIcon: React.ReactType<any>;
 }
 
-export const EvlPasswordField: React.FC<EvlPasswordFieldProps> = ({showIcon: ShowIcon, hideIcon: HideIcon, ...props }) => {
+export const EvlPasswordField: React.FC<EvlPasswordFieldProps> = ({ showIcon: ShowIcon, hideIcon: HideIcon, ...props }) => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -18,6 +18,7 @@ export const EvlPasswordField: React.FC<EvlPasswordFieldProps> = ({showIcon: Sho
       {...props}
       type={showPassword ? 'text' : 'password'}
       InputProps={{
+        ...props.InputProps,
         endAdornment: (
           <InputAdornment position="end">
             <IconButton aria-label="toggle password visibility" onClick={() => setShowPassword(!showPassword)}>

@@ -41,6 +41,12 @@ const useStyles = makeStyles(
         display: 'inline-block',
         marginLeft: theme.spacing(0),
         textAlign: 'center',
+
+        '&:hover': {
+          '& $img': {
+            filter: `brightness(460%)`,
+          },
+        },
       },
       icon: {
         borderRadius: theme.shape.borderRadius * 3,
@@ -59,13 +65,13 @@ const useStyles = makeStyles(
           backgroundColor: theme.palette.secondary.main,
         },
         'input:disabled ~ &': {
-          opcity: 0.5
+          opcity: 0.5,
         },
       },
       checkedIcon: {
         backgroundColor: theme.palette.primary.main,
         borderColor: theme.palette.primary.main,
-        
+
         '&:before': {
           display: 'block',
           width: theme.spacing(2),
@@ -86,6 +92,10 @@ const useStyles = makeStyles(
       checked: {
         color: theme.palette.common.white,
         backgroundColor: theme.palette.primary.light,
+
+        '& $img': {
+          filter: `brightness(460%)`,
+        },
 
         '&:hover': {
           backgroundColor: theme.palette.primary.light,

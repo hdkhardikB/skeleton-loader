@@ -9,5 +9,5 @@ function getSearchText(text: string) {
 }
 
 stories.add('EvlSearchBox', () => (
-  <EvlSearchBox minCharForSearch={3} placeholder="Search..." onSearch={getSearchText} />
+  <EvlSearchBox placeholder="Search..." onSearch={getSearchText} />
 ));

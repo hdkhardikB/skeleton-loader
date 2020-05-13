@@ -4,4 +4,4 @@ import { EvlLink } from '@components';
 
 const stories = storiesOf('EvlLink', module);
 
-stories.add('dummy', () => <EvlLink />);
+stories.add('Link component', () => <EvlLink>{"Link"}</EvlLink>);

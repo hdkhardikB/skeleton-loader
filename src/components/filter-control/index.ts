@@ -1,3 +1,3 @@
-import EvlFilterControl, {EvlFilterControlProps} from './FilterControl';
+import EvlFilterControl, {EvlFilterControlProps, FilterControl} from './FilterControl';
 export default EvlFilterControl;
-export {EvlFilterControlProps};
+export {EvlFilterControlProps, FilterControl};

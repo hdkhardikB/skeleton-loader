@@ -1,29 +1,100 @@
-image: docker:stable
-pipelines:
-  branches:
-    master:
-      - step:
-          name: build and deploy
-          
-          script:
-            - set -eu
-            - apk add --no-cache py-pip bash curl
-            - chmod 755 push-docker-image-to-registry.sh
-            - ./push-docker-image-to-registry.sh $BITBUCKET_BUILD_NUMBER
-            - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-            - chmod +x ./kubectl
-            - mv ./kubectl /usr/local/bin/kubectl
-            - echo $KUBE_TOKEN | base64  -d > ./kube_token
-            - echo $KUBE_CA | base64 -d > ./kube_ca
-            - kubectl config set-cluster devx2 --server=https://34.68.45.155 --certificate-authority="$(pwd)/kube_ca"
-            - kubectl config set-credentials default --token="$(cat ./kube_token)"
-            - kubectl config set-context development --cluster=devx2 --user=default
-            - kubectl config use-context development
-           # - kubectl get nodes
-            - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops
-          services:
-            - docker
+image: atlassian/default-image:2
+
 definitions:
   services:
     docker:
-      memory: 2048 
+      memory: 3072
+  steps:
+    - step: &build
+        name: Install & Build
+        image: node:10.15.3
+        cache:
+          - node
+        script:
+          - mv .npmrc_config .npmrc
+          - npm install
+          - npm run build  
+        artifacts: 
+          - lib/**
+    - step: &prerelease-publish
+        name: Increment prerelease version and create tag
+        image: node:10.15.3
+        script:
+          - npm version prerelease -m "Upgrade to %s [skip ci]"
+          - git push && git push --tags
+          - mv .npmrc_config .npmrc
+          - npm publish   
+    - step: &patch-publish
+        name: Increment patch version and Publish
+        image: node:10.15.3
+        script:
+          - npm version patch -m "Upgrade to %s [skip ci]"
+          - git push && git push --tags
+          - mv .npmrc_config .npmrc 
+          - npm publish
+    - step: &minor-publish
+        name: Increment patch version and Publish
+        image: node:10.15.3
+        script:
+          - npm version minor -m "Upgrade to %s [skip ci]"
+          - git push && git push --tags
+          - mv .npmrc_config .npmrc 
+          - npm publish 
+    - step: &major-publish
+        name: Increment patch version and Publish
+        image: node:10.15.3
+        script:
+          - npm version minor -m "Upgrade to %s [skip ci]"
+          - git push && git push --tags
+          - mv .npmrc_config .npmrc 
+          - npm publish                
+    - step: &build-storybook
+        name: Build storybook
+        image: docker:stable
+        script:
+          - set -eu
+          - apk add --no-cache py-pip bash curl
+          - mv .npmrc_config .npmrc
+          - chmod 755 push-docker-image-to-registry.sh
+          - ./push-docker-image-to-registry.sh
+        services:
+          - docker   
+    - step: &deploy-storybook 
+        name: Deploy storybook
+        script:  
+          - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+          - chmod +x ./kubectl
+          - mv ./kubectl /usr/local/bin/kubectl
+          - echo $KUBE_TOKEN | base64  -d > ./kube_token
+          - echo $KUBE_CA | base64 -d > ./kube_ca
+          - kubectl config set-cluster devx2 --server=https://34.68.45.155 --certificate-authority="$(pwd)/kube_ca"
+          - kubectl config set-credentials default --token="$(cat ./kube_token)"
+          - kubectl config set-context development --cluster=devx2 --user=default
+          - kubectl config use-context development
+          # - kubectl get nodes
+          - kubectl set image deployment/evl-ui-components evl-ui-components=everledgerio/evl-ui-components:$BITBUCKET_BUILD_NUMBER --namespace devops   
+pipelines:
+  default:
+    - step: *build
+  branches:
+    develop:            
+        - step: *build
+        - step:     
+            <<: *prerelease-publish
+            deployment: test
+        - step: *build-storybook
+        - step: *deploy-storybook  
+    master:               
+        - step: *build
+        - step:     
+            <<: *minor-publish
+            deployment: production
+            trigger: manual
+        - step:     
+            <<: *major-publish
+            deployment: production
+            trigger: manual    
+        - step:     
+            <<: *patch-publish
+            deployment: production
+            trigger: manual      
