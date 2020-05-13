@@ -86,12 +86,13 @@ pipelines:
             deployment: test
     master:               
         - step: *build
-        - step:     
-            <<: *minor-publish
-            trigger: manual
-        - step:     
-            <<: *major-publish
-            trigger: manual    
-        - step:     
-            <<: *patch-publish
-            trigger: manual      
+        - parallel:    
+            - step: 
+                <<: *minor-publish
+                trigger: manual
+            - step: 
+                <<: *major-publish
+                trigger: manual 
+            - step:
+                <<: *patch-publish
+                trigger: manual    
