@@ -79,22 +79,19 @@ pipelines:
   branches:
     develop:            
         - step: *build
-        - step:     
-            <<: *prerelease-publish
-            deployment: test
+        - step: *prerelease-publish
         - step: *build-storybook
-        - step: *deploy-storybook  
+        - step: 
+            <<: *deploy-storybook  
+            deployment: test
     master:               
         - step: *build
         - step:     
             <<: *minor-publish
-            deployment: production
             trigger: manual
         - step:     
             <<: *major-publish
-            deployment: production
             trigger: manual    
         - step:     
             <<: *patch-publish
-            deployment: production
             trigger: manual      
