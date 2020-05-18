@@ -8,13 +8,16 @@ const useStyles = makeStyles(
       root: {
         borderRadius: theme.shape.borderRadius * 2.5,
         backgroundColor: theme.palette.primary.light,
-
-        '& .MuiChip-colorPrimary': {
-          backgroundColor: theme.palette.primary.light,
-        },
-        '& .MuiChip-colorSecondary': {
-          backgroundColor: theme.palette.secondary.main,
-        },
+      },
+      '& .MuiChip-root': {
+        borderRadius: theme.shape.borderRadius * 2.5,
+        backgroundColor: theme.palette.primary.light,
+      },
+      '& .MuiChip-colorPrimary': {
+        backgroundColor: theme.palette.primary.light,
+      },
+      '& .MuiChip-colorSecondary': {
+        backgroundColor: theme.palette.secondary.main,
       },
     }),
   { name: 'evlChip', defaultTheme: EvlTheme },
