@@ -114,10 +114,10 @@ const EvlTable: React.FC<EvlTableProps> = ({
                 </TableRow>
               )}
               {!!sortedRows.length &&
-                currentRowsToDisplay.map((row: any) => {
+                currentRowsToDisplay.map((row: any, index: number) => {
                   const isItemSelected = !!_some(selected, row);
                   return (
-                    <TableRow hover tabIndex={-1} key={row.name} selected={!!selectable && isItemSelected}>
+                    <TableRow hover tabIndex={-1} key={`${row.name}_${index}`} selected={!!selectable && isItemSelected}>
                       {!!selectable && (
                         <TableCell>
                           <EvlCheckbox

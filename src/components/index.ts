@@ -45,6 +45,7 @@ import EvlMenuItem from './menu-item';
 import EvlCard from './card';
 import EvlCardContent from './card-content';
 import EvlChip from './chip';
+import EvlDialog from './dialog'
 
 export {
   Button,
@@ -94,4 +95,5 @@ export {
   EvlCard,
   EvlCardContent,
   EvlChip,
+  EvlDialog
 };
