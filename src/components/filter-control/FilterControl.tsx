@@ -105,7 +105,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
           onChange={(e: React.ChangeEvent<{ value: string }>) => {
             onChange({
               ...selectedFilters,
-              [filterProperty]: e.target.value,
+              [filterProperty]: [e.target.value],
             });
           }}
           autoWidth
@@ -121,7 +121,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
           onChange={(event: React.ChangeEvent<{}>, value: any) => {
             onChange({
               ...selectedFilters,
-              [filterProperty]: (value && value.value) || '',
+              [filterProperty]: value && [value.value] || [],
             });
           }}
         />
