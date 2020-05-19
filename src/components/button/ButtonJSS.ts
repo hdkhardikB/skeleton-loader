@@ -78,7 +78,9 @@ const useStyles = makeStyles(
             color: theme.palette.common.white,
           },
         },
-        '&.MuiButton-contained': {},
+        '&.Mui-disabled': {
+          opacity: 0.3,
+        },
       },
     }),
   { name: 'evlButton', defaultTheme: EvlTheme },
