@@ -27,7 +27,7 @@ export const EvlTablePagination: React.FC<EvlTablePaginationProps> = ({
   const classes = useStyles();
   const noOfRecordsToDisplay = page * rowsPerPage + rowsPerPage;
   const noOfRecords = (rowsPerPage < count && noOfRecordsToDisplay < count && noOfRecordsToDisplay) || count;
-  const displayMore = noOfRecords < count && rowsPerPage < count;
+  const displayMore = true; //TODO when backend impliment we have to change
   const progress = (noOfRecords / count) * 100;
   return (
     <EvlBox className={classes.root}>
