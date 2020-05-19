@@ -42,21 +42,21 @@ const defaultTheme = createMuiTheme({
 
     h1: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 700,
+      fontWeight: 900,
       fontSize: '2.75rem',
       lineHeight: 1.167,
       letterSpacing: 0,
     },
     h2: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 700,
+      fontWeight: 900,
       fontSize: '2.5rem',
       lineHeight: 1.2,
       letterSpacing: 0,
     },
     h3: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 700,
+      fontWeight: 900,
       fontSize: '2.25rem',
       lineHeight: 1.235,
       letterSpacing: 0,
@@ -84,7 +84,7 @@ const defaultTheme = createMuiTheme({
     },
     subtitle1: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 700,
+      fontWeight: 900,
       fontSize: '1rem',
       lineHeight: 1.75,
       letterSpacing: 0,
@@ -112,7 +112,7 @@ const defaultTheme = createMuiTheme({
     },
     button: {
       fontFamily: 'Lato, sans-serif',
-      fontWeight: 500,
+      fontWeight: 700,
       fontSize: '1rem',
       lineHeight: 1.75,
       letterSpacing: 0,
