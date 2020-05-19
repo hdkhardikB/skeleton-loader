@@ -22,6 +22,10 @@ const useStyles = makeStyles(
         '&:hover': {
           backgroundColor: 'transparent',
           color: theme.palette.primary.light,
+
+          '& .MuiButton-startIcon img': {
+            filter: 'brightness(600%)',
+          },
         },
 
         '&.MuiButton-textSizeSmall': {
