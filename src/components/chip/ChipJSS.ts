@@ -10,6 +10,15 @@ const useStyles = makeStyles(
         backgroundColor: theme.palette.primary.light,
         height: 'inherit',
 
+        '& .MuiAvatar-root': {
+          backgroundColor: 'transparent',
+          filter: 'brightness(650%)',
+
+          '& .MuiAvatar-img': {
+            objectFit: 'unset',
+          },
+        },
+
         '& .MuiChip-labelSmall': {
           whiteSpace: 'break-spaces',
           lineHeight: `${theme.spacing(1.5)}px`,
