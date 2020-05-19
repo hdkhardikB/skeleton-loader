@@ -8,6 +8,22 @@ const useStyles = makeStyles(
       root: {
         borderRadius: theme.shape.borderRadius * 2.5,
         backgroundColor: theme.palette.primary.light,
+        height: 'inherit',
+
+        '& .MuiAvatar-root': {
+          backgroundColor: 'transparent',
+          filter: 'brightness(650%)',
+
+          '& .MuiAvatar-img': {
+            objectFit: 'unset',
+          },
+        },
+
+        '& .MuiChip-labelSmall': {
+          whiteSpace: 'break-spaces',
+          lineHeight: `${theme.spacing(1.5)}px`,
+          padding: theme.spacing(0.5, 1),
+        },
       },
       '& .MuiChip-root': {
         borderRadius: theme.shape.borderRadius * 2.5,
