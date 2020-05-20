@@ -4,7 +4,7 @@ import EvlRangeSlider from '../range-slider';
 import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
 import EvlAutoComplete from '../autocomplete';
-import isEmpty from 'lodash/isEmpty'
+import { isEmpty } from 'lodash';
 
 export enum FilterControl {
   input,
