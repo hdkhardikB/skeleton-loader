@@ -22,6 +22,10 @@ const useStyles = makeStyles(
         '&:hover': {
           backgroundColor: 'transparent',
           color: theme.palette.primary.light,
+
+          '& .MuiButton-startIcon img': {
+            filter: 'brightness(600%)',
+          },
         },
 
         '&.MuiButton-textSizeSmall': {
@@ -78,7 +82,9 @@ const useStyles = makeStyles(
             color: theme.palette.common.white,
           },
         },
-        '&.MuiButton-contained': {},
+        '&.Mui-disabled': {
+          opacity: 0.3,
+        },
       },
     }),
   { name: 'evlButton', defaultTheme: EvlTheme },

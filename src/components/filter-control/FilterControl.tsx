@@ -4,6 +4,7 @@ import EvlRangeSlider from '../range-slider';
 import EvlSelect from '../select';
 import EvlDateRange from '../date-range';
 import EvlAutoComplete from '../autocomplete';
+import { isEmpty } from 'lodash';
 
 export enum FilterControl {
   input,
@@ -63,8 +64,11 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
               const newFilterAttribute = selectedFilterValues.filter((c: string) => c !== value);
               newFilters = {
                 ...selectedFilters,
-                [filterProperty]: newFilterAttribute,
-              };
+              }
+              if (isEmpty(newFilterAttribute))
+                delete newFilters[filterProperty]
+              else
+                newFilters[filterProperty] = newFilterAttribute
             }
             onChange(newFilters);
           }}
@@ -105,7 +109,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
           onChange={(e: React.ChangeEvent<{ value: string }>) => {
             onChange({
               ...selectedFilters,
-              [filterProperty]: e.target.value,
+              [filterProperty]: [e.target.value],
             });
           }}
           autoWidth
@@ -119,10 +123,14 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
         <EvlAutoComplete
           options={filterOptions}
           onChange={(event: React.ChangeEvent<{}>, value: any) => {
-            onChange({
+            const newFilters = {
               ...selectedFilters,
-              [filterProperty]: (value && value.value) || '',
-            });
+            };
+            if (value && [value.value])
+              newFilters[filterProperty] = [value.value]
+            else
+              delete newFilters[filterProperty]
+            onChange(newFilters);
           }}
         />
       );

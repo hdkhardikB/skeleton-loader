@@ -44,6 +44,10 @@ import EvlMenu from './menu';
 import EvlMenuItem from './menu-item';
 import EvlCard from './card';
 import EvlCardContent from './card-content';
+import EvlChip from './chip';
+import EvlDialog from './dialog';
+import EvlAvatar from './avatar';
+import EvlListItemAvatar from './list-item-avatar';
 
 export {
   Button,
@@ -92,4 +96,8 @@ export {
   EvlMenuItem,
   EvlCard,
   EvlCardContent,
+  EvlChip,
+  EvlDialog,
+  EvlAvatar,
+  EvlListItemAvatar,
 };
