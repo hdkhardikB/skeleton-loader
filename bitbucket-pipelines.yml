@@ -50,6 +50,7 @@ definitions:
           - npm publish                
     - step: &build-storybook
         name: Build storybook
+        image: node:10.15.3
         script:
           - set -eu
           - apk add --no-cache py-pip bash curl
