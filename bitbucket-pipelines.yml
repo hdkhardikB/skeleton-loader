@@ -52,8 +52,6 @@ definitions:
         name: Build storybook
         image: node:10.15.3
         script:
-          - set -eu
-          - apk add --no-cache py-pip bash curl
           - mv .npmrc_config .npmrc
           - chmod 755 push-docker-image-to-registry.sh
           - ./push-docker-image-to-registry.sh
