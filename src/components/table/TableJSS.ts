@@ -12,14 +12,20 @@ const useStyles = makeStyles(
           borderBottomWidth: theme.spacing(0.1),
           borderBottomStyle: 'solid',
           borderBottomColor: theme.palette.grey.A200,
+
           '& .MuiCheckbox-root': {
             padding: theme.spacing(0),
+          },
+        },
+        '& .MuiTableRow-hover': {
+          '&:hover': {
+            cursor: 'pointer',
           },
         },
       },
       tablePaper: {
         backgroundColor: theme.palette.common.white,
-        borderRadius: theme.shape.borderRadius * 3
+        borderRadius: theme.shape.borderRadius * 3,
       },
     }),
   { name: 'evlTable', defaultTheme: EvlTheme },
