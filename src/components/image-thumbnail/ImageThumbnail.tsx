@@ -4,12 +4,14 @@ import EvlLink from '@components/link';
 import useStyles from './ImageThumbnailJSS';
 import { EvlGrid } from '@components';
 import EvlTypography from '@components/typography';
-
+import { IconButton } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 export interface EvlImageThumbnailProps {
   imageFile: string;
   supoportDownload?: boolean;
   downloadLabel?: any;
   icon?: string;
+  onDelete?(file?: string): void
   fileName?: string;
 }
 
@@ -18,6 +20,7 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
   supoportDownload,
   downloadLabel,
   icon,
+  onDelete,
   fileName,
 }) => {
   const classes = useStyles();
@@ -36,6 +39,9 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
         </EvlGrid>
         <EvlGrid item xs={4}>
           <EvlBox textAlign="right">
+            {onDelete && (<IconButton onClick={() => onDelete(imageFile)} aria-label="delete" >
+              <DeleteIcon />
+            </IconButton>)}
             {supoportDownload && (
               <EvlLink href={imageFile} download={imageFile} target="_blank" className={classes.icDownload}>
                 {downloadLabel || 'Click to view'}
