@@ -10,6 +10,10 @@ const useStyles = makeStyles(
         minWidth: 'inherit',
         width: '100%',
       },
+      dropZone: {
+        padding: theme.spacing(2),
+        border: `${theme.spacing(0.2)}px dashed ${theme.palette.primary.main}`,
+      },
     }),
   { name: 'evlFileUpload', defaultTheme: EvlTheme },
 );
