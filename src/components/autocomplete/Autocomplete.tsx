@@ -9,6 +9,7 @@ type option = {
   value: string;
 };
 
+//@ts-ignore
 export interface EvlAutocompleteProps extends Omit<AutocompleteProps<option>, 'renderInput'> {
   options: option[];
   onChange: (event: React.ChangeEvent<{}>, value: option | null) => void;
