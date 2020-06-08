@@ -1,6 +1,6 @@
 {
   "name": "evl-ui-components",
-  "version": "0.4.0",
+  "version": "0.5.0-alpha.7",
   "description": "Everledger UI Component Library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -21,11 +21,13 @@
     "@material-ui/lab": "~4.0.0-alpha.45",
     "@material-ui/pickers": "~3.2.10",
     "@types/lodash": "~4.14.149",
+    "@types/react-dropzone": "5.1.0",
     "@types/react-pdf": "~4.0.3",
     "classnames": "~2.2.6",
     "date-fns": "~2.10.0",
     "formik": "~2.1.4",
     "lodash": "~4.17.15",
+    "react-dropzone": "11.0.1",
     "react-pdf": "~4.1.0",
     "typeface-lato": "0.0.75"
   },

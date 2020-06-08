@@ -9,9 +9,8 @@ type option = {
   value: string;
 };
 
-export interface EvlAutocompleteProps extends Omit<AutocompleteProps<option>, 'renderInput'> {
+export interface EvlAutocompleteProps extends Omit<AutocompleteProps<option, true, true, true>, 'renderInput'> {
   options: option[];
-  onChange: (event: React.ChangeEvent<{}>, value: option | null) => void;
   label?: string;
 }
 
@@ -21,17 +20,12 @@ export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({ options, label
     <EvlBox className={classes.root}>
       <Autocomplete
         {...props}
+        //@ts-ignore
         getOptionLabel={option => option.title}
         options={options}
         onChange={onChange}
         renderInput={params => {
-          return (
-            <EvlTextBox
-              {...params}
-              label={label}
-              InputProps={{ ...params.InputProps, type: 'new-password' }}
-            />
-          );
+          return <EvlTextBox {...params} label={label} InputProps={{ ...params.InputProps, type: 'new-password' }} />;
         }}
       />
     </EvlBox>
