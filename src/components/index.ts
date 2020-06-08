@@ -48,6 +48,8 @@ import EvlChip from './chip';
 import EvlDialog from './dialog';
 import EvlAvatar from './avatar';
 import EvlListItemAvatar from './list-item-avatar';
+import EvlFormFileUpload from './form-file-upload'
+import EvlFileUpload from './file-upload'
 
 export {
   Button,
@@ -100,4 +102,6 @@ export {
   EvlDialog,
   EvlAvatar,
   EvlListItemAvatar,
+  EvlFileUpload,
+  EvlFormFileUpload
 };
