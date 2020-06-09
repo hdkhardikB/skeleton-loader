@@ -13,9 +13,18 @@ const useStyles = makeStyles(
       icDownload: {
         padding: theme.spacing(1),
         display: 'inline-block',
+        verticalAlign: 'middle',
       },
       fileName: {
         margin: theme.spacing(0, 1),
+      },
+      figure: {
+        margin: theme.spacing(0),
+      },
+      btnDelete: {
+        width: theme.spacing(4),
+        height: theme.spacing(4),
+        padding: theme.spacing(0),
       },
     }),
   { name: 'evlImageThumbnail', defaultTheme: EvlTheme },
