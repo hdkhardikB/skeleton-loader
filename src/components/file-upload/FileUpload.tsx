@@ -9,10 +9,10 @@ export interface EvlFileUploadProps extends DropzoneProps {
   error?: string;
   name: string;
   uploaderText?: any;
-  icUploadPath?: string;
+  uploadIcon?: string;
 }
 
-const EvlFileUpload: React.FC<EvlFileUploadProps> = ({ uploaderText, error, icUploadPath, ...props }) => {
+const EvlFileUpload: React.FC<EvlFileUploadProps> = ({ uploaderText, error, uploadIcon, ...props }) => {
   const classes = useStyles();
 
   const { getRootProps, getInputProps } = useDropzone({ ...props });
@@ -20,7 +20,7 @@ const EvlFileUpload: React.FC<EvlFileUploadProps> = ({ uploaderText, error, icUp
     <FormControl className={classes.root} error={!!error}>
       <EvlBox {...getRootProps()}>
         <input {...getInputProps()} />
-        <img src={icUploadPath} />
+        <img src={uploadIcon} />
         <EvlTypography variant="body1">{uploaderText || `Drop the files here ...`}</EvlTypography>
       </EvlBox>
       <FormHelperText>{error}</FormHelperText>

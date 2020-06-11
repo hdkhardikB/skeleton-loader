@@ -13,7 +13,7 @@ export interface EvlImageThumbnailProps {
   icon?: string;
   onDelete?(file?: string): void;
   fileName?: string;
-  icDeletePath?: string;
+  deleteIcon?: string;
 }
 
 export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
@@ -23,7 +23,7 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
   icon,
   onDelete,
   fileName,
-  icDeletePath,
+  deleteIcon,
 }) => {
   const classes = useStyles();
   return (
@@ -44,7 +44,7 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
             {onDelete && (
               <IconButton className={classes.btnDelete} onClick={() => onDelete(imageFile)} aria-label="delete">
                 <EvlBox component="figure" className={classes.figure}>
-                  <img src={icDeletePath} />
+                  <img src={deleteIcon} />
                 </EvlBox>
               </IconButton>
             )}
