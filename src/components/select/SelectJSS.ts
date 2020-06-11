@@ -61,6 +61,15 @@ const useStyles = makeStyles(
           },
         },
       },
+      selectEmpty: {
+        marginTop: theme.spacing(2),
+      },
+
+      selectIcon: {
+        position: 'absolute',
+        right: theme.spacing(0),
+        zIndex: -1,
+      },
     }),
   { name: 'evlSelect', defaultTheme: EvlTheme },
 );
