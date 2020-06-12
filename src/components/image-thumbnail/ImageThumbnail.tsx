@@ -5,14 +5,15 @@ import useStyles from './ImageThumbnailJSS';
 import { EvlGrid } from '@components';
 import EvlTypography from '@components/typography';
 import { IconButton } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+
 export interface EvlImageThumbnailProps {
   imageFile: string;
   supoportDownload?: boolean;
   downloadLabel?: any;
   icon?: string;
-  onDelete?(file?: string): void
+  onDelete?(file?: string): void;
   fileName?: string;
+  deleteIcon?: string;
 }
 
 export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
@@ -22,12 +23,13 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
   icon,
   onDelete,
   fileName,
+  deleteIcon,
 }) => {
   const classes = useStyles();
   return (
     <EvlBox className={classes.root}>
       <EvlGrid container alignItems="center">
-        <EvlGrid item xs={8}>
+        <EvlGrid item xs={7}>
           <EvlBox display="flex">
             <img src={icon} />
             {fileName && (
@@ -37,11 +39,15 @@ export const EvlImageThumbnail: React.FC<EvlImageThumbnailProps> = ({
             )}
           </EvlBox>
         </EvlGrid>
-        <EvlGrid item xs={4}>
+        <EvlGrid item xs={5}>
           <EvlBox textAlign="right">
-            {onDelete && (<IconButton onClick={() => onDelete(imageFile)} aria-label="delete" >
-              <DeleteIcon />
-            </IconButton>)}
+            {onDelete && (
+              <IconButton className={classes.btnDelete} onClick={() => onDelete(imageFile)} aria-label="delete">
+                <EvlBox component="figure" className={classes.figure}>
+                  <img src={deleteIcon} />
+                </EvlBox>
+              </IconButton>
+            )}
             {supoportDownload && (
               <EvlLink href={imageFile} download={imageFile} target="_blank" className={classes.icDownload}>
                 {downloadLabel || 'Click to view'}
