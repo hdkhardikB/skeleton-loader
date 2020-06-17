@@ -5,14 +5,23 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
-      formControl: {
-        minWidth: 'inherit',
+      root: {
         width: '100%',
-      },
-      dropZone: {
-        padding: theme.spacing(2),
-        border: `${theme.spacing(0.2)}px dashed ${theme.palette.primary.main}`,
+
+        '& .MuiBox-root': {
+          display: 'flex',
+          width: '100%',
+          borderStyle: 'dashed',
+          borderWidth: theme.spacing(0.1),
+          borderColor: theme.palette.grey.A100,
+          padding: theme.spacing(1.5),
+          borderRadius: theme.shape.borderRadius * 5,
+          cursor: 'pointer',
+
+          '& $img': {
+            marginRight: theme.spacing(1.5),
+          },
+        },
       },
     }),
   { name: 'evlFileUpload', defaultTheme: EvlTheme },
