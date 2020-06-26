@@ -12,7 +12,7 @@ const useStyles = makeStyles(
         fontSize: theme.spacing(1.6),
 
         '&.MuiAvatar-rounded': {
-          borderRadius: theme.shape.borderRadius * 8,
+          borderRadius: theme.shape.borderRadius * 6,
         },
       },
     }),
