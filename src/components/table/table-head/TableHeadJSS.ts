@@ -32,6 +32,7 @@ const useStyles = makeStyles(
       TableSortLabel: {
         fontWeight: 700,
         color: theme.palette.primary.main,
+        whiteSpace: 'pre',
 
         '&:hover': {
           color: theme.palette.primary.main,
