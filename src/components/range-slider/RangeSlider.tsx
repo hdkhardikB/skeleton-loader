@@ -17,6 +17,7 @@ export interface EvlRangeSliderProps extends Omit<SliderProps, 'onChange'>  {
 export const EvlRangeSlider: React.FC<EvlRangeSliderProps> = ({ value, label, valueText, error, ...props }) => {
   const classes = useStyles();
   const [minVaule, maxValue] = value as number[];
+  
   return (
     <FormControl className={classes.root} error={!!error}>
       {label && (

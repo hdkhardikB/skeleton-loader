@@ -41,6 +41,7 @@ const useStyles = makeStyles(
         display: 'inline-block',
         marginLeft: theme.spacing(0),
         textAlign: 'center',
+        minWidth: theme.spacing(8),
 
         '&:hover': {
           '& $img': {
