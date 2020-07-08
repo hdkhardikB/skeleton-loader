@@ -5,7 +5,11 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
+      root: {
+        '&.MuiContainer-maxWidthLg': {
+          maxWidth: theme.spacing(120),
+        },
+      },
     }),
   { name: 'evlContainer', defaultTheme: EvlTheme },
 );

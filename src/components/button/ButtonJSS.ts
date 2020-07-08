@@ -86,6 +86,12 @@ const useStyles = makeStyles(
           opacity: 0.3,
         },
       },
+      exportData: {
+        [theme.breakpoints.down('sm')]: {
+          lineHeight: '1em',
+          padding: `${theme.spacing(0.8, 1)} !important`,
+        },
+      },
     }),
   { name: 'evlButton', defaultTheme: EvlTheme },
 );
