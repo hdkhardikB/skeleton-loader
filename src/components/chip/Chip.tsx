@@ -4,6 +4,7 @@ import useStyles from './ChipJSS';
 
 export interface EvlChipProps extends ChipProps {}
 
+
 export const EvlChip: React.FC<EvlChipProps> = ({ children, ...props }) => {
   const classes = useStyles();
   return (
