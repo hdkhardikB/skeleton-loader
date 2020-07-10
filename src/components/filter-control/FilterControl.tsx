@@ -48,6 +48,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       const selectedFilterValues = selectedFilters[filterProperty] || [];
       filterControl = (
         <EvlMultiCheckbox
+          noCheckbox={!filterMeta || !filterMeta.showCheckbox}
           options={filterOptions}
           selectedOptions={selectedFilterValues}
           imageSrc={filterMeta && filterMeta.imageSrc}
