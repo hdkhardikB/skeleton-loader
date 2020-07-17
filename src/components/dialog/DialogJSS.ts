@@ -8,7 +8,7 @@ const useStyles = makeStyles(
       root: {
         '& .MuiDialog-paper': {
           borderRadius: theme.shape.borderRadius * 4,
-          padding: theme.spacing(4.5),
+          padding: theme.spacing(2),
           boxShadow: 'none',
         },
 
