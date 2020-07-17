@@ -34,7 +34,7 @@ function ImageRadio({ image, checkedImage, ...props }: EvlRadioProps) {
   return (
     <>
       <Radio
-        className={classes.root}
+        className={clsx(classes.root)}
         checkedIcon={<img src={checkedImage} />}
         icon={<img src={image} />}
         color="default"
@@ -59,13 +59,21 @@ function SwitchRadio(props: EvlRadioProps) {
   );
 }
 
-export const EvlRadio: React.FC<EvlRadioProps> = ({ value, image, switchRadio, label, ...props }) => {
+export const EvlRadio: React.FC<EvlRadioProps> = ({ value, image, switchRadio, label, checked, ...props }) => {
+  const classes = useStyles();
+  console.log(value, checked);
+
   return (
     <FormControlLabel
+      className={clsx(classes.root, {
+        [classes.rootImage]: image,
+        [classes.rootSwitch]: switchRadio,
+        [classes.rootChecked]: checked,
+      })}
       value={value}
       control={
-        (image && <ImageRadio image={image} {...props} />) ||
-        (switchRadio && <SwitchRadio {...props} />) || <SimpleRadio {...props} />
+        (image && <ImageRadio checked={checked} image={image} {...props} />) ||
+        (switchRadio && <SwitchRadio checked={checked} {...props} />) || <SimpleRadio checked={checked} {...props} />
       }
       label={label}
     />

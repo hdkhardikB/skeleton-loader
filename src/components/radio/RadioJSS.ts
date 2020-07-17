@@ -42,6 +42,31 @@ const useStyles = makeStyles(
           backgroundColor: theme.palette.secondary.main,
         },
       },
+      rootImage: {
+        margin: theme.spacing(0),
+        borderWidth: theme.spacing(0.1),
+        borderStyle: 'solid',
+        borderColor: theme.palette.grey.A100,
+        borderRadius: theme.shape.borderRadius * 4,
+        width: '100%',
+        display: 'block',
+        textAlign: 'center',
+        padding: theme.spacing(1),
+
+        '&:hover': {
+          borderColor: theme.palette.primary.main,
+        },
+
+        '&$rootChecked': {
+          borderColor: theme.palette.secondary.main,
+          backgroundColor: theme.palette.grey.A700,
+          boxShadow: `${theme.spacing(0, 0.5, 1)} ${theme.palette.grey.A100}`,
+        },
+      },
+      rootChecked: {},
+      rootSwitch: {
+        margin: theme.spacing(0),
+      },
     }),
   { name: 'evlCheckbox', defaultTheme: EvlTheme },
 );
