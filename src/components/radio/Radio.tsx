@@ -61,7 +61,6 @@ function SwitchRadio(props: EvlRadioProps) {
 
 export const EvlRadio: React.FC<EvlRadioProps> = ({ value, image, switchRadio, label, checked, ...props }) => {
   const classes = useStyles();
-  console.log(value, checked);
 
   return (
     <FormControlLabel
