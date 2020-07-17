@@ -80,7 +80,7 @@ const useStyles = makeStyles(
         },
 
         '&$rootChecked': {
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.primary.light,
           borderRadius: theme.shape.borderRadius * 4,
           color: theme.palette.common.white,
         },
