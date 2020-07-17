@@ -65,7 +65,25 @@ const useStyles = makeStyles(
       },
       rootChecked: {},
       rootSwitch: {
+        width: '50%',
+        textAlign: 'center',
         margin: theme.spacing(0),
+        display: 'inline-block',
+        padding: theme.spacing(1),
+
+        '& .MuiRadio-root': {
+          display: 'none',
+        },
+
+        '& $icon': {
+          display: 'none',
+        },
+
+        '&$rootChecked': {
+          backgroundColor: theme.palette.primary.main,
+          borderRadius: theme.shape.borderRadius * 4,
+          color: theme.palette.common.white,
+        },
       },
     }),
   { name: 'evlCheckbox', defaultTheme: EvlTheme },

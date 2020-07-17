@@ -6,7 +6,7 @@ import clsx from 'classnames';
 import EvlBox from '@components/box';
 
 export interface EvlRadioProps extends RadioProps {
-  label?: string;
+  label?: any;
   value?: any;
   image?: string;
   switchRadio?: boolean;
@@ -45,18 +45,7 @@ function ImageRadio({ image, checkedImage, ...props }: EvlRadioProps) {
 }
 
 function SwitchRadio(props: EvlRadioProps) {
-  const classes = useStyles();
-
-  return (
-    <Radio
-      className={classes.root}
-      disableRipple
-      color="default"
-      checkedIcon={<EvlBox component="span" className={clsx(classes.icon, classes.checkedIcon)} />}
-      icon={<EvlBox component="span" className={classes.icon} />}
-      {...props}
-    />
-  );
+  return <Radio disableRipple color="default" {...props} />;
 }
 
 export const EvlRadio: React.FC<EvlRadioProps> = ({ value, image, switchRadio, label, checked, ...props }) => {
