@@ -11,7 +11,7 @@ const useStyles = makeStyles(
         borderWidth: theme.spacing(0.1),
         borderStyle: 'solid',
         borderColor: theme.palette.grey.A400,
-        padding: theme.spacing(3),
+        padding: theme.spacing(1.5),
         backgroundColor: theme.palette.common.white,
         height: '100%',
       },
