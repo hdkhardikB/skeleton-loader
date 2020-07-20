@@ -11,10 +11,10 @@ type option = {
 export interface EvlGroupRadioProps extends RadioGroupProps {
   options: option[];
   onChange: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
-  noRadio?: boolean;
+  switchRadio?: boolean
 }
 
-export const EvlGroupRadio: React.FC<EvlGroupRadioProps> = ({ options, onChange, noRadio, ...props }) => {
+export const EvlGroupRadio: React.FC<EvlGroupRadioProps> = ({ options, switchRadio, onChange, ...props }) => {
   const classes = useStyles();
 
   return (
@@ -22,7 +22,7 @@ export const EvlGroupRadio: React.FC<EvlGroupRadioProps> = ({ options, onChange,
       {!!options &&
         options.length > 0 &&
         options.map(({ title, value }) => (
-          <EvlRadio switchRadio checked={value === props.value} key={value} value={value} label={title} />
+          <EvlRadio switchRadio={switchRadio} checked={value === props.value} key={value} value={value} label={title} />
         ))}
     </RadioGroup>
   );
