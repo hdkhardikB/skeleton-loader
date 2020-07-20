@@ -52,6 +52,7 @@ import EvlFormFileUpload from './form-file-upload'
 import EvlFileUpload from './file-upload'
 import EvlRadio from './radio'
 import EvlFormRadio from './form-radio'
+import EvlGroupRadio from './radio-group'
 
 export {
   Button,
@@ -107,5 +108,6 @@ export {
   EvlFileUpload,
   EvlFormFileUpload,
   EvlRadio,
-  EvlFormRadio
+  EvlFormRadio,
+  EvlGroupRadio
 };
