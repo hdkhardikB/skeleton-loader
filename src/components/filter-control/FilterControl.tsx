@@ -82,6 +82,18 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlRangeSlider
           marks
+          onTextChange={
+            //@ts-ignore
+            (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+              let input: number[] = []
+              input = selectedFilters[filterProperty] || [min, max]
+              input[index] = Number(event.target.value)
+              onChange({
+                ...selectedFilters,
+                [filterProperty]: input as number[],
+              });
+            }
+          }
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={
             //@ts-ignore
