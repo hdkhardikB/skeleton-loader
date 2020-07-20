@@ -11,7 +11,7 @@ const useStyles = makeStyles(
       },
       formTextLabel: {
         marginLeft: theme.spacing(0),
-        marginRight: theme.spacing(0.5),
+        marginRight: theme.spacing(0.1),
         padding: theme.spacing(0.4, 1),
         borderWidth: theme.spacing(0.1),
         borderStyle: 'solid',
@@ -32,7 +32,7 @@ const useStyles = makeStyles(
       },
       checkBoxLabel: {
         fontWeight: 700,
-        fontSize: theme.spacing(1.2),
+        fontSize: theme.spacing(1.1),
         margin: theme.spacing(0.2, 0),
       },
       figure: {
