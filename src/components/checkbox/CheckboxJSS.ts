@@ -32,16 +32,24 @@ const useStyles = makeStyles(
       },
       checkBoxLabel: {
         fontWeight: 700,
+        fontSize: theme.spacing(1.2),
+        margin: theme.spacing(0.2, 0),
       },
       figure: {
         margin: `0 auto`,
         display: 'block',
+        width: theme.spacing(3),
+        height: theme.spacing(3),
+
+        '& $img': {
+          height: '100%',
+          objectFit: 'scale-down',
+        },
       },
       blockImg: {
         display: 'inline-block',
         marginLeft: theme.spacing(0),
         textAlign: 'center',
-        minWidth: theme.spacing(8),
 
         '&:hover': {
           '& $img': {
