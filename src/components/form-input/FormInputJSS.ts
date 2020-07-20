@@ -5,7 +5,11 @@ import { EvlTheme } from '@themes';
 const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
-      root: {},
+      root: {
+        '& .MuiOutlinedInput-input': {
+          padding: theme.spacing(1.25, 1.4),
+        },
+      },
     }),
   { name: 'evlFormInput', defaultTheme: EvlTheme },
 );

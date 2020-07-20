@@ -53,6 +53,10 @@ const useStyles = makeStyles(
         textAlign: 'center',
         padding: theme.spacing(1),
 
+        '& $img': {
+          maxWidth: theme.spacing(4.2),
+        },
+
         '&:hover': {
           borderColor: theme.palette.primary.main,
         },
