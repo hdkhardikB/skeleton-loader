@@ -12,16 +12,15 @@ const useStyles = makeStyles(
       formTextLabel: {
         marginLeft: theme.spacing(0),
         marginRight: theme.spacing(0.1),
-        padding: theme.spacing(0.4, 1),
-        borderWidth: theme.spacing(0.1),
+        padding: theme.spacing(0.5),
+        borderWidth: theme.spacing(0),
         borderStyle: 'solid',
         borderColor: theme.palette.grey.A400,
         borderRadius: theme.shape.borderRadius * 5,
         fontSize: theme.spacing(1.4),
         fontWeight: 700,
         color: theme.palette.primary.light,
-        minWidth: theme.spacing(3.4),
-        minHeight: theme.spacing(3.4),
+        minWidth: theme.spacing(5.8),
         textAlign: 'center',
         backgroundColor: theme.palette.common.white,
 
@@ -48,7 +47,7 @@ const useStyles = makeStyles(
       },
       blockImg: {
         display: 'inline-block',
-        marginLeft: theme.spacing(0),
+        margin: theme.spacing(0, 0, 0.5),
         textAlign: 'center',
 
         '&:hover': {
