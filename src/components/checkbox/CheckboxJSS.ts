@@ -11,7 +11,7 @@ const useStyles = makeStyles(
       },
       formTextLabel: {
         marginLeft: theme.spacing(0),
-        marginRight: theme.spacing(0.1),
+        marginRight: theme.spacing(0.5),
         padding: theme.spacing(0.4, 1),
         borderWidth: theme.spacing(0.1),
         borderStyle: 'solid',
