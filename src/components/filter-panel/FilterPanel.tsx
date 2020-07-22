@@ -39,7 +39,7 @@ export const EvlFilterPanel: React.FC<EvlFilterPanelProps> = ({
         aria-controls="filter-panel-content"
         id="filter-panel-header"
       >
-        <EvlButton size="large" type="button">
+        <EvlButton size="medium" type="button">
           <EvlBox component="figure" className={classes.figure}>
             <img src={(expanded && closeIcon) || (filterApplied && filterAppliedIcon) || filterIcon} alt="" />
           </EvlBox>
