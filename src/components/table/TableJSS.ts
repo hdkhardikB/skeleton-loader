@@ -27,6 +27,9 @@ const useStyles = makeStyles(
         backgroundColor: theme.palette.common.white,
         borderRadius: theme.shape.borderRadius * 3,
       },
+      tableContainer: {
+        maxHeight: theme.spacing(45),
+      },
     }),
   { name: 'evlTable', defaultTheme: EvlTheme },
 );

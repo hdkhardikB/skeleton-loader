@@ -88,11 +88,6 @@ const useStyles = makeStyles(
       },
       exportData: {
         marginLeft: theme.spacing(0.5),
-
-        [theme.breakpoints.down('sm')]: {
-          lineHeight: '1em',
-          padding: `${theme.spacing(0.8, 1)} !important`,
-        },
       },
     }),
   { name: 'evlButton', defaultTheme: EvlTheme },

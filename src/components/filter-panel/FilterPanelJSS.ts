@@ -11,7 +11,6 @@ const useStyles = makeStyles(
         '& .MuiExpansionPanelSummary-root': {
           padding: theme.spacing(0),
           width: 'auto',
-          display: 'inline-block',
         },
         '& .MuiButtonBase-root': {
           backgroundColor: 'transparent',
