@@ -8,7 +8,7 @@ const useStyles = makeStyles(
       root: {
         textTransform: 'inherit',
         minWidth: 'inherit',
-        marginRight: theme.spacing(1.5),
+        marginRight: theme.spacing(3),
         fontWeight: 'bold',
         color: theme.palette.secondary.main,
 
