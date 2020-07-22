@@ -32,7 +32,7 @@ export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, placeholde
       <IconButton disabled className={classes.iconButton} aria-label="menu">
         <SearchIcon />
       </IconButton>
-      <InputBase onChange={handleInput} placeholder={placeholder} value={text} />
+      <InputBase onChange={handleInput} placeholder={placeholder} value={text} className={classes.inputBase} />
       {clear && (
         <IconButton
           type="button"

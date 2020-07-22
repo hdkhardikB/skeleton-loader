@@ -25,11 +25,22 @@ const useStyles = makeStyles(
         },
       },
       iconButton: {
-        padding: theme.spacing(1),
+        padding: theme.spacing(0.5, 1),
         color: theme.palette.secondary.main,
       },
       iconClose: {
         marginLeft: 'auto',
+      },
+      inputBase: {
+        width: '100%',
+        borderRadius: theme.shape.borderRadius * 5,
+
+        '&.Mui-focused': {
+          backgroundColor: theme.palette.grey[100],
+          '& $input': {
+            color: theme.palette.secondary.main,
+          },
+        },
       },
     }),
   { name: 'evlSearchBox', defaultTheme: EvlTheme },
