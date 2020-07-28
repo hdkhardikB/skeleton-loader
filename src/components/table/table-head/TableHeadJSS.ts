@@ -7,7 +7,7 @@ const useStyles = makeStyles(
     createStyles({
       root: {},
       TableCell: {
-        padding: theme.spacing(1.5),
+        padding: theme.spacing(1),
         backgroundColor: theme.palette.grey.A400,
         borderBottom: 0,
 
@@ -33,6 +33,7 @@ const useStyles = makeStyles(
         fontWeight: 700,
         color: theme.palette.primary.main,
         whiteSpace: 'pre',
+        fontSize: theme.spacing(1.4),
 
         '&:hover': {
           color: theme.palette.primary.main,
