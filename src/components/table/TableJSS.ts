@@ -8,7 +8,7 @@ const useStyles = makeStyles(
       root: {
         '& .MuiTableCell-body': {
           color: theme.palette.secondary.main,
-          padding: theme.spacing(1, 1.5),
+          padding: theme.spacing(1),
           borderBottomWidth: theme.spacing(0.1),
           borderBottomStyle: 'solid',
           borderBottomColor: theme.palette.grey.A200,
