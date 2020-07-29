@@ -6,12 +6,15 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        '& .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]': {
-          padding: theme.spacing(0.3),
-        },
+        display: 'block',
+        borderWidth: theme.spacing(0.1),
+        borderStyle: 'solid',
+        borderColor: theme.palette.grey.A100,
+        backgroundColor: theme.palette.common.white,
+        borderRadius: theme.shape.borderRadius * 4,
       },
     }),
-  { name: 'evlAutocomplete', defaultTheme: EvlTheme },
+  { name: 'EvlGroupRadio', defaultTheme: EvlTheme },
 );
 
 export default useStyles;

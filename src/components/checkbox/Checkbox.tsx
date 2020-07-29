@@ -7,6 +7,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import useStyles from './CheckboxJSS';
 import clsx from 'classnames';
 import { Typography } from '@material-ui/core';
+import EvlBox from '@components/box';
 
 export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error'> {
   label?: string;
@@ -25,30 +26,32 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, c
             [classes.blockImg]: !!image,
             [classes.formControlLabel]: !image && !noCheckbox,
             [classes.checked]: (image || noCheckbox) && checked,
-            [classes.formTextLabel]: !!noCheckbox
+            [classes.formTextLabel]: !!noCheckbox,
           })}
           control={
             <>
               <Checkbox
                 disableRipple
                 color="default"
-                checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
-                icon={<span className={classes.icon} />}
+                checkedIcon={<EvlBox component="span" className={clsx(classes.icon, classes.checkedIcon)} />}
+                icon={<EvlBox component="span" className={classes.icon} />}
                 inputProps={{ 'aria-label': 'decorative checkbox' }}
-                className={clsx({[classes.noCheckbox]: !!noCheckbox || !!image})}
+                className={clsx({ [classes.noCheckbox]: !!noCheckbox || !!image })}
                 checked={checked}
                 {...props}
               />
               {image && (
-                <figure className={classes.figure}>
+                <EvlBox component="figure" className={classes.figure}>
                   <img src={image} alt="" />
-                </figure>
+                </EvlBox>
               )}
             </>
           }
           label={
             <>
-              <Typography className={classes.checkBoxLabel}>{label}</Typography>
+              <Typography variant="body2" className={classes.checkBoxLabel}>
+                {label}
+              </Typography>
             </>
           }
         />

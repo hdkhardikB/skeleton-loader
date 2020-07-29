@@ -48,6 +48,7 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       const selectedFilterValues = selectedFilters[filterProperty] || [];
       filterControl = (
         <EvlMultiCheckbox
+          noCheckbox={!filterMeta || !filterMeta.showCheckbox}
           options={filterOptions}
           selectedOptions={selectedFilterValues}
           imageSrc={filterMeta && filterMeta.imageSrc}
@@ -81,6 +82,18 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlRangeSlider
           marks
+          onTextChange={
+            //@ts-ignore
+            (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+              let input: any[] = []
+              input = selectedFilters[filterProperty] || [min, max]
+              input[index] = event.target.value.length && Number(event.target.value) || event.target.value
+              onChange({
+                ...selectedFilters,
+                [filterProperty]: input as any[],
+              });
+            }
+          }
           value={selectedFilters[filterProperty] || filterOptions}
           onChange={
             //@ts-ignore

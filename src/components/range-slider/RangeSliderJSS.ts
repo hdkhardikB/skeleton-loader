@@ -6,12 +6,11 @@ const useStyles = makeStyles(
   (theme: Theme) =>
     createStyles({
       root: {
-        width: theme.spacing(30),
-
         '& .MuiSlider-root': {
           padding: theme.spacing(0),
           height: theme.spacing(2.5),
-          margin: theme.spacing(1.5, 0),
+          margin: `${theme.spacing(1.5)}px auto`,
+          width: `calc(100% - ${theme.spacing(3)}px)`,
         },
         '& .MuiSlider-mark': {
           top: theme.spacing(0.9),

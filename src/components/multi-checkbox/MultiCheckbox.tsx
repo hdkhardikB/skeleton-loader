@@ -13,6 +13,7 @@ export interface EvlMultiCheckboxProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   imageSrc?: string;
   imageExt?: string;
+  noCheckbox?: boolean
 }
 
 export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({
@@ -20,6 +21,7 @@ export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({
   selectedOptions,
   onChange,
   imageSrc,
+  noCheckbox,
   imageExt = 'svg',
 }) => {
   const classes = useStyles();
@@ -36,7 +38,7 @@ export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({
               value={value}
               label={title}
               image={imageSrc && `${imageSrc}/${title.toLowerCase()}.${imageExt}`}
-              noCheckbox
+              noCheckbox={noCheckbox}
             />
           ))}
       </FormGroup>

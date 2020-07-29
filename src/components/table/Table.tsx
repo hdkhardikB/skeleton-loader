@@ -59,12 +59,12 @@ const EvlTable: React.FC<EvlTableProps> = ({
     onLoadMore,
   } = pagination || {};
 
-
   const handleChangePage = (newPage: number) => {
     setPage(newPage);
     const noOfRecordsToDisplay = newPage * rowsPerPage + rowsPerPage;
-    const noOfRecords = (rowsPerPage < totalNoOfRows && noOfRecordsToDisplay < totalNoOfRows && noOfRecordsToDisplay) || totalNoOfRows;
-    (noOfRecords >= totalNoOfRows) && onLoadMore && onLoadMore(noOfRecordsToDisplay, rowsPerPage);
+    const noOfRecords =
+      (rowsPerPage < totalNoOfRows && noOfRecordsToDisplay < totalNoOfRows && noOfRecordsToDisplay) || totalNoOfRows;
+    noOfRecords >= totalNoOfRows && onLoadMore && onLoadMore(noOfRecordsToDisplay, rowsPerPage);
   };
 
   const handleRequestSort = (property: string) => {
@@ -96,8 +96,8 @@ const EvlTable: React.FC<EvlTableProps> = ({
   return (
     <EvlBox className={classes.root}>
       <EvlPaper elevation={0} className={classes.tablePaper}>
-        <TableContainer>
-          <Table aria-labelledby="tableTitle" size="medium" aria-label="table">
+        <TableContainer className={classes.tableContainer}>
+          <Table stickyHeader aria-labelledby="tableTitle" size="medium" aria-label="table">
             <EvlTableHead
               columns={columns}
               selectable={!!selectable && !!sortedRows.length}
@@ -120,7 +120,12 @@ const EvlTable: React.FC<EvlTableProps> = ({
                 currentRowsToDisplay.map((row: any, index: number) => {
                   const isItemSelected = !!_some(selected, row);
                   return (
-                    <TableRow hover tabIndex={-1} key={`${row.name}_${index}`} selected={!!selectable && isItemSelected}>
+                    <TableRow
+                      hover
+                      tabIndex={-1}
+                      key={`${row.name}_${index}`}
+                      selected={!!selectable && isItemSelected}
+                    >
                       {!!selectable && (
                         <TableCell>
                           <EvlCheckbox

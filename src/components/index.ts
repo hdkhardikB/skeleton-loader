@@ -50,6 +50,9 @@ import EvlAvatar from './avatar';
 import EvlListItemAvatar from './list-item-avatar';
 import EvlFormFileUpload from './form-file-upload'
 import EvlFileUpload from './file-upload'
+import EvlRadio from './radio'
+import EvlFormRadio from './form-radio'
+import EvlGroupRadio from './radio-group'
 
 export {
   Button,
@@ -103,5 +106,8 @@ export {
   EvlAvatar,
   EvlListItemAvatar,
   EvlFileUpload,
-  EvlFormFileUpload
+  EvlFormFileUpload,
+  EvlRadio,
+  EvlFormRadio,
+  EvlGroupRadio
 };
