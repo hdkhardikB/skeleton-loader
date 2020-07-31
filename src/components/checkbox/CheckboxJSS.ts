@@ -64,6 +64,9 @@ const useStyles = makeStyles(
           },
         },
       },
+      checkboxImage: {
+        display: 'flex',
+      },
       icon: {
         borderRadius: theme.shape.borderRadius * 3,
         width: theme.spacing(2.4),
