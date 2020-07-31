@@ -67,6 +67,13 @@ const useStyles = makeStyles(
       checkboxImage: {
         display: 'flex',
       },
+      labelImage: {
+        maxWidth: theme.spacing(10),
+        '& $img': {
+          width: '100%',
+          height: 'auto'
+        }
+      },
       icon: {
         borderRadius: theme.shape.borderRadius * 3,
         width: theme.spacing(2.4),

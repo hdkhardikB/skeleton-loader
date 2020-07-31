@@ -14,7 +14,7 @@ export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error
   error?: string;
   image?: string;
   noCheckbox?: boolean;
-  checkboxImage?: boolean;
+  checkboxImage?: string;
 }
 
 export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({
@@ -28,9 +28,10 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({
 }) => {
   const classes = useStyles();
   let showCheckbox = false;
-  showCheckbox = !(!!noCheckbox || !!image);
-  showCheckbox = checkboxImage || showCheckbox;
-
+  if (!!checkboxImage)
+    showCheckbox = true
+  else
+    showCheckbox = !(!!noCheckbox || !!image);
   return (
     <FormControl error={!!error}>
       <FormGroup>
@@ -50,7 +51,7 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({
                 checkedIcon={<EvlBox component="span" className={clsx(classes.icon, classes.checkedIcon)} />}
                 icon={<EvlBox component="span" className={classes.icon} />}
                 inputProps={{ 'aria-label': 'decorative checkbox' }}
-                className={clsx({ [classes.noCheckbox]: showCheckbox })}
+                className={clsx({ [classes.noCheckbox]: !showCheckbox })}
                 checked={checked}
                 {...props}
               />
@@ -60,8 +61,8 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({
                 </EvlBox>
               )}
               {checkboxImage && (
-                <EvlBox component="figure" m={0}>
-                  <img src={image} alt="" />
+                <EvlBox component="figure" className={clsx({ [classes.labelImage]: !!checkboxImage })} m={0}>
+                  <img src={checkboxImage} alt="" />
                 </EvlBox>
               )}
             </>
