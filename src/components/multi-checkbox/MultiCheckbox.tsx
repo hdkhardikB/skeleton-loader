@@ -40,7 +40,7 @@ export const EvlMultiCheckbox: React.FC<EvlMultiCheckboxProps> = ({
               label={title}
               image={imageSrc && `${imageSrc}/${title.toLowerCase()}.${imageExt}`}
               noCheckbox={noCheckbox}
-              checkboxImage={image && `${image.imageSrc}/${title.toLowerCase()}.${image.imageExt}`}
+              checkboxImage={image && `${image.imageSrc}/${value.toLowerCase()}.${image.imageExt}`}
             />
           ))}
       </FormGroup>
