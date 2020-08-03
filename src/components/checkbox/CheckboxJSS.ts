@@ -68,11 +68,14 @@ const useStyles = makeStyles(
         display: 'flex',
       },
       labelImage: {
-        maxWidth: theme.spacing(10),
+        maxWidth: theme.spacing(7),
+        display: 'flex',
+        marginRight: theme.spacing(1),
+
         '& $img': {
           width: '100%',
-          height: 'auto'
-        }
+          height: 'auto',
+        },
       },
       icon: {
         borderRadius: theme.shape.borderRadius * 3,
