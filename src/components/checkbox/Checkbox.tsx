@@ -14,10 +14,24 @@ export interface EvlCheckboxProps extends Omit<CheckboxProps, 'classes' | 'error
   error?: string;
   image?: string;
   noCheckbox?: boolean;
+  checkboxImage?: string;
 }
 
-export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, checked, noCheckbox, ...props }) => {
+export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({
+  label,
+  error,
+  image,
+  checked,
+  noCheckbox,
+  checkboxImage,
+  ...props
+}) => {
   const classes = useStyles();
+  let showCheckbox = false;
+  if (!!checkboxImage)
+    showCheckbox = true
+  else
+    showCheckbox = !(!!noCheckbox || !!image);
   return (
     <FormControl error={!!error}>
       <FormGroup>
@@ -27,6 +41,7 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, c
             [classes.formControlLabel]: !image && !noCheckbox,
             [classes.checked]: (image || noCheckbox) && checked,
             [classes.formTextLabel]: !!noCheckbox,
+            [classes.checkboxImage]: !!checkboxImage,
           })}
           control={
             <>
@@ -36,13 +51,18 @@ export const EvlCheckbox: React.FC<EvlCheckboxProps> = ({ label, error, image, c
                 checkedIcon={<EvlBox component="span" className={clsx(classes.icon, classes.checkedIcon)} />}
                 icon={<EvlBox component="span" className={classes.icon} />}
                 inputProps={{ 'aria-label': 'decorative checkbox' }}
-                className={clsx({ [classes.noCheckbox]: !!noCheckbox || !!image })}
+                className={clsx({ [classes.noCheckbox]: !showCheckbox })}
                 checked={checked}
                 {...props}
               />
               {image && (
                 <EvlBox component="figure" className={classes.figure}>
                   <img src={image} alt="" />
+                </EvlBox>
+              )}
+              {checkboxImage && (
+                <EvlBox component="figure" className={clsx({ [classes.labelImage]: !!checkboxImage })} m={0}>
+                  <img src={checkboxImage} alt="" />
                 </EvlBox>
               )}
             </>
