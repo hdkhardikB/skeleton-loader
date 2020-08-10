@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 export interface EvlSwitchProps extends Omit<SwitchProps, 'error'> {
-  label?: string;
+  label?: string | React.ReactNode;
   labelPlacement?: 'end' | 'start' | 'top' | 'bottom';
   error?: string;
 }
