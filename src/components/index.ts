@@ -48,11 +48,14 @@ import EvlChip from './chip';
 import EvlDialog from './dialog';
 import EvlAvatar from './avatar';
 import EvlListItemAvatar from './list-item-avatar';
-import EvlFormFileUpload from './form-file-upload'
-import EvlFileUpload from './file-upload'
-import EvlRadio from './radio'
-import EvlFormRadio from './form-radio'
-import EvlGroupRadio from './radio-group'
+import EvlFormFileUpload from './form-file-upload';
+import EvlFileUpload from './file-upload';
+import EvlRadio from './radio';
+import EvlFormRadio from './form-radio';
+import EvlGroupRadio from './radio-group';
+import EvlStepper from './stepper';
+import EvlStep from './step';
+import EvlStepLabel from './step-label';
 
 export {
   Button,
@@ -109,5 +112,8 @@ export {
   EvlFormFileUpload,
   EvlRadio,
   EvlFormRadio,
-  EvlGroupRadio
+  EvlGroupRadio,
+  EvlStepper,
+  EvlStep,
+  EvlStepLabel,
 };
