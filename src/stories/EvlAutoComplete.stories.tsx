@@ -16,12 +16,14 @@ type option = {
   value: string;
 };
 
+
 stories.add('EvlAutoComplete', () => (
   <EvlAutocomplete
     options={top100Films}
     id="free-solo-2-demo"
     disableClearable
     label="Select Movie"
+    //@ts-ignore
     onChange={(event: React.ChangeEvent<{}>, value: option | null) => console.log(value)}
   />
 ));

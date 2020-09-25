@@ -32,6 +32,7 @@ interface EvlTableProps {
     onLoadMore?: (skipIndex: number, rowsPerPage: number) => void;
     totalNoOfRows?: number;
   };
+  selected?: any[]
 }
 
 const EvlTable: React.FC<EvlTableProps> = ({
@@ -43,11 +44,12 @@ const EvlTable: React.FC<EvlTableProps> = ({
   noDataComponent: NoDataComponent,
   rowComponent: RowComponent,
   pagination,
+  selected = []
 }) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState<'asc' | 'desc'>((sort && sort.order) || 'asc');
   const [orderBy, setOrderBy] = React.useState<string>((sort && sort.orderBy) || '');
-  const [selected, setSelected] = React.useState<any[]>([]);
+  // const [selected, setSelected] = React.useState<any[]>([]);
   const [page, setPage] = React.useState(0);
   const {
     showPagination,
@@ -78,7 +80,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
     if (event.target.checked) {
       newSelected = [...rows];
     }
-    setSelected(newSelected);
+    // setSelected(newSelected);
     !!onSelect && onSelect(newSelected);
   };
 
@@ -87,7 +89,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
       _filter(selected, o => {
         return !_isMatch(o, selectedRow);
       })) || [...selected, selectedRow];
-    setSelected(newSelected);
+    // setSelected(newSelected);
     !!onSelect && onSelect(newSelected);
   };
 
