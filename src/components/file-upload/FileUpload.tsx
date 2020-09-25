@@ -18,7 +18,11 @@ const EvlFileUpload: React.FC<EvlFileUploadProps> = ({ uploaderText, error, uplo
   const { getRootProps, getInputProps } = useDropzone({ ...props });
   return (
     <FormControl className={classes.root} error={!!error}>
-      <EvlBox {...getRootProps()}>
+      <EvlBox
+        // css={undefined}
+        //@ts-ignore
+        {...getRootProps()}
+      >
         <input {...getInputProps()} />
         <img src={uploadIcon} />
         <EvlTypography variant="body1">{uploaderText || `Drop the files here ...`}</EvlTypography>
