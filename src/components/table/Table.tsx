@@ -55,7 +55,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
     loadMoreLabel = 'Load More',
     currentlyShowingLabel = 'Currently Showing',
     recordLabel = 'Records',
-    totalNoOfRows = rows.length,
+    totalNoOfRows = rows && rows.length,
     onLoadMore,
   } = pagination || {};
 
@@ -64,7 +64,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
     const noOfRecordsToDisplay = newPage * rowsPerPage + rowsPerPage;
     const noOfRecords =
       (rowsPerPage < totalNoOfRows && noOfRecordsToDisplay < totalNoOfRows && noOfRecordsToDisplay) || totalNoOfRows;
-    noOfRecords >= totalNoOfRows && onLoadMore && onLoadMore(noOfRecordsToDisplay, rowsPerPage);
+    noOfRecords < totalNoOfRows && onLoadMore && onLoadMore(noOfRecords, rowsPerPage);
   };
 
   const handleRequestSort = (property: string) => {
@@ -152,6 +152,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
           <EvlTablePagination
             count={totalNoOfRows}
             page={page}
+            totalRows={rows}
             onChangePage={handleChangePage}
             rowsPerPage={rowsPerPage}
             loadMoreLabel={loadMoreLabel}
