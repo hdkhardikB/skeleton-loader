@@ -126,7 +126,6 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       key={`${row.name}_${index}`}
                       selected={!!selectable && isItemSelected}
                     >
-                      <p>{index + 1}</p>
                       {!!selectable && (
                         <TableCell>
                           <EvlCheckbox
