@@ -64,7 +64,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
     const noOfRecordsToDisplay = newPage * rowsPerPage + rowsPerPage;
     const noOfRecords =
       (rowsPerPage < totalNoOfRows && noOfRecordsToDisplay < totalNoOfRows && noOfRecordsToDisplay) || totalNoOfRows;
-    noOfRecords < totalNoOfRows && onLoadMore && onLoadMore(noOfRecords, rowsPerPage);
+    noOfRecords >= rows.length && onLoadMore && onLoadMore(rows.length, rowsPerPage);
   };
 
   const handleRequestSort = (property: string) => {
@@ -126,6 +126,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
                       key={`${row.name}_${index}`}
                       selected={!!selectable && isItemSelected}
                     >
+                      <p>{index + 1}</p>
                       {!!selectable && (
                         <TableCell>
                           <EvlCheckbox
@@ -150,7 +151,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
         </TableContainer>
         {!!showPagination && !!sortedRows.length && (
           <EvlTablePagination
-            count={totalNoOfRows}
+            count={totalNoOfRows} // total number of expacted assets
             page={page}
             totalRows={rows}
             onChangePage={handleChangePage}
