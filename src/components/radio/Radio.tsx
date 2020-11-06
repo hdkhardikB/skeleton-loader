@@ -11,6 +11,7 @@ export interface EvlRadioProps extends RadioProps {
   image?: string;
   switchRadio?: boolean;
   checkedImage?: string;
+  onBoardingRadio?: string;
 }
 
 function SimpleRadio(props: EvlRadioProps) {
@@ -28,15 +29,15 @@ function SimpleRadio(props: EvlRadioProps) {
   );
 }
 
-function ImageRadio({ image, checkedImage, ...props }: EvlRadioProps) {
+function ImageRadio({ image, checkedImage, onBoardingRadio, ...props }: EvlRadioProps) {
   const classes = useStyles();
 
   return (
     <>
       <Radio
         className={clsx(classes.root)}
-        checkedIcon={<img src={checkedImage} />}
-        icon={<img src={image} />}
+        checkedIcon={<img className={clsx({ [classes.onBoardingRadio]: !!onBoardingRadio })} src={checkedImage} />}
+        icon={<img className={clsx({ [classes.onBoardingRadio]: !!onBoardingRadio })} src={image} />}
         color="default"
         {...props}
       />
