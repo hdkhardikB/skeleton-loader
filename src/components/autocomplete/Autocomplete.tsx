@@ -12,9 +12,16 @@ type option = {
 export interface EvlAutocompleteProps extends Omit<AutocompleteProps<option, true, true, true>, 'renderInput'> {
   options: option[];
   label?: string;
+  standardTextField?: 'filled' | 'outlined' | 'standard' | undefined;
 }
 
-export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({ options, label, onChange, ...props }) => {
+export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({
+  options,
+  label,
+  onChange,
+  standardTextField,
+  ...props
+}) => {
   const classes = useStyles();
   return (
     <EvlBox className={classes.root}>
@@ -25,7 +32,14 @@ export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({ options, label
         options={options}
         onChange={onChange}
         renderInput={params => {
-          return <EvlTextBox {...params} label={label} InputProps={{ ...params.InputProps, type: 'new-password' }} />;
+          return (
+            <EvlTextBox
+              standardTextField={standardTextField}
+              {...params}
+              label={label}
+              InputProps={{ ...params.InputProps, type: 'new-password' }}
+            />
+          );
         }}
       />
     </EvlBox>
