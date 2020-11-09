@@ -57,8 +57,9 @@ import EvlGroupRadio from './radio-group';
 import EvlStepper from './stepper';
 import EvlStep from './step';
 import EvlStepLabel from './step-label';
-import EvlDatePicker from './date-picker'
-import EvlFormDatePicker from './form-data-picker'
+import EvlDatePicker from './date-picker';
+import EvlFormDatePicker from './form-data-picker';
+import EvlComingSoon from './coming-soon';
 
 export {
   Button,
@@ -121,5 +122,6 @@ export {
   EvlStep,
   EvlStepLabel,
   EvlFormDatePicker,
-  EvlDatePicker
+  EvlDatePicker,
+  EvlComingSoon,
 };
