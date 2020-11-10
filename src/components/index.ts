@@ -43,6 +43,7 @@ import EvlListItemText from './list-item-text';
 import EvlMenu from './menu';
 import EvlMenuItem from './menu-item';
 import EvlCard from './card';
+import EvlCardMedia from './card-media';
 import EvlCardContent from './card-content';
 import EvlChip from './chip';
 import EvlDialog from './dialog';
@@ -106,6 +107,7 @@ export {
   EvlMenu,
   EvlMenuItem,
   EvlCard,
+  EvlCardMedia,
   EvlCardContent,
   EvlChip,
   EvlDialog,

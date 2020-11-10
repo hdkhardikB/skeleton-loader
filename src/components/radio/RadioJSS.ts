@@ -67,6 +67,9 @@ const useStyles = makeStyles(
           boxShadow: `${theme.spacing(0, 0.5, 1)} ${theme.palette.grey.A100}`,
         },
       },
+      onBoardingRadio: {
+        maxWidth: `${theme.spacing(8)}px !important`,
+      },
       rootChecked: {},
       rootSwitch: {
         width: '50%',
