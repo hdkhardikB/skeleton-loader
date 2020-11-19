@@ -28,7 +28,7 @@ export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, placeholde
   };
 
   return (
-    <Paper component="form" className={classes.root}>
+    <Paper className={classes.root}>
       <IconButton disabled className={classes.iconButton} aria-label="menu">
         <SearchIcon />
       </IconButton>
