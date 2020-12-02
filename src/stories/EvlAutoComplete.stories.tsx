@@ -16,10 +16,10 @@ type option = {
   value: string;
 };
 
-
 stories.add('EvlAutoComplete', () => (
   <EvlAutocomplete
     options={top100Films}
+    getOptionLabel={top100Films => top100Films.title}
     id="free-solo-2-demo"
     disableClearable
     label="Select Movie"
