@@ -10,7 +10,7 @@ type option = {
 };
 
 export interface EvlAutocompleteProps extends Omit<AutocompleteProps<option, true, true, true>, 'renderInput'> {
-  options: option[];
+  options: any;
   label?: string;
   standardTextField?: 'filled' | 'outlined' | 'standard' | undefined;
 }
@@ -28,7 +28,6 @@ export const EvlAutocomplete: React.FC<EvlAutocompleteProps> = ({
       <Autocomplete
         {...props}
         //@ts-ignore
-        getOptionLabel={option => option.title}
         options={options}
         onChange={onChange}
         renderInput={params => {

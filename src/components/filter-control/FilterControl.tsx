@@ -65,11 +65,9 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
               const newFilterAttribute = selectedFilterValues.filter((c: string) => c !== value);
               newFilters = {
                 ...selectedFilters,
-              }
-              if (isEmpty(newFilterAttribute))
-                delete newFilters[filterProperty]
-              else
-                newFilters[filterProperty] = newFilterAttribute
+              };
+              if (isEmpty(newFilterAttribute)) delete newFilters[filterProperty];
+              else newFilters[filterProperty] = newFilterAttribute;
             }
             onChange(newFilters);
           }}
@@ -85,9 +83,9 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
           onTextChange={
             //@ts-ignore
             (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
-              let input: any[] = []
-              input = selectedFilters[filterProperty] || [min, max]
-              input[index] = event.target.value.length && Number(event.target.value) || event.target.value
+              let input: any[] = [];
+              input = selectedFilters[filterProperty] || [min, max];
+              input[index] = (event.target.value.length && Number(event.target.value)) || event.target.value;
               onChange({
                 ...selectedFilters,
                 [filterProperty]: input as any[],
@@ -135,14 +133,13 @@ export const EvlFilterControl: React.FC<EvlFilterControlProps> = ({
       filterControl = (
         <EvlAutoComplete
           options={filterOptions}
+          getOptionLabel={filterOptions => filterOptions.title}
           onChange={(event: React.ChangeEvent<{}>, value: any) => {
             const newFilters = {
               ...selectedFilters,
             };
-            if (value && [value.value])
-              newFilters[filterProperty] = [value.value]
-            else
-              delete newFilters[filterProperty]
+            if (value && [value.value]) newFilters[filterProperty] = [value.value];
+            else delete newFilters[filterProperty];
             onChange(newFilters);
           }}
         />
