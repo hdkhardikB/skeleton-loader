@@ -11,6 +11,7 @@ export interface EvlTablePaginationProps {
   onChangePage: (newPage: number) => void;
   rowsPerPage: number;
   page: number;
+  setIsLoadMore?: boolean;
   loadMoreLabel: string;
   currentlyShowingLabel: string;
   recordLabel: string;
@@ -21,6 +22,7 @@ export const EvlTablePagination: React.FC<EvlTablePaginationProps> = ({
   totalRows,
   rowsPerPage,
   page,
+  setIsLoadMore,
   onChangePage,
   loadMoreLabel,
   currentlyShowingLabel,
@@ -37,7 +39,7 @@ export const EvlTablePagination: React.FC<EvlTablePaginationProps> = ({
         {`${currentlyShowingLabel} ${noOfRecords}/${count} ${recordLabel}`}
       </label>
       <LinearProgress className={classes.paginationItem} variant="determinate" value={progress} />
-      {!!displayMore && (
+      {!!displayMore && !setIsLoadMore && (
         <EvlButton
           variant="outlined"
           className={clsx(classes.paginationItem, classes.paginationButton)}

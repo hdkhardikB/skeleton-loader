@@ -29,10 +29,11 @@ interface EvlTableProps {
     loadMoreLabel?: string;
     currentlyShowingLabel?: string;
     recordLabel?: string;
+    setIsLoadMore?: boolean;
     onLoadMore?: (skipIndex: number, rowsPerPage: number) => void;
     totalNoOfRows?: number;
   };
-  selected?: any[]
+  selected?: any[];
 }
 
 const EvlTable: React.FC<EvlTableProps> = ({
@@ -44,7 +45,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
   noDataComponent: NoDataComponent,
   rowComponent: RowComponent,
   pagination,
-  selected = []
+  selected = [],
 }) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState<'asc' | 'desc'>((sort && sort.order) || 'asc');
@@ -57,6 +58,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
     loadMoreLabel = 'Load More',
     currentlyShowingLabel = 'Currently Showing',
     recordLabel = 'Records',
+    setIsLoadMore = false,
     totalNoOfRows = rows && rows.length,
     onLoadMore,
   } = pagination || {};
@@ -155,6 +157,7 @@ const EvlTable: React.FC<EvlTableProps> = ({
             count={totalNoOfRows} // total number of expacted assets
             page={page}
             totalRows={rows}
+            setIsLoadMore={setIsLoadMore}
             onChangePage={handleChangePage}
             rowsPerPage={rowsPerPage}
             loadMoreLabel={loadMoreLabel}
