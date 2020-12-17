@@ -36,7 +36,7 @@ export const EvlTablePagination: React.FC<EvlTablePaginationProps> = ({
   return (
     <EvlBox className={classes.root}>
       <label className={clsx(classes.paginationItem, classes.paginationLabel)}>
-        {`${currentlyShowingLabel} ${noOfRecords}/${count} ${recordLabel}`}
+        {`${currentlyShowingLabel} ${totalRows.length}/${count} ${recordLabel}`}
       </label>
       <LinearProgress className={classes.paginationItem} variant="determinate" value={progress} />
       {!!displayMore && !setIsLoadMore && (
