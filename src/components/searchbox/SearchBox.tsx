@@ -8,14 +8,14 @@ import ClearIcon from '@material-ui/icons/Clear';
 import clsx from 'classnames';
 
 export interface EvlSearchBoxProps {
-  onSearch: (text: string) => void;
+  onSearch: (text: string | undefined) => void;
   placeholder: string;
 }
 /** Customized Everledger SearchBox which is based on
  * material-ui https://material-ui.com/api/input-base/#inputbase-api */
 export const EvlSearchBox: React.FC<EvlSearchBoxProps> = ({ onSearch, placeholder }) => {
   const classes = useStyles();
-  const [text, setText] = React.useState<string>('');
+  const [text, setText] = React.useState<string | undefined>(undefined);
   const [clear, setClear] = React.useState(false);
 
   React.useEffect(() => {
