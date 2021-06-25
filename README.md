@@ -1,10 +1,10 @@
-# evl-ui-components
+# Skeleton loader
 
-Everledger component library which contains basic UI components.
+Implmentation of Basic Skeleton loader with variants.
 
-Should be used as building blocks in Everleder Platform. By Default it comes with Everleder Default Theme.
+Should be used as a loader instead of showing conventional page level loader.
 
-It is designed by customizing [**material-ui**](https://material-ui.com/) components. To visualize components and support documentation  integrated with [**storybook**](https://storybook.js.org/).
+This library can be used a `npm` or `yarn` package to `react` web app.
 
 ## Install
 
@@ -22,15 +22,26 @@ It is designed by customizing [**material-ui**](https://material-ui.com/) compon
 
 >it will start storybook on http://localhost:6006/.
 
+## Usage
+There are 3 variants of this laoder 
 
-### Add Component
+**1. Circle
+```jsx
+    <SkeletonLoader type="circle" height={200} width={300} />
+```
+**2. Box
 
-To add component please use existing template created for component + story. Please follow steps mentioned below. It uses [**vscode template extension**](https://marketplace.visualstudio.com/items?itemName=yuanhjty.code-template-tool) 
+```jsx
+    <SkeletonLoader type="box" height={200} width={300} />
+```
+You can also wrap loader inside element to fill it. Something like this
 
-1. Install **code-template-tool** in vscode extension
+```jsx
+    <h4><SkeletonLoader /><h4>
+```
+**3. Line
+```jsx
+    <SkeletonLoader type="line" height={200} width={300} />
+```
 
-2. Right Click on components folder > New File/Folder from Template. Please choose component template.
 
-3. Please give appropriate name for component
-
-> Please follow same to add story from template.

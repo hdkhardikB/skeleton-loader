@@ -22,8 +22,6 @@
     "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "paths": {
-      "@themes": ["src/themes"],
-      "@themes/*": ["src/themes/*"],
       "@components": ["src/components"],
       "@components/*": ["src/components/*"],
       "@assets":["assets"],
